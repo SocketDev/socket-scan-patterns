@@ -14,6 +14,7 @@ import type { DerivedRowSet } from './_shared/emit-table.mts'
 import type { UpstreamSlice } from './_shared/upstream-slice.mts'
 
 import { assertRowsPresent, writeSourceRowSet } from './_shared/emit-table.mts'
+import { translateRegexForJs } from './_shared/regex-dialect.mts'
 import {
   readSliceFile,
   resolveUpstreamSlice,
@@ -163,24 +164,33 @@ export function deriveGitleaksRules(slice: UpstreamSlice): DerivedRowSet {
     if (!id || !regexSource) {
       continue
     }
-    const pathRegexSource = readGitleaksScalar(block, 'path')
+    const rawPath = readGitleaksScalar(block, 'path')
     const description = readGitleaksScalar(block, 'description') ?? id
+    const translated = translateRegexForJs(regexSource)
+    const translatedPath = rawPath ? translateRegexForJs(rawPath) : undefined
+    // A path-scoped rule is only JS-safe when BOTH of its patterns translated.
+    const dialect =
+      translated.dialect === 'js' &&
+      (translatedPath === undefined || translatedPath.dialect === 'js')
+        ? 'js'
+        : 're2'
     rules.push({
       category: gitleaksCategoryFromId(id),
       description,
+      dialect,
       entropy: readGitleaksNumber(block, 'entropy'),
       id: `gitleaks:${id}`,
       keywords: readGitleaksKeywords(block),
-      kind: pathRegexSource ? 'path' : 'regex',
-      pathRegexSource,
+      kind: rawPath ? 'path' : 'regex',
+      pathRegexSource: translatedPath?.source,
       provenance: {
         license: slice.license,
         ruleId: id,
         source: slice.source,
         sourceFile,
       },
-      regexFlags: '',
-      regexSource,
+      regexFlags: translated.flags,
+      regexSource: translated.source,
       severity: GITLEAKS_DEFAULT_SEVERITY,
       title: id,
     })

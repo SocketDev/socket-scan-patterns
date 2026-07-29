@@ -151,6 +151,12 @@ export function deriveAgentShieldRules(
 
   const agentConfigRules: PatternRule[] = []
   const skillRules: PatternRule[] = []
+  // AgentShield v1.4.0 declares `hooks-background-process` TWICE in hooks.ts
+  // with different bodies ("Spawns" vs "Runs"). Both are real detectors, so
+  // dropping either would lose coverage; instead the second and later
+  // occurrences get a deterministic `-2`, `-3` … suffix. Declared in
+  // .config/repo/upstream-divergence.json.
+  const idOrdinals = new Map<string, number>()
 
   for (let i = 0, { length } = moduleFiles; i < length; i += 1) {
     const fileName = moduleFiles[i]!
@@ -167,11 +173,15 @@ export function deriveAgentShieldRules(
       : agentConfigRules
     for (let j = 0, metaCount = metas.length; j < metaCount; j += 1) {
       const meta = metas[j]!
+      const ordinal = (idOrdinals.get(meta.id) ?? 0) + 1
+      idOrdinals.set(meta.id, ordinal)
+      const uniqueId = ordinal === 1 ? meta.id : `${meta.id}-${ordinal}`
       target.push({
         category: meta.category,
         description: meta.description,
+        dialect: 'js',
         entropy: undefined,
-        id: `agentshield:${meta.id}`,
+        id: `agentshield:${uniqueId}`,
         keywords: [],
         kind: 'audit',
         pathRegexSource: undefined,

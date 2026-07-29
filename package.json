@@ -5,6 +5,7 @@
   "license": "MIT",
   "files": [
     "CHANGELOG.md",
+    "DISCLOSURE",
     "NOTICE",
     "data/**/*.json",
     "dist/**/*"
@@ -122,5 +123,8 @@
     "protobufjs": false,
     "puppeteer": false,
     "ssh2": false
+  },
+  "contentPolicy": {
+    "class": "dual-use"
   }
 }

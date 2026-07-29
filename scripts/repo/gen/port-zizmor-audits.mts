@@ -232,6 +232,7 @@ export function deriveZizmorAudits(slice: UpstreamSlice): DerivedRowSet {
     }
     rules.push({
       category: entry.status,
+      dialect: 'js',
       description: entry.reason
         ? `${doc.summary} Declined: ${entry.reason}`
         : doc.summary,

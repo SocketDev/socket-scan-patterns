@@ -37,6 +37,20 @@ export type PatternSeverity = 'critical' | 'high' | 'info' | 'low' | 'medium'
 export type PatternKind = 'audit' | 'capability' | 'path' | 'regex'
 
 /**
+ * Which regex engine `regexSource` is valid for.
+ *
+ * - `js` — compiles with `new RegExp(regexSource, regexFlags)`. The generators
+ *   verify this by actually constructing it, so a `js` row is guaranteed
+ *   loadable.
+ * - `re2` — needs a Go/RE2-class engine. Upstreams write scoped inline flags
+ *   (`foo(?i)bar`) that JavaScript cannot express at all; hoisting them to a
+ *   global flag would change what the pattern matches, so the row is published
+ *   untranslated and honestly labelled instead of being silently broadened or
+ *   silently dropped.
+ */
+export type PatternDialect = 'js' | 're2'
+
+/**
  * Per-row provenance. Every generated row carries one; a row without
  * provenance is a defect, not an omission. `source` is the upstream project
  * at its pinned release, so a row can always be traced back to the exact
@@ -89,6 +103,10 @@ export interface PatternRule {
    * Literal substrings that must be present before the regex is tried.
    */
   readonly keywords: readonly string[]
+  /**
+   * Engine `regexSource` is valid for. Check this before compiling.
+   */
+  readonly dialect: PatternDialect
   readonly kind: PatternKind
   /**
    * Flags for `regexSource`, e.g. `i`. Empty when the rule sets none.

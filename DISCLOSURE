@@ -1,0 +1,63 @@
+Dual-use content disclosure
+===========================
+
+@socketsecurity/scan-patterns is a SECURITY TOOL. It publishes the detector
+pattern tables that Socket's baseline scanners run, so the package necessarily
+CONTAINS the things it detects: credential-shaped regular expressions, prompt
+injection and jailbreak patterns, data-exfiltration and privilege-escalation
+signatures, and descriptions of insecure agent and CI configurations.
+
+This disclosure exists because npm's dual-use policy
+(https://docs.npmjs.com/policies/dual-use) requires a package whose content
+could be repurposed for harm to state its functionality and its intended
+legitimate use.
+
+What the package contains
+-------------------------
+
+- `data/secrets.json` — regular expressions matching the SHAPE of API keys,
+  tokens, and private keys for ~300 services. These match credential FORMATS.
+  The package contains no real credential, and no fixture that is a live
+  secret.
+- `data/skills.json` — patterns matching prompt-injection, jailbreak,
+  anti-refusal, data-exfiltration, memory-poisoning and privilege-escalation
+  text in AI-agent skill definitions.
+- `data/agent-configs.json` — descriptions of insecure agent, MCP, hook, and
+  permission configurations.
+- `data/workflows.json` — a checklist of GitHub Actions workflow audits.
+- `data/manifests.json` — the subset of secret rules scoped to package
+  manifest and config files.
+
+Every row is DERIVED from a pinned, publicly published upstream security
+scanner and records that provenance (`provenance.source`, `provenance.ruleId`,
+`provenance.license`). Nothing here is a novel attack technique; it is a
+reformatting of detection rules that the upstream projects already publish.
+
+Intended legitimate use
+-----------------------
+
+Defensive scanning. The tables are consumed by `socket scan secrets`,
+`socket scan workflows`, `socket scan agent-configs`, `socket scan skills`,
+and `socket scan manifests`, and by Socket's public composite actions, to find
+leaked credentials and insecure AI-agent and CI configuration in a codebase
+its operator controls.
+
+The package is a passive data set with a small typed accessor API. It performs
+no network access, executes nothing, and takes no action on a match — it only
+describes what to look for. Acting on a finding is the consumer's decision.
+
+Why the patterns cannot be redacted
+-----------------------------------
+
+A credential-detection rule has to contain the credential's shape, and an
+injection detector has to contain the injection's wording. Obfuscating them
+would make the package unable to do the one job it exists for. This is the
+same posture as the upstreams it derives from — gitleaks, Trivy, zizmor,
+AgentShield, and NVIDIA SkillSpector — all of which publish their rule sets
+openly for the same reason.
+
+Reporting
+---------
+
+Security concerns about this package: https://socket.dev/security or the
+repository's SECURITY policy.

@@ -40,6 +40,23 @@ applies to any future copyleft upstream, enforced by
 Everything that ships here is MIT, with Apache-2.0 attribution for the Trivy,
 SkillSpector, and codex-security derivations recorded in [`NOTICE`](NOTICE).
 
+**Never build license detection here.** Socket's API already returns
+authoritative per-package license data through
+[`@socketsecurity/sdk`](https://github.com/SocketDev/socket-sdk-js):
+`LicenseDetails` carries `spdxDisj` (the SPDX expression in disjunctive normal
+form), `authors[]`, `provenance` (package.json / LICENSE file / README),
+`filepath`, and a confidence score, and the batch endpoints accept
+`include_license_details`. Anything in this repo — or downstream of it — that
+needs "what license is this dependency" consumes that. No regex license
+sniffing, ever.
+
+This repo eats its own cooking: `upstream-licenses-match-registry` looks every
+pinned upstream up through that same SDK and fails when an upstream's reported
+`spdxDisj` no longer covers the SPDX id recorded here. TruffleHog itself
+relicensed GPL-2.0 → AGPL-3.0 at v3.0, which is exactly how a compliant
+derivation quietly becomes a non-compliant one; the check is offline-safe and
+skips without a token rather than failing closed.
+
 ## Install
 
 ```sh

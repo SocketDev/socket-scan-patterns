@@ -15,6 +15,7 @@ import type { DerivedRowSet } from './_shared/emit-table.mts'
 import type { UpstreamSlice } from './_shared/upstream-slice.mts'
 
 import { assertRowsPresent, writeSourceRowSet } from './_shared/emit-table.mts'
+import { translateRegexForJs } from './_shared/regex-dialect.mts'
 import {
   readSliceFile,
   resolveUpstreamSlice,
@@ -244,22 +245,35 @@ export function deriveTrivyRules(slice: UpstreamSlice): DerivedRowSet {
       ? resolveTrivyRegex(pathInner, fragments)
       : undefined
 
+    const translated = regexSource
+      ? translateRegexForJs(regexSource)
+      : undefined
+    const translatedPath = pathRegexSource
+      ? translateRegexForJs(pathRegexSource)
+      : undefined
+    // A path-scoped rule is only JS-safe when BOTH of its patterns translated.
+    const dialect =
+      translated?.dialect === 'js' &&
+      (translatedPath === undefined || translatedPath.dialect === 'js')
+        ? 'js'
+        : 're2'
     rules.push({
       category,
       description: title,
+      dialect,
       entropy: undefined,
       id: `trivy:${id}`,
       keywords: readTrivyKeywords(body),
       kind: pathRegexSource ? 'path' : 'regex',
-      pathRegexSource,
+      pathRegexSource: translatedPath?.source,
       provenance: {
         license: slice.license,
         ruleId: id,
         source: slice.source,
         sourceFile,
       },
-      regexFlags: '',
-      regexSource,
+      regexFlags: translated?.flags ?? '',
+      regexSource: translated?.source,
       severity,
       title,
     })

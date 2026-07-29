@@ -1,0 +1,19 @@
+{
+  "$comment": "Intentional, reviewed divergences between an upstream's full rule set and what this package derives. Kept OUT of the generators so a divergence is a declared decision with a reason, never a silent gap. Every generator asserts that a source it parsed to zero rows is listed here; an unlisted zero fails the run.",
+  "skillspector": {
+    "modules": {
+      "static_patterns_harmful_content.py": {
+        "reason": "Patterns are built by Python expression evaluation, not static literals: DANGEROUS_ACTIONS concatenates '|'.join(HARMFUL_SUBSTANCES) into each regex at import time, and SUBSTANCE_PATTERNS is an f-string list comprehension over that same list. Deriving them would mean evaluating Python, and a hand-expanded copy would silently rot the moment upstream edits the substance list. This analyzer also targets physical-harm content rather than a software-supply-chain or agent-security property, so it is outside this package's scope.",
+        "skipped": true
+      }
+    }
+  },
+  "agentshield": {
+    "duplicateRuleIds": {
+      "hooks-background-process": {
+        "reason": "AgentShield v1.4.0 declares this id twice in src/rules/hooks.ts (lines 1021 and 1955) with different names and check bodies \u2014 'Hook Spawns Background Process' and 'Hook Runs Background Process'. Both are real detectors, so neither is dropped; the second occurrence is emitted as `agentshield:hooks-background-process-2`. Revisit when upstream deduplicates.",
+        "resolution": "ordinal-suffix"
+      }
+    }
+  }
+}

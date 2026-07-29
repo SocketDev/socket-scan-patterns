@@ -8,5 +8,10 @@
   "build": {
     "from": "npm-registry",
     "type": "js"
+  },
+  "contentPolicy": {
+    "packages": [
+      "."
+    ]
   }
 }
