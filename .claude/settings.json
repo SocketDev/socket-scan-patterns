@@ -20,6 +20,15 @@
             "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/fleet/index.cjs PreToolUse"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/repo/no-copyleft-source-read/index.mts"
+          }
+        ],
+        "matcher": "Bash|Glob|Grep|Read|WebFetch"
       }
     ],
     "SessionStart": [

@@ -48,15 +48,27 @@
 	ignore = dirty
 	sparse-checkout = src
 	verify = none
-# 🚨 AGPL-3.0 — CONFORMANCE-ONLY. TruffleHog is pinned SOLELY as a
-# coverage-comparison oracle: scripts/check/trufflehog-coverage.mts reads the
-# detector INDEX (the import list in pkg/engine/defaults/defaults.go) to report
-# which detector families this package does not cover. Never copy, derive,
-# transform, or emit a TruffleHog regex, rule datum, or source line into data/,
-# src/, or any published artifact — this package is MIT and AGPL derivation
-# would relicense it. The sparse-checkout is deliberately narrowed to
-# pkg/engine/defaults so the regex-bearing pkg/detectors tree is never even
-# materialized. See upstream/README.md and NOTICE.
+# 🚨 AGPL-3.0 — CLEAN-ROOM, TESTS-ONLY. TruffleHog is pinned SOLELY as a
+# coverage-comparison oracle, and its IMPLEMENTATION IS UNREADABLE BY
+# CONSTRUCTION, not merely un-copied.
+#
+# The sparse-checkout admits ONLY `*_test.go` files and `testdata/` fixtures
+# under pkg/detectors, in NO-CONE mode (cone mode cannot express a file-level
+# glob, so `sparse-mode = no-cone` is load-bearing — materialize via
+# `node scripts/repo/materialize-upstream.mts trufflehog`, never a bare cone
+# clone). Not one line of TruffleHog implementation lands on disk, so no agent
+# and no human can read it. Absence is the block.
+#
+# The oracle infers detector families from test FILE PATHS only — the fact that
+# `pkg/detectors/stripe/stripe_test.go` exists tells us a Stripe detector
+# exists. It never reads a registry or an implementation file. There is NO
+# trufflehog generator and NO trufflehog-derived table row, ever. Their bytes
+# are never vendored into our tree; conformance reads the pinned submodule.
+#
+# For secret detection, gitleaks (MIT) is the sanctioned derivation source.
+# Guard: .claude/hooks/repo/no-copyleft-source-read/
+# Gate:  scripts/repo/check/copyleft-slices-are-tests-only.mts
+# See docs/agents.md/repo/upstream-slices.md and NOTICE.
 # trufflehog-v3.96.0 sha256:83e7c8ca90c0e87367d7b0f4473266cd725a9ab5b0ad4b92b9e232188debcdf1
 [submodule "upstream/trufflehog"]
 	ref = 6f3c981e7b77f235fd2702dd74af25fc4b72bf11
@@ -65,8 +77,9 @@
 	branch = v3.96.0
 	shallow = true
 	ignore = dirty
-	sparse-checkout = pkg/engine/defaults
+	sparse-checkout = /pkg/detectors/**/*_test.go /pkg/detectors/**/testdata/**
 	verify = none
+	sparse-mode = no-cone
 # skillspector-v2.5.0 sha256:56012ec197ac45ac572fb39260e2811f17ede92c6d821dc5947220a9a14e69e4
 [submodule "upstream/skillspector"]
 	ref = 34f60308522f45447cd343da0aad77bcea308ad4

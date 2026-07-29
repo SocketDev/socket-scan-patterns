@@ -87,14 +87,26 @@ reproduced here alongside the MIT permission notice already granted by LICENSE.
                               `data/agentshield-skills.json`
 
 ================================================================================
-Conformance-only upstreams (NO derivation)
+Copyleft upstreams — TESTS-ONLY, NO derivation
 ================================================================================
 
   TruffleHog   — https://github.com/trufflesecurity/trufflehog
                  Licensed under AGPL-3.0.
 
-TruffleHog is pinned SOLELY as a coverage-comparison oracle. Its detector
-index is read at check time to report which detector families this package
-does not cover. No TruffleHog regular expression, rule datum, or source code
-is copied, derived, transformed, or emitted into `data/`, `src/`, or any
-published artifact. See `upstream/README.md`.
+TruffleHog is pinned SOLELY as a coverage-comparison oracle, under a
+clean-room posture: this project may observe its TESTS and never its
+IMPLEMENTATION.
+
+Its implementation is unreadable by construction. The pinned sparse-checkout
+admits only `*_test.go` files and `testdata/` fixtures, in no-cone mode, so no
+TruffleHog implementation file is ever materialized on disk. The oracle infers
+detector families from test FILE PATHS alone and reports coverage gaps; it
+never gates.
+
+No TruffleHog regular expression, rule datum, or source code is copied,
+derived, transformed, or emitted into `data/`, `src/`, or any published
+artifact, and no TruffleHog bytes are vendored into this repository's tracked
+content. No generator reads it and no table row cites it as a source.
+
+This tests-only rule applies to ANY copyleft upstream (AGPL/GPL/SSPL), not
+only TruffleHog. See `docs/agents.md/repo/upstream-slices.md`.

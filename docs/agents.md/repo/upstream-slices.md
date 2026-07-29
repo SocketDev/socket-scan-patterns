@@ -20,27 +20,27 @@ against the index, and these references have no index entry.
 
 ## The slices
 
-| name | pinned | sparse-checkout | role |
-| --- | --- | --- | --- |
-| `gitleaks` | `v8.30.1` | `config`, `testdata/config` | derive |
-| `zizmor` | `v1.28.0` | `docs`, `crates/zizmor/tests` | derive |
-| `trivy` | `v0.72.0` | `pkg/fanal/secret` | derive |
-| `codex-security` | `npm-v0.1.1` | `sdk/typescript/_bundled_plugin/{preflight,schemas,skills}` | derive |
-| `agentshield` | `v1.4.0` | `src` | derive |
-| `skillspector` | `v2.5.0` | `src/skillspector/nodes/analyzers` | derive |
-| `trufflehog` | `v3.96.0` | `pkg/engine/defaults` | **conformance-only** |
+| name             | pinned       | sparse-checkout                                             | role                  |
+| ---------------- | ------------ | ----------------------------------------------------------- | --------------------- |
+| `gitleaks`       | `v8.30.1`    | `config`, `testdata/config`                                 | derive                |
+| `zizmor`         | `v1.28.0`    | `docs`, `crates/zizmor/tests`                               | derive                |
+| `trivy`          | `v0.72.0`    | `pkg/fanal/secret`                                          | derive                |
+| `codex-security` | `npm-v0.1.1` | `sdk/typescript/_bundled_plugin/{preflight,schemas,skills}` | derive                |
+| `agentshield`    | `v1.4.0`     | `src`                                                       | derive                |
+| `skillspector`   | `v2.5.0`     | `src/skillspector/nodes/analyzers`                          | derive                |
+| `trufflehog`     | `v3.96.0`    | `**/*_test.go`, `**/testdata/**` (no-cone)                  | **tests-only oracle** |
 
 ### Licenses
 
-| upstream | license | obligation |
-| --- | --- | --- |
-| gitleaks | MIT | notice reproduced in `NOTICE` |
-| zizmor | MIT | notice reproduced in `NOTICE` |
-| agentshield | MIT | notice reproduced in `NOTICE` |
-| trivy | Apache-2.0 | attribution **required** — `NOTICE` |
-| codex-security | Apache-2.0 | attribution **required** — `NOTICE` |
-| skillspector | Apache-2.0 | attribution **required** — `NOTICE` |
-| trufflehog | **AGPL-3.0** | **never derive** — see below |
+| upstream       | license      | obligation                          |
+| -------------- | ------------ | ----------------------------------- |
+| gitleaks       | MIT          | notice reproduced in `NOTICE`       |
+| zizmor         | MIT          | notice reproduced in `NOTICE`       |
+| agentshield    | MIT          | notice reproduced in `NOTICE`       |
+| trivy          | Apache-2.0   | attribution **required** — `NOTICE` |
+| codex-security | Apache-2.0   | attribution **required** — `NOTICE` |
+| skillspector   | Apache-2.0   | attribution **required** — `NOTICE` |
+| trufflehog     | **AGPL-3.0** | **never derive** — see below        |
 
 SkillSpector's `src/skillspector/yara_rules` tree is deliberately outside the
 sparse-checkout. The `skills` table derives only from the
@@ -48,28 +48,59 @@ NVIDIA-copyright `static_patterns_*.py` category modules and
 `pattern_defaults.py`, so none of the obligations in SkillSpector's own
 `THIRD_PARTY_NOTICES.md` carry forward.
 
-## TruffleHog is conformance-only
+## Copyleft upstreams are TESTS-ONLY
 
-TruffleHog is AGPL-3.0. Deriving its regexes or rule data into this package
-would relicense the package, so it is pinned **solely as a coverage-comparison
-oracle**.
+This is the generic rule, not a TruffleHog special case. **Any upstream whose
+license appears in `COPYLEFT_LICENSES`** (`scripts/repo/upstream-config.mts` —
+AGPL-1.0, AGPL-3.0, GPL-2.0, GPL-3.0, SSPL-1.0) inherits this posture
+automatically. A future copyleft upstream gets it by default rather than
+because someone remembered.
 
-`scripts/check/trufflehog-coverage.mts` reads the detector **index** — the
-import list in `pkg/engine/defaults/defaults.go`, which is a list of Go package
-names — and reports which detector families this package's `secrets` table does
-not cover. It reports; it never gates, and it never writes to `data/`.
+This package is MIT. Deriving copyleft rules into it would relicense it. So the
+posture is **clean-room**: we may observe a copyleft upstream's **tests** and
+never its **implementation**.
 
-Three things keep that honest:
+**The implementation must be UNREADABLE, not merely un-copied.** A rule saying
+"do not copy this" is only as good as the reader's discipline; a file that
+never lands on disk cannot be read by any agent or human. Absence is the block.
 
-1. The sparse-checkout is narrowed to `pkg/engine/defaults`, so the
-   regex-bearing `pkg/detectors` tree (2780 files) is never materialized.
-2. The coverage check derives only detector family **names** for comparison and
-   emits no upstream datum into any artifact.
-3. No generator under `scripts/gen/` may read `upstream/trufflehog`;
-   `data-is-regenerated` fails if one does.
+Four layers enforce it:
 
-If you need broader secret coverage, add a rule to a **derivable** upstream's
-generator or author an original Socket rule. Never port one from TruffleHog.
+1. **Sparse-checkout admits tests only** — `*_test.go` files and `testdata/**`,
+   in **`no-cone` mode**. Cone mode can only express directory prefixes and
+   would silently admit whole trees, so `sparse-mode = no-cone` is
+   load-bearing. Materialize with
+   `node scripts/repo/materialize-upstream.mts <name>`, which re-applies the
+   pattern set in the declared mode; a bare fleet clone would leave it in cone
+   mode.
+2. **`no-copyleft-source-read` guard** (`.claude/hooks/repo/`) blocks every
+   reach-around: Read/Grep/Glob at a non-test path in the slice, `gh api` /
+   `curl` / `wget` fetches of the upstream org, `git show` / `cat-file` of a
+   non-test blob, a `sparse-checkout set|add|disable` that would widen the
+   cone, and WebFetch of the upstream's source hosting. Bypass phrase:
+   `Allow copyleft-source-read bypass`, owner-typed only.
+3. **`copyleft-slices-are-tests-only` gate** (wired into `check --all`) fails
+   when the declared pattern set admits a non-test path, when the mode is cone,
+   when a non-test file is present on disk, when a generator resolves the
+   slice, or when a table row cites it as a `source`.
+4. **Never vendor their bytes.** Conformance runs read the pinned submodule,
+   copying to an `os.tmpdir()` scratch dir at runtime for side-effect hygiene.
+   That is execution, not redistribution. Nothing copyleft enters git-tracked
+   content.
+
+### What the TruffleHog oracle actually does
+
+`scripts/repo/check/trufflehog-coverage.mts` lists test **file paths** and
+takes each detector directory name as a fact: `pkg/detectors/stripe/stripe_test.go`
+exists, therefore a Stripe detector exists. It compares that family list
+against this package's `secrets` table and **reports** the gap. It never reads
+an implementation file, never consults a registry, and never gates the build.
+
+There is **no TruffleHog generator and no TruffleHog-derived row, ever.**
+
+If you need broader secret coverage, add a rule to a **permissive** upstream's
+generator — gitleaks (MIT) is the sanctioned source — or author an original
+Socket rule. Never port one from a copyleft upstream.
 
 ## Bumping a pin
 

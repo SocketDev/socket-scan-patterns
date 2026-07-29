@@ -22,12 +22,23 @@ generator reads only its own `upstream/` slice and stamps each row with a
 upstream rule id, and the upstream license. Regenerate with `pnpm run gen`; a
 drift check fails the build when `data/` no longer matches its sources.
 
-**TruffleHog is AGPL-3.0 and is never derived from.** It is pinned solely as a
-coverage-comparison oracle: a check reads its detector index and *reports* which
-detector families this package does not cover. No TruffleHog regex, rule datum,
-or source is copied into `data/`, `src/`, or any published artifact. Everything
-that ships here is MIT, with Apache-2.0 attribution for the Trivy and
-codex-security derivations recorded in [`NOTICE`](NOTICE).
+**TruffleHog is AGPL-3.0, and its implementation is unreadable here by
+construction.** Deriving AGPL rules into an MIT package would relicense the
+package, so the posture is clean-room: this repo may observe TruffleHog's
+_tests_ and never its implementation. Its sparse-checkout admits only
+`*_test.go` files and `testdata/` fixtures, so not one line of implementation
+lands on disk — absence is the block, not a rule asking people to behave. The
+coverage oracle infers detector families from test file paths alone (that
+`pkg/detectors/stripe/stripe_test.go` exists proves a Stripe detector exists)
+and _reports_ gaps; it never gates. No generator reads TruffleHog, no table row
+cites it, and none of its bytes are vendored into this tree. For secret
+detection, gitleaks (MIT) is the sanctioned source. The same tests-only rule
+applies to any future copyleft upstream, enforced by
+`scripts/repo/check/copyleft-slices-are-tests-only.mts` and the
+`no-copyleft-source-read` guard.
+
+Everything that ships here is MIT, with Apache-2.0 attribution for the Trivy,
+SkillSpector, and codex-security derivations recorded in [`NOTICE`](NOTICE).
 
 ## Install
 
