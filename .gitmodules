@@ -67,3 +67,13 @@
 	ignore = dirty
 	sparse-checkout = pkg/engine/defaults
 	verify = none
+# skillspector-v2.5.0 sha256:56012ec197ac45ac572fb39260e2811f17ede92c6d821dc5947220a9a14e69e4
+[submodule "upstream/skillspector"]
+	ref = 34f60308522f45447cd343da0aad77bcea308ad4
+	path = upstream/skillspector
+	url = https://github.com/NVIDIA/SkillSpector.git
+	branch = v2.5.0
+	shallow = true
+	ignore = dirty
+	sparse-checkout = src/skillspector/nodes/analyzers
+	verify = none

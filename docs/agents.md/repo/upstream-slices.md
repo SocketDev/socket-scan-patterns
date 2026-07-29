@@ -27,6 +27,7 @@ against the index, and these references have no index entry.
 | `trivy` | `v0.72.0` | `pkg/fanal/secret` | derive |
 | `codex-security` | `npm-v0.1.1` | `sdk/typescript/_bundled_plugin/{preflight,schemas,skills}` | derive |
 | `agentshield` | `v1.4.0` | `src` | derive |
+| `skillspector` | `v2.5.0` | `src/skillspector/nodes/analyzers` | derive |
 | `trufflehog` | `v3.96.0` | `pkg/engine/defaults` | **conformance-only** |
 
 ### Licenses
@@ -38,7 +39,14 @@ against the index, and these references have no index entry.
 | agentshield | MIT | notice reproduced in `NOTICE` |
 | trivy | Apache-2.0 | attribution **required** — `NOTICE` |
 | codex-security | Apache-2.0 | attribution **required** — `NOTICE` |
+| skillspector | Apache-2.0 | attribution **required** — `NOTICE` |
 | trufflehog | **AGPL-3.0** | **never derive** — see below |
+
+SkillSpector's `src/skillspector/yara_rules` tree is deliberately outside the
+sparse-checkout. The `skills` table derives only from the
+NVIDIA-copyright `static_patterns_*.py` category modules and
+`pattern_defaults.py`, so none of the obligations in SkillSpector's own
+`THIRD_PARTY_NOTICES.md` carry forward.
 
 ## TruffleHog is conformance-only
 

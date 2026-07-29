@@ -30,6 +30,27 @@ severities, keywords and regular-expression sources are reproduced and
 reformatted; no Trivy source code is included.
 
 --------------------------------------------------------------------------------
+SkillSpector
+--------------------------------------------------------------------------------
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+https://github.com/NVIDIA/SkillSpector
+Licensed under the Apache License, Version 2.0.
+
+Rows in `data/sources/skillspector.json` (and the `skills` rows composed from
+it) are derived from the static analyzer pattern modules under
+`src/skillspector/nodes/analyzers/` — the `static_patterns_*.py` category
+modules and `pattern_defaults.py`. Pattern identifiers, category names,
+regular-expression sources, confidence weights and explanation text are
+reproduced and reformatted; no SkillSpector source code is included.
+
+SkillSpector's own THIRD_PARTY_NOTICES.md covers its runtime dependencies
+(typer, rich, httpx, PyYAML, pydantic, openai, langgraph, langchain,
+yara-python). This package derives only from SkillSpector's own
+NVIDIA-copyright pattern modules and vendors none of those dependencies, so no
+obligation from them carries forward. The `src/skillspector/yara_rules` tree is
+deliberately outside the pinned sparse-checkout and is not derived from.
+
+--------------------------------------------------------------------------------
 codex-security
 --------------------------------------------------------------------------------
 Copyright OpenAI.
