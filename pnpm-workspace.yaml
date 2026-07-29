@@ -2,6 +2,7 @@ packages:
   - '.claude/hooks/fleet/*'
   - '.config/fleet/oxlint-plugin'
   - '.config/fleet/oxlint-plugin/fleet/*'
+  - '.claude/hooks/repo/*'
 
 trustPolicy: no-downgrade
 minimumReleaseAge: 10080

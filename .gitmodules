@@ -77,7 +77,7 @@
 	branch = v3.96.0
 	shallow = true
 	ignore = dirty
-	sparse-checkout = /pkg/detectors/**/*_test.go /pkg/detectors/**/testdata/**
+	sparse-checkout = **/*_test.go **/testdata/** /AUTHORS* /CONTRIBUTORS* /COPYING* /LICENSE* /NOTICE* /README*
 	verify = none
 	sparse-mode = no-cone
 # skillspector-v2.5.0 sha256:56012ec197ac45ac572fb39260e2811f17ede92c6d821dc5947220a9a14e69e4

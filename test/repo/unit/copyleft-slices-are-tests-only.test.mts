@@ -13,6 +13,18 @@ describe('isTestOnlySparsePattern', () => {
     expect(isTestOnlySparsePattern('/pkg/detectors/**/testdata/**')).toBe(true)
   })
 
+  it('accepts a ROOT-ANCHORED metadata glob', () => {
+    expect(isTestOnlySparsePattern('/LICENSE*')).toBe(true)
+    expect(isTestOnlySparsePattern('/NOTICE*')).toBe(true)
+  })
+
+  it('refuses the UNANCHORED form of the same metadata glob', () => {
+    // Unanchored, a non-cone glob matches at any depth: `NOTICE*` pulls in
+    // pkg/detectors/noticeable/noticeable.go on a case-insensitive filesystem.
+    expect(isTestOnlySparsePattern('NOTICE*')).toBe(false)
+    expect(isTestOnlySparsePattern('README*')).toBe(false)
+  })
+
   it('refuses a bare directory prefix', () => {
     // A cone-style prefix admits everything beneath it, implementation included.
     expect(isTestOnlySparsePattern('pkg/detectors')).toBe(false)

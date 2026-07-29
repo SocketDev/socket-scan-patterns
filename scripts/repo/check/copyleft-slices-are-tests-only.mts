@@ -51,7 +51,16 @@ export const GEN_DIR = path.join(REPO_ROOT, 'scripts', 'repo', 'gen')
  * form) admits everything beneath it, so it is never test-safe.
  */
 export function isTestOnlySparsePattern(pattern: string): boolean {
-  return pattern.endsWith('_test.go') || pattern.includes('/testdata/')
+  if (pattern.endsWith('_test.go') || pattern.includes('/testdata/')) {
+    return true
+  }
+  // A ROOT-ANCHORED metadata glob (`/LICENSE*`) is allowed; the same glob
+  // unanchored (`LICENSE*`) is NOT, because non-cone globs match at any depth
+  // and would admit implementation — `NOTICE*` pulls in
+  // pkg/detectors/noticeable/noticeable.go on a case-insensitive filesystem.
+  return /^\/(?:AUTHORS|CONTRIBUTORS|COPYING|LICENSE|NOTICE|README)[^/]*$/.test(
+    pattern,
+  )
 }
 
 /**
