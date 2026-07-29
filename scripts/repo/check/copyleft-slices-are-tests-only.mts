@@ -1,4 +1,4 @@
-/**
+/*
  * @file `check --all` gate: a copyleft upstream slice admits TESTS ONLY, and
  *   nothing in this repo derives from one.
  *   This is the license boundary expressed as code. TruffleHog is AGPL-3.0;

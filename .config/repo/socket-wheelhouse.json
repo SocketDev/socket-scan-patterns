@@ -10,8 +10,6 @@
     "type": "js"
   },
   "contentPolicy": {
-    "packages": [
-      "."
-    ]
+    "packages": ["."]
   }
 }

@@ -90,7 +90,7 @@ Four layers enforce it:
 
 ### What the TruffleHog oracle actually does
 
-`scripts/repo/check/trufflehog-coverage.mts` lists test **file paths** and
+`scripts/repo/check/detector-coverage-is-reported.mts` lists test **file paths** and
 takes each detector directory name as a fact: `pkg/detectors/stripe/stripe_test.go`
 exists, therefore a Stripe detector exists. It compares that family list
 against this package's `secrets` table and **reports** the gap. It never reads

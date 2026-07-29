@@ -15,6 +15,7 @@
 
 // oxlint-disable-next-line socket/prefer-stable-self-import -- package is unpublished (0.0.0), so no -stable surface exists yet; see the docblock above. Single chokepoint for the whole scripts/ tree.
 export type {
+  PatternDialect,
   PatternKind,
   PatternProvenance,
   PatternRule,

@@ -1,4 +1,4 @@
-/**
+/*
  * @file `check --all` gate: each upstream's RECORDED license still matches what
  *   Socket's API reports for it.
  *   This repo's whole premise is deriving from other people's licensed work.

@@ -1,4 +1,4 @@
-/**
+/*
  * @file Translates an upstream regex into JavaScript, or labels it honestly
  *   when it cannot be translated.
  *   gitleaks and Trivy write Go/RE2 patterns; SkillSpector writes Python.

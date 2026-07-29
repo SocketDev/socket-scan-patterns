@@ -12,13 +12,7 @@
  *   build on a network fetch. Skipping is announced, never silent.
  */
 
-import {
-  cpSync,
-  existsSync,
-  mkdtempSync,
-  readdirSync,
-  readFileSync,
-} from 'node:fs'
+import { existsSync, mkdtempSync, readdirSync, readFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
@@ -123,30 +117,26 @@ export function compareDataTrees(
 /**
  * Regenerate into a scratch dir and diff against the committed tables.
  *
- * The generators write to `data/` by absolute path, so the scratch run copies
- * the committed tree out, regenerates in place, compares, then restores. The
- * restore runs in a `finally` so an interrupted check cannot leave the tree
- * mutated.
+ * The generators honor `SCAN_PATTERNS_DATA_DIR`, so the fresh run writes into
+ * an `os.tmpdir()` scratch dir and the committed tree is never touched. That
+ * matters twice over: the fleet runner invokes every check argless and forbids
+ * a check that mutates a tracked file, and it runs checks in PARALLEL — a
+ * check that regenerated in place would race any other check reading `data/`.
  */
 export async function checkDataIsRegenerated(): Promise<DriftReport> {
   const scratch = mkdtempSync(path.join(os.tmpdir(), 'scan-patterns-drift-'))
-  const backup = path.join(scratch, 'committed')
-  cpSync(DATA_DIR, backup, { recursive: true })
-  const committed = readDataTree(backup)
   try {
     await spawn(
       'node',
       [path.join(REPO_ROOT, 'scripts', 'repo', 'gen', 'all.mts')],
       {
         cwd: REPO_ROOT,
+        env: { ...process.env, SCAN_PATTERNS_DATA_DIR: scratch },
         stdio: 'ignore',
       },
     )
-    const fresh = readDataTree(DATA_DIR)
-    return compareDataTrees(committed, fresh)
+    return compareDataTrees(readDataTree(DATA_DIR), readDataTree(scratch))
   } finally {
-    safeDeleteSync(DATA_DIR)
-    cpSync(backup, DATA_DIR, { recursive: true })
     safeDeleteSync(scratch)
   }
 }

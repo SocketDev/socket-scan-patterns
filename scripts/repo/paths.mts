@@ -6,6 +6,7 @@
  */
 
 import path from 'node:path'
+import process from 'node:process'
 
 import { REPO_ROOT } from '../fleet/paths.mts'
 
@@ -14,7 +15,8 @@ export * from '../fleet/paths.mts'
 /**
  * Generated detector tables. Owned by `scripts/repo/gen/`, never hand-edited.
  */
-export const DATA_DIR = path.join(REPO_ROOT, 'data')
+export const DATA_DIR =
+  process.env['SCAN_PATTERNS_DATA_DIR'] ?? path.join(REPO_ROOT, 'data')
 
 /**
  * Per-upstream derived rows, one file per generator. These are the raw

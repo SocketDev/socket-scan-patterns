@@ -168,7 +168,7 @@ export function main(): void {
   const detectorsDir = path.join(UPSTREAM_DIR, ORACLE_SLICE, DETECTORS_REL_DIR)
   if (!existsSync(detectorsDir)) {
     logger.info(
-      `trufflehog-coverage: slice not materialized — skipping. ` +
+      `detector-coverage-is-reported: slice not materialized — skipping. ` +
         `Run node scripts/repo/materialize-upstream.mts ${ORACLE_SLICE} to enable the oracle.`,
     )
     return
@@ -176,13 +176,13 @@ export function main(): void {
 
   const report = compareDetectorCoverage()
   logger.info(
-    `trufflehog-coverage: ${report.covered}/${report.upstreamFamilies} upstream detector families have a counterpart in data/secrets.json.`,
+    `detector-coverage-is-reported: ${report.covered}/${report.upstreamFamilies} upstream detector families have a counterpart in data/secrets.json.`,
   )
   if (report.gaps.length === 0) {
     return
   }
   logger.info(
-    `trufflehog-coverage: ${report.gaps.length} family name(s) with no counterpart (advisory — this NEVER fails the build):`,
+    `detector-coverage-is-reported: ${report.gaps.length} family name(s) with no counterpart (advisory — this NEVER fails the build):`,
   )
   const preview = report.gaps.slice(0, 40)
   for (let i = 0, { length } = preview; i < length; i += 1) {
@@ -192,7 +192,7 @@ export function main(): void {
     logger.info(`  … and ${report.gaps.length - preview.length} more`)
   }
   logger.info(
-    `trufflehog-coverage: to close a gap, add a rule to a PERMISSIVE upstream's ` +
+    `detector-coverage-is-reported: to close a gap, add a rule to a PERMISSIVE upstream's ` +
       `generator (gitleaks is MIT) or author an original Socket rule. Never port ` +
       `one from TruffleHog — it is AGPL-3.0 and this package is MIT.`,
   )

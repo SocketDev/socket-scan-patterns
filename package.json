@@ -12,11 +12,11 @@
   ],
   "sideEffects": false,
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
       "source": "./src/index.mts",
-      "types": "./dist/index.d.ts",
+      "types": "./dist/index.d.mts",
       "default": "./dist/index.js"
     },
     "./data/agent-configs.json": "./data/agent-configs.json",
@@ -100,6 +100,7 @@
     "playwright-core": "catalog:",
     "portless": "catalog:",
     "regjsparser": "catalog:",
+    "rolldown": "catalog:",
     "semver": "catalog:",
     "shell-quote": "catalog:",
     "taze": "catalog:",
