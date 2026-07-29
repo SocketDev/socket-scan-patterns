@@ -1,0 +1,79 @@
+@socketsecurity/scan-patterns
+Copyright (c) Socket Inc.
+
+This product is licensed under the MIT License (see LICENSE).
+
+Portions of the generated detector tables under `data/` are DERIVED from
+third-party projects. Each generated row carries its own `provenance` object
+recording the upstream project, the pinned release, the upstream rule id, and
+the upstream license. The pins themselves live in `.gitmodules`.
+
+================================================================================
+Apache License 2.0 derivations
+================================================================================
+
+The following derivations require attribution under Apache-2.0 section 4. A
+copy of the Apache License 2.0 is available at
+https://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------------
+Trivy
+--------------------------------------------------------------------------------
+Copyright Aqua Security Software Ltd.
+https://github.com/aquasecurity/trivy
+Licensed under the Apache License, Version 2.0.
+
+Rows in `data/trivy-secrets.json` (and the `manifests` rows sourced from it)
+are derived from Trivy's built-in secret rules in
+`pkg/fanal/secret/builtin-rules.go`. Rule identifiers, titles, categories,
+severities, keywords and regular-expression sources are reproduced and
+reformatted; no Trivy source code is included.
+
+--------------------------------------------------------------------------------
+codex-security
+--------------------------------------------------------------------------------
+Copyright OpenAI.
+https://github.com/openai/codex-security
+Licensed under the Apache License, Version 2.0.
+
+Rows in `data/codex-security.json` are derived from the bundled plugin's
+capability profiles and finding schemas under
+`sdk/typescript/_bundled_plugin/`. Capability identifiers, required plugin
+skill names, and the finding severity vocabulary are reproduced; no
+codex-security source code is included.
+
+================================================================================
+MIT derivations
+================================================================================
+
+The following upstreams are MIT licensed. Their copyright notices are
+reproduced here alongside the MIT permission notice already granted by LICENSE.
+
+  Gitleaks     — Copyright (c) 2019 Zachary Rice
+                 https://github.com/gitleaks/gitleaks
+                 Source: `config/gitleaks.toml`
+                 Consumed by: `data/gitleaks-secrets.json`
+
+  zizmor       — Copyright (c) William Woodruff
+                 https://github.com/zizmorcore/zizmor
+                 Source: `docs/audits.md`
+                 Consumed by: `data/zizmor-audits.json`
+
+  AgentShield  — Copyright (c) Affaan Mustafa
+                 https://github.com/affaan-m/agentshield
+                 Source: `src/rules/`, `src/injection/payloads.ts`
+                 Consumed by: `data/agentshield-agent-configs.json`,
+                              `data/agentshield-skills.json`
+
+================================================================================
+Conformance-only upstreams (NO derivation)
+================================================================================
+
+  TruffleHog   — https://github.com/trufflesecurity/trufflehog
+                 Licensed under AGPL-3.0.
+
+TruffleHog is pinned SOLELY as a coverage-comparison oracle. Its detector
+index is read at check time to report which detector families this package
+does not cover. No TruffleHog regular expression, rule datum, or source code
+is copied, derived, transformed, or emitted into `data/`, `src/`, or any
+published artifact. See `upstream/README.md`.
