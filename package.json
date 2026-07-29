@@ -3,30 +3,46 @@
   "version": "0.0.0",
   "description": "Canonical detector pattern tables for Socket's baseline security scanners",
   "license": "MIT",
-  "type": "module",
   "engines": {
-    "node": ">=24"
+    "node": ">=24",
+    "npm": ">=12.0.1",
+    "pnpm": ">=11.0.5"
   },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=11.0.0 <12.0.0",
+      "onFail": "error"
+    }
+  },
+  "sideEffects": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "source": "./src/index.mts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./data/*.json": "./data/*.json",
+    "./data/agent-configs.json": "./data/agent-configs.json",
+    "./data/manifests.json": "./data/manifests.json",
+    "./data/secrets.json": "./data/secrets.json",
+    "./data/skills.json": "./data/skills.json",
+    "./data/workflows.json": "./data/workflows.json",
     "./package.json": "./package.json"
   },
   "files": [
-    "data",
-    "dist",
-    "NOTICE"
+    "CHANGELOG.md",
+    "NOTICE",
+    "data/**/*.json",
+    "dist/**/*"
   ],
   "publishConfig": {
     "access": "public",
     "provenance": true
   },
   "scripts": {
+    "build": "node scripts/repo/build.mts",
     "gen": "node scripts/gen/all.mts",
     "check:coverage-oracle": "node scripts/check/trufflehog-coverage.mts",
     "check:data-drift": "node scripts/check/data-is-regenerated.mts"
