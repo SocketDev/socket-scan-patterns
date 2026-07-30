@@ -1,0 +1,2236 @@
+{
+  "rules": [
+    {
+      "category": "injection",
+      "description": "Checks for instructions that modify execution allowlists, approval configs, or permission settings programmatically",
+      "dialect": "js",
+      "id": "agentshield:agents-allowlist-bypass",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-allowlist-bypass",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Exec Allowlist / Approval Bypass"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for instructions to write, copy, or inline secrets from env vars into config files as plaintext",
+      "dialect": "js",
+      "id": "agentshield:agents-config-secret-leakage",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-config-secret-leakage",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Config File Secret Leakage"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that reference cryptocurrency mining",
+      "dialect": "js",
+      "id": "agentshield:agents-crypto-mining",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-crypto-mining",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Contains Crypto Mining Instructions"
+    },
+    {
+      "category": "injection",
+      "description": "Checks agent definitions for instructions that direct data to be sent externally",
+      "dialect": "js",
+      "id": "agentshield:agents-data-exfil-instructions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-data-exfil-instructions",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Contains Data Exfiltration Instructions"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct bulk collection of passwords, keys, or credentials",
+      "dialect": "js",
+      "id": "agentshield:agents-data-harvesting",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-data-harvesting",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Instructed to Collect Sensitive Data in Bulk"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for synthetic chat-role delimiters, fake system prompts, and boundary markers used to hijack the agent's context",
+      "dialect": "js",
+      "id": "agentshield:agents-end-sequence-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-end-sequence-injection",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "End Sequence / Boundary Injection"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct fetching or executing content from external URLs",
+      "dialect": "js",
+      "id": "agentshield:agents-external-url-loading",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-external-url-loading",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Loads Instructions from External URL"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct destructive filesystem operations",
+      "dialect": "js",
+      "id": "agentshield:agents-filesystem-destruction",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-filesystem-destruction",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Instructed to Delete or Destroy Files"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for invisible Unicode characters that could hide malicious instructions in agent definitions or CLAUDE.md",
+      "dialect": "js",
+      "id": "agentshield:agents-hidden-instructions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-hidden-instructions",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hidden Instructions via Unicode"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that use encoding, decoding, or obfuscation to hide malicious intent",
+      "dialect": "js",
+      "id": "agentshield:agents-obfuscated-code",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-obfuscated-code",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Contains Obfuscated Code Patterns"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions to create cron jobs, startup scripts, or other persistence mechanisms",
+      "dialect": "js",
+      "id": "agentshield:agents-persistence-mechanism",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-persistence-mechanism",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Instructed to Establish Persistence"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions that guide the agent through privilege escalation techniques",
+      "dialect": "js",
+      "id": "agentshield:agents-privilege-escalation-chain",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-privilege-escalation-chain",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Instructed to Escalate Privileges"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that attempt to override system prompts or ignore prior instructions",
+      "dialect": "js",
+      "id": "agentshield:agents-reflection-attacks",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-reflection-attacks",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Agent Contains Prompt Reflection/Override Instructions"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that use Docker flags that enable container escape",
+      "dialect": "js",
+      "id": "agentshield:hooks-container-escape",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-container-escape",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Uses Container Escape Techniques"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that read password files, keychains, or credential managers",
+      "dialect": "js",
+      "id": "agentshield:hooks-credential-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-credential-access",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Accesses Credential Stores"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that install cron jobs for persistent access",
+      "dialect": "js",
+      "id": "agentshield:hooks-cron-persistence",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-cron-persistence",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Installs Cron Job"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that use destructive disk operations",
+      "dialect": "js",
+      "id": "agentshield:hooks-disk-wipe",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-disk-wipe",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Uses Disk Wiping Commands"
+    },
+    {
+      "category": "exfiltration",
+      "description": "Checks for hooks that use DNS queries with variable interpolation to exfiltrate data",
+      "dialect": "js",
+      "id": "agentshield:hooks-dns-exfiltration",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-dns-exfiltration",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Uses DNS for Data Exfiltration"
+    },
+    {
+      "category": "exposure",
+      "description": "Checks for hooks that access environment variables and send them to external services",
+      "dialect": "js",
+      "id": "agentshield:hooks-env-exfiltration",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-env-exfiltration",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Env Var Exfiltration"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that modify iptables, ufw, or firewall rules",
+      "dialect": "js",
+      "id": "agentshield:hooks-firewall-modification",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-firewall-modification",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Modifies Firewall Rules"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks hooks for command injection vulnerabilities via variable interpolation",
+      "dialect": "js",
+      "id": "agentshield:hooks-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-injection",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Command Injection"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that delete, truncate, or modify system log files to cover tracks",
+      "dialect": "js",
+      "id": "agentshield:hooks-log-tampering",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-log-tampering",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Tampers with System Logs"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that bind to network ports, which could create reverse shells or backdoors",
+      "dialect": "js",
+      "id": "agentshield:hooks-network-listener",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-network-listener",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Opens Network Listener"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that use sudo, su, or other privilege escalation commands",
+      "dialect": "js",
+      "id": "agentshield:hooks-privilege-escalation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-privilege-escalation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Uses Privilege Escalation"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that establish reverse shell connections back to an attacker",
+      "dialect": "js",
+      "id": "agentshield:hooks-reverse-shell",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-reverse-shell",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Opens Reverse Shell"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that modify shell init files (.bashrc, .zshrc, .profile) for persistence",
+      "dialect": "js",
+      "id": "agentshield:hooks-shell-profile-modification",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-shell-profile-modification",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Modifies Shell Profile"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that generate, copy, or modify SSH keys — enables lateral movement",
+      "dialect": "js",
+      "id": "agentshield:hooks-ssh-key-operations",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-ssh-key-operations",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Manipulates SSH Keys"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that create, modify, or delete user accounts",
+      "dialect": "js",
+      "id": "agentshield:hooks-user-account-modification",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-user-account-modification",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook Creates or Modifies User Accounts"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for enableAllProjectMcpServers=true which silently trusts project-defined MCP servers",
+      "dialect": "js",
+      "id": "agentshield:mcp-auto-approve-project-servers",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-auto-approve-project-servers",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Project Servers Auto-Approved"
+    },
+    {
+      "category": "mcp",
+      "description": "Detects MCP server descriptions that contain hidden instructions, data harvesting commands, prompt reflection, or exfiltration URLs",
+      "dialect": "js",
+      "id": "agentshield:mcp-description-poisoning",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-description-poisoning",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Server Description Contains Poisoning Pattern"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers with arguments that disable security features",
+      "dialect": "js",
+      "id": "agentshield:mcp-disabled-security",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-disabled-security",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Server Has Security-Disabling Flags"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers that override system-critical environment variables like PATH or LD_PRELOAD",
+      "dialect": "js",
+      "id": "agentshield:mcp-env-override",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-env-override",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Environment Variable Override"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks if MCP configs have hardcoded secrets instead of env var references",
+      "dialect": "js",
+      "id": "agentshield:mcp-hardcoded-env",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-hardcoded-env",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Hardcoded Environment Variables"
+    },
+    {
+      "category": "mcp",
+      "description": "Cross-references MCP server packages against the CVE database to detect known-vulnerable servers",
+      "dialect": "js",
+      "id": "agentshield:mcp-known-vulnerable-server",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-known-vulnerable-server",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-cve.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Known Vulnerable MCP Server Package"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks MCP server configurations for known-malicious and typosquatted packages",
+      "dialect": "js",
+      "id": "agentshield:mcp-malicious-package",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-malicious-package",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-cve.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Known Malicious Package in MCP Config"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers that download and execute remote code",
+      "dialect": "js",
+      "id": "agentshield:mcp-remote-command",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-remote-command",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Remote Command Execution"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks for dangerously-skip-permissions or no-verify flags used affirmatively",
+      "dialect": "js",
+      "id": "agentshield:permissions-dangerous-skip",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-dangerous-skip",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Dangerous Permission Bypass"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks for external API base URL overrides that can reroute model traffic through attacker-controlled infrastructure",
+      "dialect": "js",
+      "id": "agentshield:permissions-model-endpoint-override",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-model-endpoint-override",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Model Endpoint Override"
+    },
+    {
+      "category": "secrets",
+      "description": "Scans for hardcoded API keys, tokens, passwords, and credentials",
+      "dialect": "js",
+      "id": "agentshield:secrets-hardcoded",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-hardcoded",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hardcoded Secrets Detection"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for PEM-encoded private keys embedded in configuration files",
+      "dialect": "js",
+      "id": "agentshield:secrets-private-key-material",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-private-key-material",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Private Key Material in Config"
+    },
+    {
+      "category": "injection",
+      "description": "Checks CLAUDE.md for patterns that could be exploited by malicious repos",
+      "dialect": "js",
+      "id": "agentshield:agents-claude-md-instructions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-claude-md-instructions",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "CLAUDE.md Instruction Injection"
+    },
+    {
+      "category": "injection",
+      "description": "Checks CLAUDE.md files for instructions to download and execute remote content",
+      "dialect": "js",
+      "id": "agentshield:agents-claude-md-url-execution",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-claude-md-url-execution",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "CLAUDE.md URL Execution"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for malicious instructions hidden in HTML or markdown comments",
+      "dialect": "js",
+      "id": "agentshield:agents-comment-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-comment-injection",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Suspicious Instructions in Comments"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions that direct the agent to use tools for destructive operations like deleting data or dropping tables",
+      "dialect": "js",
+      "id": "agentshield:agents-destructive-tool-usage",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-destructive-tool-usage",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Destructive Tool Usage Instructions"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for base64, hex, rot13, or reversed text payloads that could hide malicious instructions",
+      "dialect": "js",
+      "id": "agentshield:agents-encoded-payload",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-encoded-payload",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Encoded Payload in Agent Definition"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions to enumerate system information, user accounts, or network configuration",
+      "dialect": "js",
+      "id": "agentshield:agents-environment-probing",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-environment-probing",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Instructed to Probe Environment"
+    },
+    {
+      "category": "agents",
+      "description": "Checks if an agent has the complete chain: discovery + read + write + execute tools",
+      "dialect": "js",
+      "id": "agentshield:agents-full-tool-escalation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-full-tool-escalation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Has Full Tool Escalation Chain"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct the agent to impersonate users, systems, or other identities",
+      "dialect": "js",
+      "id": "agentshield:agents-identity-impersonation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-identity-impersonation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Instructed to Impersonate Identity"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions that use fictional, hypothetical, or educational framing to bypass safety constraints",
+      "dialect": "js",
+      "id": "agentshield:agents-jailbreak-framing",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-jailbreak-framing",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Jailbreak Framing / Hypothetical Bypass"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for markdown images or links that could be used to exfiltrate data via URL parameters",
+      "dialect": "js",
+      "id": "agentshield:agents-markdown-exfil-links",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-markdown-exfil-links",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Markdown Image/Link Exfiltration"
+    },
+    {
+      "category": "agents",
+      "description": "Checks if agent definitions omit the tools array entirely, inheriting all tools by default",
+      "dialect": "js",
+      "id": "agentshield:agents-no-tools-restriction",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-no-tools-restriction",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Without Tools Restriction"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct the agent to modify, suppress, or fake output shown to users",
+      "dialect": "js",
+      "id": "agentshield:agents-output-manipulation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-output-manipulation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Contains Output Manipulation Instructions"
+    },
+    {
+      "category": "injection",
+      "description": "Checks agent definitions for patterns commonly used in prompt injection attacks",
+      "dialect": "js",
+      "id": "agentshield:agents-prompt-injection-patterns",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-prompt-injection-patterns",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Prompt Injection Patterns"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions that reassign the agent's role, persona, or behavioral constraints",
+      "dialect": "js",
+      "id": "agentshield:agents-role-hijacking",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-role-hijacking",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Role Hijacking / Persona Override"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for nested instructions targeting downstream models in multi-agent pipelines",
+      "dialect": "js",
+      "id": "agentshield:agents-russian-doll-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-russian-doll-injection",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Russian Doll / Multi-Chain Injection"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for instructions to log, print, or persist secrets from tool output to disk or transcripts",
+      "dialect": "js",
+      "id": "agentshield:agents-secrets-in-output",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-secrets-in-output",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Secrets Exposed in Tool Output / Transcripts"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct the agent to bypass, ignore, or suppress security warnings",
+      "dialect": "js",
+      "id": "agentshield:agents-security-suppression",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-security-suppression",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Instructs to Ignore Security Warnings"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions to load, import, or execute skills without verification or from untrusted sources",
+      "dialect": "js",
+      "id": "agentshield:agents-skill-tampering",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-skill-tampering",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Skill Tampering / Unsigned Skill Loading"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that instruct the agent to deceive or manipulate users",
+      "dialect": "js",
+      "id": "agentshield:agents-social-engineering",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-social-engineering",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Contains Social Engineering Instructions"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for instructions that attempt to extract, leak, or reveal system prompts",
+      "dialect": "js",
+      "id": "agentshield:agents-system-prompt-extraction",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-system-prompt-extraction",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "System Prompt Extraction Attempt"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for agent definitions that schedule actions for a future time or condition — time-bomb behavior",
+      "dialect": "js",
+      "id": "agentshield:agents-time-bomb",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-time-bomb",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Contains Delayed Execution Instructions"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for CLAUDE.md instructions that direct the agent to use specific tools in dangerous ways",
+      "dialect": "js",
+      "id": "agentshield:agents-tool-poisoning",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-tool-poisoning",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Tool Poisoning via CLAUDE.md"
+    },
+    {
+      "category": "agents",
+      "description": "Checks if agent definitions grant excessive tool access",
+      "dialect": "js",
+      "id": "agentshield:agents-unrestricted-tools",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-unrestricted-tools",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent with Unrestricted Tool Access"
+    },
+    {
+      "category": "agents",
+      "description": "Checks for agents that can fetch web content and write files — a remote code injection vector",
+      "dialect": "js",
+      "id": "agentshield:agents-web-write-combo",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-web-write-combo",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Agent Has Web Fetch + Write Access"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that spawn background processes which persist beyond the hook's execution",
+      "dialect": "js",
+      "id": "agentshield:hooks-background-process",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-background-process",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Spawns Background Process"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that start persistent background processes that outlive the session",
+      "dialect": "js",
+      "id": "agentshield:hooks-background-process-2",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-background-process",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Runs Background Process"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that read or write the system clipboard, which can be used for data exfiltration",
+      "dialect": "js",
+      "id": "agentshield:hooks-clipboard-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-clipboard-access",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Accesses System Clipboard"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks hooks for patterns that could exfiltrate data to external services",
+      "dialect": "js",
+      "id": "agentshield:hooks-exfiltration",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-exfiltration",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Data Exfiltration"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that delete files, which could destroy work or cover tracks",
+      "dialect": "js",
+      "id": "agentshield:hooks-file-deletion",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-file-deletion",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Deletes Files"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that modify git config, which can alter commit authorship, disable signing, or change hooks",
+      "dialect": "js",
+      "id": "agentshield:hooks-git-config-modification",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-git-config-modification",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Modifies Git Configuration"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that install packages globally, which can modify system-wide binaries",
+      "dialect": "js",
+      "id": "agentshield:hooks-global-package-install",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-global-package-install",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Installs Global Packages"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks non-shell hook implementations for child-process execution that downloads and pipes remote shell payloads",
+      "dialect": "js",
+      "id": "agentshield:hooks-hook-code-remote-shell-payload",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-hook-code-remote-shell-payload",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Code Remote Shell Payload"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that clear logs or disable audit mechanisms",
+      "dialect": "js",
+      "id": "agentshield:hooks-logging-disabled",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-logging-disabled",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Disables Logging or Audit Trail"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that redirect output to world-readable directories like /tmp",
+      "dialect": "js",
+      "id": "agentshield:hooks-output-to-world-readable",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-output-to-world-readable",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Writes to World-Readable Path"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that read or write to sensitive system files",
+      "dialect": "js",
+      "id": "agentshield:hooks-sensitive-file-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-sensitive-file-access",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Accesses Sensitive Files"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for SessionStart hooks that download or execute remote scripts",
+      "dialect": "js",
+      "id": "agentshield:hooks-session-start-download",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-session-start-download",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook SessionStart Downloads Remote Content"
+    },
+    {
+      "category": "injection",
+      "description": "Checks for hooks that source scripts from environment variable paths",
+      "dialect": "js",
+      "id": "agentshield:hooks-source-from-env",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-source-from-env",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook Sources Script from Environment Path"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers with autoApprove settings that skip user confirmation for tool calls",
+      "dialect": "js",
+      "id": "agentshield:mcp-auto-approve",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-auto-approve",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Has Auto-Approve Enabled"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers configured to listen on 0.0.0.0, exposing the server to the network",
+      "dialect": "js",
+      "id": "agentshield:mcp-bind-all-interfaces",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-bind-all-interfaces",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Binds to All Network Interfaces"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for MCP servers with database connection strings containing credentials in env or args",
+      "dialect": "js",
+      "id": "agentshield:mcp-database-connection-string",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-database-connection-string",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Has Database Connection String"
+    },
+    {
+      "category": "mcp",
+      "description": "Detects MCP server environment variables containing URLs associated with data exfiltration services",
+      "dialect": "js",
+      "id": "agentshield:mcp-env-exfiltration-urls",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-env-exfiltration-urls",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Env Contains Exfiltration URLs"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers installed from git URLs which are mutable supply chain risks",
+      "dialect": "js",
+      "id": "agentshield:mcp-git-url-dependency",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-git-url-dependency",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Git URL Dependency"
+    },
+    {
+      "category": "mcp",
+      "description": "Detects MCP servers configured with access to sensitive directories like .ssh, .aws, /etc, or user home directories",
+      "dialect": "js",
+      "id": "agentshield:mcp-overly-broad-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-overly-broad-access",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Has Overly Broad File Access"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks MCP server configs for servers that grant excessive capabilities",
+      "dialect": "js",
+      "id": "agentshield:mcp-risky-servers",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-risky-servers",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Risky MCP Server Configuration"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for MCP servers with credential files (.env, .pem, credentials.json) passed as arguments",
+      "dialect": "js",
+      "id": "agentshield:mcp-sensitive-file-args",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-sensitive-file-args",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server References Sensitive Files in Arguments"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers that use sh/bash -c as command, which defeats argument separation safety",
+      "dialect": "js",
+      "id": "agentshield:mcp-shell-wrapper",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-shell-wrapper",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Uses Shell Wrapper"
+    },
+    {
+      "category": "mcp",
+      "description": "Detects MCP server arguments containing URLs associated with data exfiltration or tunneling services",
+      "dialect": "js",
+      "id": "agentshield:mcp-suspicious-url-args",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-suspicious-url-args",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Args Contain Suspicious URLs"
+    },
+    {
+      "category": "mcp",
+      "description": "Detects MCP server names that contain instruction-like text, URLs, or prompt injection patterns",
+      "dialect": "js",
+      "id": "agentshield:mcp-tool-name-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-tool-name-injection",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Name Contains Injection Attempt"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers with filesystem access to root or home directory",
+      "dialect": "js",
+      "id": "agentshield:mcp-unrestricted-root-path",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-unrestricted-root-path",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Unrestricted Root Path"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers using URL-based transport connecting to external hosts",
+      "dialect": "js",
+      "id": "agentshield:mcp-url-transport",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-url-transport",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP External URL Transport"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if the allow list grants access to all three mutable tool categories simultaneously",
+      "dialect": "js",
+      "id": "agentshield:permissions-all-mutable-tools",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-all-mutable-tools",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "All Mutable Tools Allowed"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if CLAUDE.md files have overly permissive filesystem permissions (world-writable or group-writable)",
+      "dialect": "js",
+      "id": "agentshield:permissions-claude-md-world-writable",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-claude-md-world-writable",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "CLAUDE.md File Permissions Too Open"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if the allow list permits destructive git operations",
+      "dialect": "js",
+      "id": "agentshield:permissions-destructive-git",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-destructive-git",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Destructive Git Commands Allowed"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks for allow list entries that grant access to environment variables or env files",
+      "dialect": "js",
+      "id": "agentshield:permissions-env-in-allow",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-env-in-allow",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Environment Variable Access in Allow List"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if the settings.json has a deny list for dangerous operations",
+      "dialect": "js",
+      "id": "agentshield:permissions-no-deny-list",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-no-deny-list",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Missing Deny List"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks the ALLOW list for permission rules that grant excessive access",
+      "dialect": "js",
+      "id": "agentshield:permissions-overly-permissive",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-overly-permissive",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Overly Permissive Access"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if the allow list permits tool access to sensitive system directories",
+      "dialect": "js",
+      "id": "agentshield:permissions-sensitive-path-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-sensitive-path-access",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Sensitive Path in Allow List"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks for allow rules that grant unrestricted access to network tools",
+      "dialect": "js",
+      "id": "agentshield:permissions-unrestricted-network",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-unrestricted-network",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Unrestricted Network Tool Access"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if the allow list uses wildcards on root-level or home-level directories",
+      "dialect": "js",
+      "id": "agentshield:permissions-wildcard-root-paths",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-wildcard-root-paths",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Wildcard Root Path in Allow List"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for references to credential files that should never be accessed by agents",
+      "dialect": "js",
+      "id": "agentshield:secrets-credential-file-reference",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-credential-file-reference",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Credential File Reference"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for sensitive env var assignments in CLAUDE.md files which are often committed to repos",
+      "dialect": "js",
+      "id": "agentshield:secrets-env-in-claude-md",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-env-in-claude-md",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Secrets in CLAUDE.md"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for env var values being logged or exposed in config",
+      "dialect": "js",
+      "id": "agentshield:secrets-env-in-config",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-env-in-config",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Environment Variable Exposure"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for URLs containing embedded usernames and passwords",
+      "dialect": "js",
+      "id": "agentshield:secrets-url-credentials",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-url-credentials",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "URL-Embedded Credentials"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for webhook URLs that contain embedded secret tokens or API keys",
+      "dialect": "js",
+      "id": "agentshield:secrets-webhook-url",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-webhook-url",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Webhook URL with Secret Token"
+    },
+    {
+      "category": "agents",
+      "description": "Checks for agent definitions that are unusually large, which could hide malicious instructions",
+      "dialect": "js",
+      "id": "agentshield:agents-oversized-prompt",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-oversized-prompt",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Oversized Agent Definition"
+    },
+    {
+      "category": "agents",
+      "description": "Checks agent definitions for patterns that increase prompt injection risk",
+      "dialect": "js",
+      "id": "agentshield:agents-prompt-injection-surface",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-prompt-injection-surface",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Agent Prompt Injection Surface"
+    },
+    {
+      "category": "agents",
+      "description": "Checks for agent definitions that instruct the agent to delegate to other agents or spawn sub-agents without restrictions",
+      "dialect": "js",
+      "id": "agentshield:agents-unrestricted-delegation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-unrestricted-delegation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Agent Has Unrestricted Delegation Instructions"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that chain multiple commands, which may execute beyond the matcher's intended scope",
+      "dialect": "js",
+      "id": "agentshield:hooks-chained-commands",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-chained-commands",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hook Chained Shell Commands"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for hooks that set or export environment variables, which can alter subsequent command behavior",
+      "dialect": "js",
+      "id": "agentshield:hooks-env-mutation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-env-mutation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hook Mutates Environment Variables"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks if there are PreToolUse hooks for security validation",
+      "dialect": "js",
+      "id": "agentshield:hooks-missing-pretooluse",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-missing-pretooluse",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "No PreToolUse Security Hooks"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks if hooks suppress errors silently",
+      "dialect": "js",
+      "id": "agentshield:hooks-no-error-handling",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-no-error-handling",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hook Missing Error Handling"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for PostToolUse hooks making HTTP requests on frequent tool calls without throttling",
+      "dialect": "js",
+      "id": "agentshield:hooks-unthrottled-network",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-unthrottled-network",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hook Unthrottled Network Requests"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks for MCP servers with both url and command fields, which is ambiguous and potentially dangerous",
+      "dialect": "js",
+      "id": "agentshield:mcp-dual-transport",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-dual-transport",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Server Has Both URL and Command"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers without an explicit env block, which inherit the parent process's full environment including secrets",
+      "dialect": "js",
+      "id": "agentshield:mcp-env-inheritance",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-env-inheritance",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Server Inherits Full Environment"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers using npx with unversioned packages",
+      "dialect": "js",
+      "id": "agentshield:mcp-no-version-pin",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-no-version-pin",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP No Version Pin"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers using npx -y which auto-installs packages without confirmation",
+      "dialect": "js",
+      "id": "agentshield:mcp-npx-supply-chain",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-npx-supply-chain",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP npx Supply Chain Risk"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers configured to listen on ports below 1024, which require root privileges",
+      "dialect": "js",
+      "id": "agentshield:mcp-privileged-port",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-privileged-port",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Server Binds to Privileged Port"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for shell metacharacters in MCP server arguments that could enable command injection",
+      "dialect": "js",
+      "id": "agentshield:mcp-shell-metacharacters",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-shell-metacharacters",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Shell Metacharacters in Args"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers with CORS set to * in their arguments or environment",
+      "dialect": "js",
+      "id": "agentshield:mcp-wildcard-cors",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-wildcard-cors",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Server Has Wildcard CORS"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks if settings.json exists but has no permissions configuration at all",
+      "dialect": "js",
+      "id": "agentshield:permissions-no-permissions-block",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-no-permissions-block",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "No Permissions Block Configured"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for long base64-encoded strings that may be obfuscated secrets or payloads",
+      "dialect": "js",
+      "id": "agentshield:secrets-base64-obfuscation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-base64-obfuscation",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Potential Base64 Obfuscated Secret"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for hardcoded internal/private IP addresses with ports, which may expose internal services",
+      "dialect": "js",
+      "id": "agentshield:secrets-hardcoded-ip-port",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-hardcoded-ip-port",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hardcoded Internal IP Address with Port"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks for MCP servers passing through excessive sensitive environment variables",
+      "dialect": "js",
+      "id": "agentshield:secrets-sensitive-env-passthrough",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-sensitive-env-passthrough",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Sensitive Env Var Passthrough"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks if read-only agents are using expensive models unnecessarily",
+      "dialect": "js",
+      "id": "agentshield:agents-expensive-model-readonly",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-expensive-model-readonly",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/agents.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Expensive Model for Read-Only Agent"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for PostToolUse hooks running expensive build/lint commands with broad matchers",
+      "dialect": "js",
+      "id": "agentshield:hooks-expensive-unscoped",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-expensive-unscoped",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Hook Expensive Unscoped Command"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks if there are Stop hooks for end-of-session verification",
+      "dialect": "js",
+      "id": "agentshield:hooks-no-stop-hooks",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-no-stop-hooks",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "No Stop Hooks for Session Verification"
+    },
+    {
+      "category": "mcp",
+      "description": "Flags configurations with too many MCP servers",
+      "dialect": "js",
+      "id": "agentshield:mcp-excessive-server-count",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-excessive-server-count",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "MCP Excessive Server Count"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks for MCP servers without a timeout, which could hang indefinitely or be used for resource exhaustion",
+      "dialect": "js",
+      "id": "agentshield:mcp-timeout-missing",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-timeout-missing",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "MCP Server Has No Timeout Configuration"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks non-shell hook implementations for explicit output back into Claude context",
+      "dialect": "js",
+      "id": "agentshield:hooks-hook-code-context-output",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-hook-code-context-output",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "Hook Code Context Output"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks non-shell hook implementations for direct access to Claude transcript input",
+      "dialect": "js",
+      "id": "agentshield:hooks-hook-code-transcript-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-hook-code-transcript-access",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "Hook Code Transcript Access"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "MCP servers without descriptions make auditing harder",
+      "dialect": "js",
+      "id": "agentshield:mcp-no-description",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-no-description",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "MCP Server Missing Description"
+    }
+  ],
+  "scanner": "agentConfigs",
+  "schemaVersion": 1,
+  "sources": [
+    "agentshield@v1.4.0"
+  ]
+}

@@ -1,0 +1,671 @@
+{
+  "rules": [
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects local filesystem `git` credential storage on GitHub Actions, as well as potential avenues for unintentional persistence of credentials in artifacts.",
+      "id": "zizmor:artipacked",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "artipacked",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "artipacked"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects potentially spoofable bot conditions.",
+      "id": "zizmor:bot-conditions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "bot-conditions",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "bot-conditions"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects fundamentally dangerous GitHub Actions workflow triggers.",
+      "id": "zizmor:dangerous-triggers",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "dangerous-triggers",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "dangerous-triggers"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects excessive permissions in workflows, both at the workflow level and individual job levels.",
+      "id": "zizmor:excessive-permissions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "excessive-permissions",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "excessive-permissions"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects dangerous writes to the `GITHUB_ENV` and `GITHUB_PATH` environment variables.",
+      "id": "zizmor:github-env",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "github-env",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "github-env"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects Docker credentials (usernames and passwords) hardcoded in various places within workflows.",
+      "id": "zizmor:hardcoded-container-credentials",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hardcoded-container-credentials",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "hardcoded-container-credentials"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects opt-in for executing insecure workflow commands.",
+      "id": "zizmor:insecure-commands",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "insecure-commands",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "insecure-commands"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects excessive sharing of the `secrets` context.",
+      "id": "zizmor:overprovisioned-secrets",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "overprovisioned-secrets",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "overprovisioned-secrets"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects excessive secret inheritance between calling workflows and reusable (called) workflows.",
+      "id": "zizmor:secrets-inherit",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-inherit",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "secrets-inherit"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "This is a `--pedantic` only audit, due to `zizmor`'s limited ability to analyze runner configurations themselves. See #34 for more details.",
+      "id": "zizmor:self-hosted-runner",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "self-hosted-runner",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "self-hosted-runner"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects potential sources of code injection via template expansion.",
+      "id": "zizmor:template-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "template-injection",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "template-injection"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Checks for `container.image` values where the image is not pinned by either a tag (other than `latest`) or SHA256.",
+      "id": "zizmor:unpinned-images",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unpinned-images",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "unpinned-images"
+    },
+    {
+      "category": "implemented",
+      "dialect": "js",
+      "description": "Detects \"unpinned\" `#!yaml uses:` clauses.",
+      "id": "zizmor:unpinned-uses",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unpinned-uses",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "unpinned-uses"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects `#!yaml run:` steps that install packages in an ad-hoc manner, i.e. outside of a managed and locked manifest.",
+      "id": "zizmor:adhoc-packages",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "adhoc-packages",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "adhoc-packages"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects workflows or action definitions that lack a `name:` field.",
+      "id": "zizmor:anonymous-definition",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "anonymous-definition",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "anonymous-definition"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects `#!yaml uses:` clauses that reference [archived repositories].",
+      "id": "zizmor:archived-uses",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "archived-uses",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "archived-uses"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects potential cache-poisoning scenarios in release workflows.",
+      "id": "zizmor:cache-poisoning",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "cache-poisoning",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "cache-poisoning"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects missing or insufficient `cooldown` settings in Dependabot configuration files.",
+      "id": "zizmor:dependabot-cooldown",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "dependabot-cooldown",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "dependabot-cooldown"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects usages of `insecure-external-code-execution` in Dependabot configuration files.",
+      "id": "zizmor:dependabot-execution",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "dependabot-execution",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "dependabot-execution"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects dangerous usages of GitHub App installation tokens.",
+      "id": "zizmor:github-app",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "github-app",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "github-app"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects commits within a repository action's network that are not present on the repository itself, also known as \"impostor\" commits.",
+      "id": "zizmor:impostor-commit",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "impostor-commit",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "impostor-commit"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Checks for usages of GitHub Actions features that are considered \"misfeatures.\"",
+      "id": "zizmor:misfeature",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "misfeature",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "misfeature"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Checks for obfuscated usages of GitHub Actions features.",
+      "id": "zizmor:obfuscation",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "obfuscation",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "obfuscation"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects actions that are pinned to confusable symbolic refs (i.e. branches or tags).",
+      "id": "zizmor:ref-confusion",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "ref-confusion",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "ref-confusion"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects `#!yaml uses:` clauses where a hash-pinned action's version comment (used by tools like Dependabot) is mismatched with the pinned commit, or missing entirely.",
+      "id": "zizmor:ref-version-mismatch",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "ref-version-mismatch",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "ref-version-mismatch"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects usage of the `secrets` context in jobs without a dedicated environment.",
+      "id": "zizmor:secrets-outside-env",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "secrets-outside-env",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "secrets-outside-env"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Checks for `#!yaml uses:` clauses which pin an action using a SHA reference, but where that reference does not point to a Git tag.",
+      "id": "zizmor:stale-action-refs",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "stale-action-refs",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "stale-action-refs"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects `#!yaml uses:` clauses that reference an action whose `owner/repo` slug is a close textual variant of a well-known action, but is owned by a different account.",
+      "id": "zizmor:typosquat-uses",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "typosquat-uses",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "typosquat-uses"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects certain `#!yaml uses:` steps where the referenced action may use an unpinned external tool at runtime.",
+      "id": "zizmor:unpinned-tools",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unpinned-tools",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "unpinned-tools"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects potential secret leakage via redaction failures.",
+      "id": "zizmor:unredacted-secrets",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unredacted-secrets",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "unredacted-secrets"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects conditions that are inadvertently always true despite containing an expression that should control the evaluation.",
+      "id": "zizmor:unsound-condition",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unsound-condition",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "unsound-condition"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects conditions that use the `contains()` function in a way that can be bypassed.",
+      "id": "zizmor:unsound-contains",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unsound-contains",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "unsound-contains"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects GitHub Actions expressions that use `&&` and `||` as a pseudo-ternary when the \"true\" value can evaluate to a falsy value.",
+      "id": "zizmor:unsound-ternary",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "unsound-ternary",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "unsound-ternary"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects packaging workflows that could use [Trusted Publishing].",
+      "id": "zizmor:use-trusted-publishing",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "use-trusted-publishing",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "use-trusted-publishing"
+    },
+    {
+      "category": "declined",
+      "dialect": "js",
+      "description": "Detects insufficient concurrency limits in workflows. Declined: A missing concurrency group is a cost and queue-time concern, not a security finding. Out of scope for a security scanner.",
+      "id": "zizmor:concurrency-limits",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "concurrency-limits",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "concurrency-limits"
+    },
+    {
+      "category": "declined",
+      "dialect": "js",
+      "description": "An *opt-in* audit for denylisting/allowlisting specific `#!yaml uses:` clauses. This is not enabled by default; you must [configure it](#forbidden-uses-configuration) to use it. Declined: Pure policy allow/deny list with no default ruleset — it only fires on operator-supplied configuration, so there is nothing to inline into a shipped table.",
+      "id": "zizmor:forbidden-uses",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "forbidden-uses",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "forbidden-uses"
+    },
+    {
+      "category": "declined",
+      "dialect": "js",
+      "description": "Detects actions with known, publicly disclosed vulnerabilities that are tracked in the [GitHub Advisories database]. Examples of commonly disclosed vulnerabilities in GitHub Actions include [credential disclosure] and code injection via [template injection]. Declined: Requires a live advisory feed at scan time. Socket serves this from its own vulnerability data rather than a static table.",
+      "id": "zizmor:known-vulnerable-actions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "known-vulnerable-actions",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "known-vulnerable-actions"
+    },
+    {
+      "category": "declined",
+      "dialect": "js",
+      "description": "Detects actions that are known to be \"superfluous,\" i.e. perform an operation already provided by GitHub's own runner images. Declined: A redundant action is a maintenance smell, not a security finding.",
+      "id": "zizmor:superfluous-actions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "superfluous-actions",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "superfluous-actions"
+    },
+    {
+      "category": "declined",
+      "dialect": "js",
+      "description": "Detects explicit permissions blocks that lack explanatory comments. Declined: Style rule about comment presence, not a security property.",
+      "id": "zizmor:undocumented-permissions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "undocumented-permissions",
+        "source": "zizmor@v1.28.0",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "undocumented-permissions"
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    "zizmor@v1.28.0"
+  ]
+}

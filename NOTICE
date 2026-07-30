@@ -1,0 +1,112 @@
+@socketsecurity/scan-patterns
+Copyright (c) Socket Inc.
+
+This product is licensed under the MIT License (see LICENSE).
+
+Portions of the generated detector tables under `data/` are DERIVED from
+third-party projects. Each generated row carries its own `provenance` object
+recording the upstream project, the pinned release, the upstream rule id, and
+the upstream license. The pins themselves live in `.gitmodules`.
+
+================================================================================
+Apache License 2.0 derivations
+================================================================================
+
+The following derivations require attribution under Apache-2.0 section 4. A
+copy of the Apache License 2.0 is available at
+https://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------------
+Trivy
+--------------------------------------------------------------------------------
+Copyright Aqua Security Software Ltd.
+https://github.com/aquasecurity/trivy
+Licensed under the Apache License, Version 2.0.
+
+Rows in `data/trivy-secrets.json` (and the `manifests` rows sourced from it)
+are derived from Trivy's built-in secret rules in
+`pkg/fanal/secret/builtin-rules.go`. Rule identifiers, titles, categories,
+severities, keywords and regular-expression sources are reproduced and
+reformatted; no Trivy source code is included.
+
+--------------------------------------------------------------------------------
+SkillSpector
+--------------------------------------------------------------------------------
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+https://github.com/NVIDIA/SkillSpector
+Licensed under the Apache License, Version 2.0.
+
+Rows in `data/sources/skillspector.json` (and the `skills` rows composed from
+it) are derived from the static analyzer pattern modules under
+`src/skillspector/nodes/analyzers/` — the `static_patterns_*.py` category
+modules and `pattern_defaults.py`. Pattern identifiers, category names,
+regular-expression sources, confidence weights and explanation text are
+reproduced and reformatted; no SkillSpector source code is included.
+
+SkillSpector's own THIRD_PARTY_NOTICES.md covers its runtime dependencies
+(typer, rich, httpx, PyYAML, pydantic, openai, langgraph, langchain,
+yara-python). This package derives only from SkillSpector's own
+NVIDIA-copyright pattern modules and vendors none of those dependencies, so no
+obligation from them carries forward. The `src/skillspector/yara_rules` tree is
+deliberately outside the pinned sparse-checkout and is not derived from.
+
+--------------------------------------------------------------------------------
+codex-security
+--------------------------------------------------------------------------------
+Copyright OpenAI.
+https://github.com/openai/codex-security
+Licensed under the Apache License, Version 2.0.
+
+Rows in `data/codex-security.json` are derived from the bundled plugin's
+capability profiles and finding schemas under
+`sdk/typescript/_bundled_plugin/`. Capability identifiers, required plugin
+skill names, and the finding severity vocabulary are reproduced; no
+codex-security source code is included.
+
+================================================================================
+MIT derivations
+================================================================================
+
+The following upstreams are MIT licensed. Their copyright notices are
+reproduced here alongside the MIT permission notice already granted by LICENSE.
+
+  Gitleaks     — Copyright (c) 2019 Zachary Rice
+                 https://github.com/gitleaks/gitleaks
+                 Source: `config/gitleaks.toml`
+                 Consumed by: `data/gitleaks-secrets.json`
+
+  zizmor       — Copyright (c) William Woodruff
+                 https://github.com/zizmorcore/zizmor
+                 Source: `docs/audits.md`
+                 Consumed by: `data/zizmor-audits.json`
+
+  AgentShield  — Copyright (c) Affaan Mustafa
+                 https://github.com/affaan-m/agentshield
+                 Source: `src/rules/`, `src/injection/payloads.ts`
+                 Consumed by: `data/agentshield-agent-configs.json`,
+                              `data/agentshield-skills.json`
+
+================================================================================
+Copyleft upstreams — TESTS-ONLY, NO derivation
+================================================================================
+
+  TruffleHog   — https://github.com/trufflesecurity/trufflehog
+                 Licensed under AGPL-3.0.
+
+TruffleHog is pinned SOLELY as a coverage-comparison oracle, under a
+clean-room posture: this project may observe its TESTS and never its
+IMPLEMENTATION.
+
+Its implementation is unreadable by construction. The pinned sparse-checkout
+admits only `*_test.go` files and `testdata/` fixtures, in no-cone mode, so no
+TruffleHog implementation file is ever materialized on disk. The oracle infers
+detector families from test FILE PATHS alone and reports coverage gaps; it
+never gates.
+
+No TruffleHog regular expression, rule datum, or source code is copied,
+derived, transformed, or emitted into `data/`, `src/`, or any published
+artifact, and no TruffleHog bytes are vendored into this repository's tracked
+content. No generator reads it and no table row cites it as a source.
+
+This tests-only rule applies to ANY copyleft upstream (AGPL/GPL/SSPL), not
+only TruffleHog. See `docs/agents.md/repo/upstream-slices.md`.

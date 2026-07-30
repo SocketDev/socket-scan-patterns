@@ -1,0 +1,6 @@
+{
+  "allow": {
+    "DISCLOSURE": "npm dual-use policy artifact. The policy expects the disclosure at the package root and the manifest ships it in `files`, so it is tool-anchored there and cannot move into a tier dir. Paired with package.json contentPolicy.class and the marker's contentPolicy.packages.",
+    "NOTICE": "Apache-2.0 section 4 attribution for the Trivy, SkillSpector, and codex-security derivations. A root NOTICE beside LICENSE is what the Apache license and every license scanner expect; it also ships in `files`."
+  }
+}

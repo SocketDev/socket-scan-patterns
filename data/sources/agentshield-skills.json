@@ -1,0 +1,42 @@
+{
+  "rules": [
+    {
+      "category": "skills",
+      "description": "Checks whether SKILL.md files define observation and feedback hooks for self-improvement loops",
+      "dialect": "js",
+      "id": "agentshield:skills-observation-feedback-hooks",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-observation-feedback-hooks",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/skills.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Skill observation and feedback hooks"
+    },
+    {
+      "category": "skills",
+      "description": "Checks whether SKILL.md files define versioning and rollback metadata",
+      "dialect": "js",
+      "id": "agentshield:skills-version-rollback-metadata",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-version-rollback-metadata",
+        "source": "agentshield@v1.4.0",
+        "sourceFile": "upstream/agentshield/src/rules/skills.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Skill version and rollback metadata"
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    "agentshield@v1.4.0"
+  ]
+}

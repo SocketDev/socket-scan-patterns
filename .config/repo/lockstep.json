@@ -1,0 +1,107 @@
+{
+  "$schema": "../fleet/lockstep.schema.json",
+  "area": "scan-patterns",
+  "description": "Lock-step manifest for the pinned detector sources. Every row is an upstream this package DERIVES its tables from, except trufflehog, which is a tests-only conformance oracle. A pin bump means re-running `pnpm run gen` and re-reviewing the NOTICE attribution.",
+  "upstreams": {
+    "agentshield": {
+      "submodule": "upstream/agentshield",
+      "repo": "https://github.com/affaan-m/agentshield"
+    },
+    "codex-security": {
+      "submodule": "upstream/codex-security",
+      "repo": "https://github.com/openai/codex-security"
+    },
+    "gitleaks": {
+      "submodule": "upstream/gitleaks",
+      "repo": "https://github.com/gitleaks/gitleaks"
+    },
+    "skillspector": {
+      "submodule": "upstream/skillspector",
+      "repo": "https://github.com/NVIDIA/SkillSpector"
+    },
+    "trivy": {
+      "submodule": "upstream/trivy",
+      "repo": "https://github.com/aquasecurity/trivy"
+    },
+    "trufflehog": {
+      "submodule": "upstream/trufflehog",
+      "repo": "https://github.com/trufflesecurity/trufflehog"
+    },
+    "zizmor": {
+      "submodule": "upstream/zizmor",
+      "repo": "https://github.com/zizmorcore/zizmor"
+    }
+  },
+  "rows": [
+    {
+      "kind": "version-pin",
+      "id": "agentshield",
+      "upstream": "agentshield",
+      "pinned_sha": "9bbc007cf5afb562c324bbad4ce6c544420f49f6",
+      "upgrade_policy": "track-latest",
+      "criticality": 8,
+      "notes": "Agent-config rule source (MIT). Supplies all 131 rows in data/agent-configs.json plus the SKILL.md governance rules.",
+      "pinned_tag": "v1.4.0"
+    },
+    {
+      "kind": "version-pin",
+      "id": "codex-security",
+      "upstream": "codex-security",
+      "pinned_sha": "e94d6bef9797a192febfde89a26ec7f831bc09b2",
+      "upgrade_policy": "track-latest",
+      "criticality": 4,
+      "notes": "Plugin-capability source (Apache-2.0, attributed in NOTICE). Contributes the 9 capability rows in data/skills.json; it has no regex corpus to derive.",
+      "pinned_tag": "npm-v0.1.1"
+    },
+    {
+      "kind": "version-pin",
+      "id": "gitleaks",
+      "upstream": "gitleaks",
+      "pinned_sha": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+      "upgrade_policy": "track-latest",
+      "criticality": 10,
+      "notes": "Primary secret-detector source (MIT). 221 of the 317 rows in data/secrets.json derive from its generated TOML config.",
+      "pinned_tag": "v8.30.1"
+    },
+    {
+      "kind": "version-pin",
+      "id": "skillspector",
+      "upstream": "skillspector",
+      "pinned_sha": "34f60308522f45447cd343da0aad77bcea308ad4",
+      "upgrade_policy": "track-latest",
+      "criticality": 9,
+      "notes": "Primary agent-skill pattern source (Apache-2.0, attributed in NOTICE). 416 of the 427 rows in data/skills.json derive from its static analyzer modules.",
+      "pinned_tag": "v2.5.0"
+    },
+    {
+      "kind": "version-pin",
+      "id": "trivy",
+      "upstream": "trivy",
+      "pinned_sha": "8a32853686209a428179bb3a1688802b25691564",
+      "upgrade_policy": "track-latest",
+      "criticality": 9,
+      "notes": "Second secret-detector source (Apache-2.0, attributed in NOTICE). Supplies severity, which gitleaks does not express, plus the manifest-scoped Maven rules.",
+      "pinned_tag": "v0.72.0"
+    },
+    {
+      "kind": "version-pin",
+      "id": "trufflehog",
+      "upstream": "trufflehog",
+      "pinned_sha": "6f3c981e7b77f235fd2702dd74af25fc4b72bf11",
+      "upgrade_policy": "track-latest",
+      "criticality": 6,
+      "notes": "CONFORMANCE-ONLY coverage oracle. AGPL-3.0, so it is TESTS-ONLY: no generator reads it and no row cites it. A pin bump must keep the sparse-checkout tests-only \u2014 see docs/agents.md/repo/upstream-slices.md.",
+      "pinned_tag": "v3.96.0"
+    },
+    {
+      "kind": "version-pin",
+      "id": "zizmor",
+      "upstream": "zizmor",
+      "pinned_sha": "4381cc6339bb76a1004a99da929fe8f8f1143d94",
+      "upgrade_policy": "track-latest",
+      "criticality": 7,
+      "notes": "Workflow-audit source (MIT). The port is documentation-driven; a new upstream audit fails the generator until it is triaged in .config/repo/zizmor-audit-status.json.",
+      "pinned_tag": "v1.28.0"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "$comment": "Implementation status for each zizmor audit ported into the workflows table. The zizmor generator is documentation-driven: it reads every audit out of the pinned docs/audits.md and fails when an audit here is unknown upstream or an upstream audit is unlisted here. Keeping status OUT of the generator means a new upstream audit shows up as a loud gap rather than silently vanishing. Values: 'implemented' — Socket runs an equivalent check; 'planned' — accepted, not yet built; 'declined' — deliberately out of scope, 'reason' required.",
+  "audits": {
+    "adhoc-packages": { "status": "planned" },
+    "anonymous-definition": { "status": "planned" },
+    "archived-uses": { "status": "planned" },
+    "artipacked": { "status": "implemented" },
+    "bot-conditions": { "status": "implemented" },
+    "cache-poisoning": { "status": "planned" },
+    "concurrency-limits": {
+      "status": "declined",
+      "reason": "A missing concurrency group is a cost and queue-time concern, not a security finding. Out of scope for a security scanner."
+    },
+    "dangerous-triggers": { "status": "implemented" },
+    "dependabot-cooldown": { "status": "planned" },
+    "dependabot-execution": { "status": "planned" },
+    "excessive-permissions": { "status": "implemented" },
+    "forbidden-uses": {
+      "status": "declined",
+      "reason": "Pure policy allow/deny list with no default ruleset — it only fires on operator-supplied configuration, so there is nothing to inline into a shipped table."
+    },
+    "github-app": { "status": "planned" },
+    "github-env": { "status": "implemented" },
+    "hardcoded-container-credentials": { "status": "implemented" },
+    "impostor-commit": { "status": "planned" },
+    "insecure-commands": { "status": "implemented" },
+    "known-vulnerable-actions": {
+      "status": "declined",
+      "reason": "Requires a live advisory feed at scan time. Socket serves this from its own vulnerability data rather than a static table."
+    },
+    "misfeature": { "status": "planned" },
+    "obfuscation": { "status": "planned" },
+    "overprovisioned-secrets": { "status": "implemented" },
+    "ref-confusion": { "status": "planned" },
+    "ref-version-mismatch": { "status": "planned" },
+    "secrets-inherit": { "status": "implemented" },
+    "secrets-outside-env": { "status": "planned" },
+    "self-hosted-runner": { "status": "implemented" },
+    "stale-action-refs": { "status": "planned" },
+    "superfluous-actions": {
+      "status": "declined",
+      "reason": "A redundant action is a maintenance smell, not a security finding."
+    },
+    "template-injection": { "status": "implemented" },
+    "typosquat-uses": { "status": "planned" },
+    "undocumented-permissions": {
+      "status": "declined",
+      "reason": "Style rule about comment presence, not a security property."
+    },
+    "unpinned-images": { "status": "implemented" },
+    "unpinned-tools": { "status": "planned" },
+    "unpinned-uses": { "status": "implemented" },
+    "unredacted-secrets": { "status": "planned" },
+    "unsound-condition": { "status": "planned" },
+    "unsound-contains": { "status": "planned" },
+    "unsound-ternary": { "status": "planned" },
+    "use-trusted-publishing": { "status": "planned" }
+  }
+}

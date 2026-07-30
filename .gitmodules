@@ -1,0 +1,92 @@
+# gitleaks-v8.30.1 sha256:6b2638a733b85619dc80bdf28e84e4fed7e526a761ab5c148fbf67695aea2115
+[submodule "upstream/gitleaks"]
+	ref = 83d9cd684c87d95d656c1458ef04895a7f1cbd8e
+	path = upstream/gitleaks
+	url = https://github.com/gitleaks/gitleaks.git
+	branch = v8.30.1
+	shallow = true
+	ignore = dirty
+	sparse-checkout = config testdata/config
+	verify = none
+# zizmor-v1.28.0 sha256:06e12a304238f8d632158b84220063c1c31538596f042ac6e03591ae0a1abfc6
+[submodule "upstream/zizmor"]
+	ref = 4381cc6339bb76a1004a99da929fe8f8f1143d94
+	path = upstream/zizmor
+	url = https://github.com/zizmorcore/zizmor.git
+	branch = v1.28.0
+	shallow = true
+	ignore = dirty
+	sparse-checkout = docs crates/zizmor/tests
+	verify = none
+# trivy-v0.72.0 sha256:5a922c388846d11345ce8283e4373be312458f002abc667c3cd1f77c43163725
+[submodule "upstream/trivy"]
+	ref = 8a32853686209a428179bb3a1688802b25691564
+	path = upstream/trivy
+	url = https://github.com/aquasecurity/trivy.git
+	branch = v0.72.0
+	shallow = true
+	ignore = dirty
+	sparse-checkout = pkg/fanal/secret
+	verify = none
+# codex-security-npm-v0.1.1 sha256:41b96760817d37b6b9aaab37286cf9c51d8fb55e3d21b73b0636c666ff751a5b
+[submodule "upstream/codex-security"]
+	ref = e94d6bef9797a192febfde89a26ec7f831bc09b2
+	path = upstream/codex-security
+	url = https://github.com/openai/codex-security.git
+	branch = npm-v0.1.1
+	shallow = true
+	ignore = dirty
+	sparse-checkout = sdk/typescript/_bundled_plugin/preflight sdk/typescript/_bundled_plugin/schemas sdk/typescript/_bundled_plugin/skills
+	verify = none
+# agentshield-v1.4.0 sha256:724d667818e21113ced33d3d292280ac1d5b8c273ec3a01db3f1fe207af8df94
+[submodule "upstream/agentshield"]
+	ref = 9bbc007cf5afb562c324bbad4ce6c544420f49f6
+	path = upstream/agentshield
+	url = https://github.com/affaan-m/agentshield.git
+	branch = v1.4.0
+	shallow = true
+	ignore = dirty
+	sparse-checkout = src
+	verify = none
+# 🚨 AGPL-3.0 — CLEAN-ROOM, TESTS-ONLY. TruffleHog is pinned SOLELY as a
+# coverage-comparison oracle, and its IMPLEMENTATION IS UNREADABLE BY
+# CONSTRUCTION, not merely un-copied.
+#
+# The sparse-checkout admits ONLY `*_test.go` files and `testdata/` fixtures
+# under pkg/detectors, in NO-CONE mode (cone mode cannot express a file-level
+# glob, so `sparse-mode = no-cone` is load-bearing — materialize via
+# `node scripts/repo/materialize-upstream.mts trufflehog`, never a bare cone
+# clone). Not one line of TruffleHog implementation lands on disk, so no agent
+# and no human can read it. Absence is the block.
+#
+# The oracle infers detector families from test FILE PATHS only — the fact that
+# `pkg/detectors/stripe/stripe_test.go` exists tells us a Stripe detector
+# exists. It never reads a registry or an implementation file. There is NO
+# trufflehog generator and NO trufflehog-derived table row, ever. Their bytes
+# are never vendored into our tree; conformance reads the pinned submodule.
+#
+# For secret detection, gitleaks (MIT) is the sanctioned derivation source.
+# Guard: .claude/hooks/repo/no-copyleft-source-read/
+# Gate:  scripts/repo/check/copyleft-slices-are-tests-only.mts
+# See docs/agents.md/repo/upstream-slices.md and NOTICE.
+# trufflehog-v3.96.0 sha256:83e7c8ca90c0e87367d7b0f4473266cd725a9ab5b0ad4b92b9e232188debcdf1
+[submodule "upstream/trufflehog"]
+	ref = 6f3c981e7b77f235fd2702dd74af25fc4b72bf11
+	path = upstream/trufflehog
+	url = https://github.com/trufflesecurity/trufflehog.git
+	branch = v3.96.0
+	shallow = true
+	ignore = dirty
+	sparse-checkout = **/*_test.go **/testdata/** /AUTHORS* /CONTRIBUTORS* /COPYING* /LICENSE* /NOTICE* /README*
+	verify = none
+	sparse-mode = no-cone
+# skillspector-v2.5.0 sha256:56012ec197ac45ac572fb39260e2811f17ede92c6d821dc5947220a9a14e69e4
+[submodule "upstream/skillspector"]
+	ref = 34f60308522f45447cd343da0aad77bcea308ad4
+	path = upstream/skillspector
+	url = https://github.com/NVIDIA/SkillSpector.git
+	branch = v2.5.0
+	shallow = true
+	ignore = dirty
+	sparse-checkout = src/skillspector/nodes/analyzers
+	verify = none
