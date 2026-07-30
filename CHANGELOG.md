@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **`tables`** — add the generated detector pattern tables
+- **`build`** — add the bundle, declarations, fuzz targets, and unit tests
+- **`tables`** — add the generators, typed API, and derivation gates
+- **`copyleft`** — make AGPL upstream implementation unreadable by construction
+- **`upstream`** — pin the skillspector agent-skill scanner slice
+- **`upstream`** — pin the six detector-source slices
+
+### Fixed
+
+- **`copyleft`** — root-anchor the metadata globs so nested detectors stay off disk
+
 ## Unreleased
 
 ### Added
