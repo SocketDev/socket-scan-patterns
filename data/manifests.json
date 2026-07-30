@@ -1,0 +1,96 @@
+{
+  "rules": [
+    {
+      "category": "freemius",
+      "description": "Detected a Freemius secret key, potentially exposing sensitive information.",
+      "dialect": "js",
+      "id": "gitleaks:freemius-secret-key",
+      "keywords": [
+        "secret_key"
+      ],
+      "kind": "path",
+      "pathRegexSource": "\\.php$",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "freemius-secret-key",
+        "source": "gitleaks@v8.30.1",
+        "sourceFile": "upstream/gitleaks/config/gitleaks.toml"
+      },
+      "regexFlags": "i",
+      "regexSource": "[\"']secret_key[\"']\\s*=>\\s*[\"'](sk_[\\S]{29})[\"']",
+      "severity": "high",
+      "title": "freemius-secret-key"
+    },
+    {
+      "category": "hashicorp",
+      "description": "Identified a HashiCorp Terraform password field, risking unauthorized infrastructure configuration and security breaches.",
+      "dialect": "js",
+      "entropy": 2,
+      "id": "gitleaks:hashicorp-tf-password",
+      "keywords": [
+        "administrator_login_password",
+        "password"
+      ],
+      "kind": "path",
+      "pathRegexSource": "\\.(?:tf|hcl)$",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hashicorp-tf-password",
+        "source": "gitleaks@v8.30.1",
+        "sourceFile": "upstream/gitleaks/config/gitleaks.toml"
+      },
+      "regexFlags": "i",
+      "regexSource": "[\\w.-]{0,50}?(?:administrator_login_password|password)(?:[ \\t\\w.-]{0,20})[\\s'\"]{0,3}(?:=|>|:{1,3}=|\\|\\||:|=>|\\?=|,)[\\x60'\"\\s=]{0,5}(\"[a-z0-9=_\\-]{8,20}\")(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
+      "severity": "high",
+      "title": "hashicorp-tf-password"
+    },
+    {
+      "category": "kubernetes",
+      "description": "Possible Kubernetes Secret detected, posing a risk of leaking credentials/tokens from your deployments",
+      "dialect": "js",
+      "id": "gitleaks:kubernetes-secret-yaml",
+      "keywords": [
+        "secret"
+      ],
+      "kind": "path",
+      "pathRegexSource": "\\.ya?ml$",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "kubernetes-secret-yaml",
+        "source": "gitleaks@v8.30.1",
+        "sourceFile": "upstream/gitleaks/config/gitleaks.toml"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?:\\bkind:[ \\t]*[\"']?\\bsecret\\b[\"']?(?s:.){0,200}?\\bdata:(?s:.){0,100}?\\s+([\\w.-]+:(?:[ \\t]*(?:\\||>[-+]?)\\s+)?[ \\t]*(?:[\"']?[a-z0-9+/]{10,}={0,3}[\"']?|\\{\\{[ \\t\\w\"|$:=,.-]+}}|\"\"|''))|\\bdata:(?s:.){0,100}?\\s+([\\w.-]+:(?:[ \\t]*(?:\\||>[-+]?)\\s+)?[ \\t]*(?:[\"']?[a-z0-9+/]{10,}={0,3}[\"']?|\\{\\{[ \\t\\w\"|$:=,.-]+}}|\"\"|''))(?s:.){0,200}?\\bkind:[ \\t]*[\"']?\\bsecret\\b[\"']?)",
+      "severity": "high",
+      "title": "kubernetes-secret-yaml"
+    },
+    {
+      "category": "nuget",
+      "description": "Identified a password within a Nuget config file, potentially compromising package management access.",
+      "dialect": "js",
+      "entropy": 1,
+      "id": "gitleaks:nuget-config-password",
+      "keywords": [
+        "<add key="
+      ],
+      "kind": "path",
+      "pathRegexSource": "nuget\\.config$",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "nuget-config-password",
+        "source": "gitleaks@v8.30.1",
+        "sourceFile": "upstream/gitleaks/config/gitleaks.toml"
+      },
+      "regexFlags": "i",
+      "regexSource": "<add key=\\\"(?:(?:ClearText)?Password)\\\"\\s*value=\\\"(.{8,})\\\"\\s*/>",
+      "severity": "high",
+      "title": "nuget-config-password"
+    }
+  ],
+  "scanner": "manifests",
+  "schemaVersion": 1,
+  "sources": [
+    "gitleaks@v8.30.1"
+  ]
+}
