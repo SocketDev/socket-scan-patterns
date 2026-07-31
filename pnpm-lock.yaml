@@ -309,7 +309,7 @@ catalogs:
       version: 4.1.10
 
 overrides:
-  '@socketregistry/packageurl-js': 1.5.0
+  '@socketregistry/packageurl-js': 1.4.8
   '@socketsecurity/lib': 6.5.1
   '@socketsecurity/registry': 2.0.5
   '@socketsecurity/sdk': 4.1.3
@@ -359,8 +359,8 @@ importers:
         specifier: 'catalog:'
         version: 0.34.52
       '@socketregistry/packageurl-js':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.4.8
+        version: 1.4.8
       '@socketregistry/packageurl-js-stable':
         specifier: 'catalog:'
         version: '@socketregistry/packageurl-js@1.4.8'
@@ -3302,10 +3302,6 @@ packages:
     resolution: {integrity: sha512-u9Mlg3zeiCr8FHdG6Sxd4T8dWS/zVzW270tS67JdDra2hrzPfgsmbWr7itlQc/0P9uWX6gslISs88YQvi3Z5SQ==}
     engines: {node: '>=24', npm: '>=12.0.0', pnpm: '>=11.0.5'}
 
-  '@socketregistry/packageurl-js@1.5.0':
-    resolution: {integrity: sha512-Yqnq50McfKVqKCUKRIhW3XcnjxzFoysBDkUktOuLzOdy4cWi0smVqvLNSkS3f4sdDJYpRBjcxTlb2ajHr+cURQ==}
-    engines: {node: '>=24', npm: '>=12.0.1', pnpm: '>=11.0.5'}
-
   '@socketregistry/safe-buffer@1.0.9':
     resolution: {integrity: sha512-eV4uYchI1+vQeKpFG+aBlhVQ/AaaPTTXaan+ReiNn/izy8U9hfT4WC8l4g8o8BC3zaeNnsNVxec14hJH/y2y3g==}
     engines: {node: '>=18'}
@@ -5161,8 +5157,6 @@ snapshots:
   '@socketregistry/es-define-property@1.0.7': {}
 
   '@socketregistry/packageurl-js@1.4.8': {}
-
-  '@socketregistry/packageurl-js@1.5.0': {}
 
   '@socketregistry/safe-buffer@1.0.9': {}
 
