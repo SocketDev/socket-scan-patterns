@@ -1,0 +1,1957 @@
+{
+  "rules": [
+    {
+      "category": "AWS",
+      "description": "AWS Access Key ID",
+      "dialect": "js",
+      "id": "trivy:aws-access-key-id",
+      "keywords": [
+        "AGPA",
+        "AIDA",
+        "AIPA",
+        "AKIA",
+        "ANPA",
+        "ANVA",
+        "AROA",
+        "ASIA"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "aws-access-key-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(?<secret>(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16})[\"']?[.,]?(\\s+|$)",
+      "severity": "critical",
+      "title": "AWS Access Key ID"
+    },
+    {
+      "category": "AWS",
+      "description": "AWS Secret Access Key",
+      "dialect": "js",
+      "id": "trivy:aws-secret-access-key",
+      "keywords": [
+        "key"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "aws-secret-access-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "[\"']?aws_?(sec(ret)?)?_?(access)?_?key[\"']?\\s*(:|=>|=)?\\s*[\"']?(?<secret>[A-Za-z0-9\\/\\+=]{40})[\"']?[.,]?(\\s+|$)",
+      "severity": "critical",
+      "title": "AWS Secret Access Key"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure App Configuration Connection String",
+      "dialect": "js",
+      "id": "trivy:azure-app-config-connection-string",
+      "keywords": [
+        "azconfig.io"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-app-config-connection-string",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "Endpoint\\s*=\\s*https://[a-zA-Z0-9\\-]+\\.azconfig\\.io\\s*;\\s*Id\\s*=\\s*[a-zA-Z0-9+/=:\\-]+\\s*;\\s*Secret\\s*=\\s*(?<secret>[a-zA-Z0-9+/=~]{32,88})",
+      "severity": "critical",
+      "title": "Azure App Configuration Connection String"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure Container Registry Credential",
+      "dialect": "js",
+      "id": "trivy:azure-container-registry-credential",
+      "keywords": [
+        "ACYeBjFEqg7NAAA"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-container-registry-credential",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(?<secret>[A-Za-z0-9+/]{52}JQQJ99C[A-Z]ACYeBjFEqg7NAAA[A-Z]AZCR[A-Za-z0-9+/]{4})",
+      "severity": "critical",
+      "title": "Azure Container Registry Credential"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure Container Registry Password",
+      "dialect": "js",
+      "id": "trivy:azure-container-registry-password",
+      "keywords": [
+        "azurecr.io"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-container-registry-password",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "azurecr\\.io[^\\n]{0,100}(?:password|pwd)\\s*[:=]\\s*[\"']?(?<secret>[a-zA-Z0-9+/]{32})[\"']?",
+      "severity": "critical",
+      "title": "Azure Container Registry Password"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure Entra ID Client Secret",
+      "dialect": "js",
+      "id": "trivy:azure-entra-client-secret",
+      "keywords": [
+        "8Q~"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-entra-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(?:[^a-zA-Z0-9_~.\\-]|\\A)(?<secret>[a-zA-Z0-9_~.\\-]{3}8Q~[a-zA-Z0-9_~.\\-]{34})(?:[^a-zA-Z0-9_~.\\-]|\\z)",
+      "severity": "critical",
+      "title": "Azure Entra ID Client Secret"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure Storage Account Key",
+      "dialect": "js",
+      "id": "trivy:azure-storage-account-key",
+      "keywords": [
+        "AccountKey"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-storage-account-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "AccountKey\\s*=\\s*(?<secret>[A-Za-z0-9+/]{86}==)",
+      "severity": "critical",
+      "title": "Azure Storage Account Key"
+    },
+    {
+      "category": "Google",
+      "description": "Google (GCP) Service-account",
+      "dialect": "js",
+      "id": "trivy:gcp-service-account",
+      "keywords": [
+        "\\\"type\\\": \\\"service_account\\\""
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "gcp-service-account",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "\\\"type\\\": \\\"service_account\\\"",
+      "severity": "critical",
+      "title": "Google (GCP) Service-account"
+    },
+    {
+      "category": "GitHub",
+      "description": "GitHub App Token",
+      "dialect": "re2",
+      "id": "trivy:github-app-token",
+      "keywords": [
+        "ghs_",
+        "ghu_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "github-app-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>(?:ghu_[0-9a-zA-Z]{36}|ghs_[0-9a-zA-Z._-]{36,})",
+      "severity": "critical",
+      "title": "GitHub App Token"
+    },
+    {
+      "category": "GitHub",
+      "description": "GitHub Fine-grained personal access tokens",
+      "dialect": "js",
+      "id": "trivy:github-fine-grained-pat",
+      "keywords": [
+        "github_pat_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "github-fine-grained-pat",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59}",
+      "severity": "critical",
+      "title": "GitHub Fine-grained personal access tokens"
+    },
+    {
+      "category": "GitHub",
+      "description": "GitHub OAuth Access Token",
+      "dialect": "re2",
+      "id": "trivy:github-oauth",
+      "keywords": [
+        "gho_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "github-oauth",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>gho_[0-9a-zA-Z]{36}",
+      "severity": "critical",
+      "title": "GitHub OAuth Access Token"
+    },
+    {
+      "category": "GitHub",
+      "description": "GitHub Personal Access Token",
+      "dialect": "re2",
+      "id": "trivy:github-pat",
+      "keywords": [
+        "ghp_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "github-pat",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>ghp_[0-9a-zA-Z]{36}",
+      "severity": "critical",
+      "title": "GitHub Personal Access Token"
+    },
+    {
+      "category": "GitHub",
+      "description": "GitHub Refresh Token",
+      "dialect": "re2",
+      "id": "trivy:github-refresh-token",
+      "keywords": [
+        "ghr_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "github-refresh-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>ghr_[0-9a-zA-Z]{76}",
+      "severity": "critical",
+      "title": "GitHub Refresh Token"
+    },
+    {
+      "category": "GitLab",
+      "description": "GitLab Personal Access Token",
+      "dialect": "re2",
+      "id": "trivy:gitlab-pat",
+      "keywords": [
+        "glpat-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "gitlab-pat",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>glpat-[0-9a-zA-Z\\-\\_]{20}",
+      "severity": "critical",
+      "title": "GitLab Personal Access Token"
+    },
+    {
+      "category": "HuggingFace",
+      "description": "Hugging Face Access Token",
+      "dialect": "re2",
+      "id": "trivy:hugging-face-access-token",
+      "keywords": [
+        "hf_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "hugging-face-access-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hugging Face Access Token"
+    },
+    {
+      "category": "Npm",
+      "description": "npm access token",
+      "dialect": "re2",
+      "id": "trivy:npm-access-token",
+      "keywords": [
+        "npm_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "npm-access-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"](npm_(?i)[a-z0-9]{36})['\\\"]",
+      "severity": "critical",
+      "title": "npm access token"
+    },
+    {
+      "category": "Stripe",
+      "description": "Stripe Secret Key",
+      "dialect": "re2",
+      "id": "trivy:stripe-secret-token",
+      "keywords": [
+        "sk_live_",
+        "sk_test_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "stripe-secret-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>(?i)sk_(test|live)_[0-9a-z]{10,32}",
+      "severity": "critical",
+      "title": "Stripe Secret Key"
+    },
+    {
+      "category": "Alibaba",
+      "description": "Alibaba AccessKey ID",
+      "dialect": "re2",
+      "id": "trivy:alibaba-access-key-id",
+      "keywords": [
+        "LTAI"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "alibaba-access-key-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "([^0-9A-Za-z]|^)(?P<secret>(LTAI)(?i)[a-z0-9]{20})([^0-9A-Za-z]|$)",
+      "severity": "high",
+      "title": "Alibaba AccessKey ID"
+    },
+    {
+      "category": "Alibaba",
+      "description": "Alibaba Secret Key",
+      "dialect": "js",
+      "id": "trivy:alibaba-secret-key",
+      "keywords": [
+        "alibaba"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "alibaba-secret-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>alibaba[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{30})['\\\"]",
+      "severity": "high",
+      "title": "Alibaba Secret Key"
+    },
+    {
+      "category": "Atlassian",
+      "description": "Atlassian API token",
+      "dialect": "js",
+      "id": "trivy:atlassian-api-token",
+      "keywords": [
+        "atlassian"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "atlassian-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>atlassian[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{24})['\\\"]",
+      "severity": "high",
+      "title": "Atlassian API token"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure AI Services Key",
+      "dialect": "js",
+      "id": "trivy:azure-ai-services-key",
+      "keywords": [
+        "XJ3w3"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-ai-services-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(?<secret>[A-Za-z0-9+/]{52}JQQJ99C[A-Z][A-Za-z0-9+/]{7}XJ3w3[A-Za-z0-9+/]{4}ACOG[A-Za-z0-9+/]{4})",
+      "severity": "high",
+      "title": "Azure AI Services Key"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure DevOps Personal Access Token",
+      "dialect": "js",
+      "id": "trivy:azure-devops-pat",
+      "keywords": [
+        "ado-pat",
+        "ado-token",
+        "ado_pat",
+        "ado_token",
+        "azure-devops",
+        "azure_devops",
+        "azuredevops"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-devops-pat",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?:azure[_\\-]?devops|ado)[_\\-]?(?:pat|token|personal.?access.?token)\\s*[:=]\\s*[\"']?(?<secret>[a-z2-7]{52})[\"']?",
+      "severity": "high",
+      "title": "Azure DevOps Personal Access Token"
+    },
+    {
+      "category": "Azure",
+      "description": "Azure Shared Access Signature Token",
+      "dialect": "js",
+      "id": "trivy:azure-sas-token",
+      "keywords": [
+        "sig=",
+        "sv="
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "azure-sas-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "sv=\\d{4}-\\d{2}-\\d{2}(?:[&;][a-z]+=[^&\\s'\"]*){1,12}[&;]sig=(?<secret>[A-Za-z0-9%+/=]{40,})",
+      "severity": "high",
+      "title": "Azure Shared Access Signature Token"
+    },
+    {
+      "category": "Bitbucket",
+      "description": "Bitbucket client ID",
+      "dialect": "js",
+      "id": "trivy:bitbucket-client-id",
+      "keywords": [
+        "bitbucket"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "bitbucket-client-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>bitbucket[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{32})['\\\"]",
+      "severity": "high",
+      "title": "Bitbucket client ID"
+    },
+    {
+      "category": "Bitbucket",
+      "description": "Bitbucket client secret",
+      "dialect": "js",
+      "id": "trivy:bitbucket-client-secret",
+      "keywords": [
+        "bitbucket"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "bitbucket-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>bitbucket[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9_\\-]{64})['\\\"]",
+      "severity": "high",
+      "title": "Bitbucket client secret"
+    },
+    {
+      "category": "Docker",
+      "description": "Dockerconfig secret exposed",
+      "dialect": "js",
+      "id": "trivy:dockerconfig-secret",
+      "keywords": [
+        "dockerc"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "dockerconfig-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(\\.(dockerconfigjson|dockercfg):\\s*\\|*\\s*(?<secret>(ey|ew)+[A-Za-z0-9\\/\\+=]+))",
+      "severity": "high",
+      "title": "Dockerconfig secret exposed"
+    },
+    {
+      "category": "Dropbox",
+      "description": "Dropbox API secret/key",
+      "dialect": "js",
+      "id": "trivy:dropbox-api-secret",
+      "keywords": [
+        "dropbox"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "dropbox-api-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(dropbox[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"]([a-z0-9]{15})['\\\"]",
+      "severity": "high",
+      "title": "Dropbox API secret/key"
+    },
+    {
+      "category": "Dropbox",
+      "description": "Dropbox long lived API token",
+      "dialect": "js",
+      "id": "trivy:dropbox-long-lived-api-token",
+      "keywords": [
+        "dropbox"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "dropbox-long-lived-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(dropbox[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"][a-z0-9]{11}(AAAAAAAAAA)[a-z0-9\\-_=]{43}['\\\"]",
+      "severity": "high",
+      "title": "Dropbox long lived API token"
+    },
+    {
+      "category": "Dropbox",
+      "description": "Dropbox short lived API token",
+      "dialect": "js",
+      "id": "trivy:dropbox-short-lived-api-token",
+      "keywords": [
+        "dropbox"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "dropbox-short-lived-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(dropbox[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](sl\\.[a-z0-9\\-=_]{135})['\\\"]",
+      "severity": "high",
+      "title": "Dropbox short lived API token"
+    },
+    {
+      "category": "Heroku",
+      "description": "Heroku API Key",
+      "dialect": "re2",
+      "id": "trivy:heroku-api-key",
+      "keywords": [
+        "heroku"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "heroku-api-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": " (?i)(?P<key>heroku[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?P<secret>[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})['\\\"]",
+      "severity": "high",
+      "title": "Heroku API Key"
+    },
+    {
+      "category": "Ionic",
+      "description": "Ionic API token",
+      "dialect": "js",
+      "id": "trivy:ionic-api-token",
+      "keywords": [
+        "ionic"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "ionic-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(ionic[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](ion_[a-z0-9]{42})['\\\"]",
+      "severity": "high",
+      "title": "Ionic API token"
+    },
+    {
+      "category": "AsymmetricPrivateKey",
+      "description": "Asymmetric Private Key",
+      "dialect": "js",
+      "id": "trivy:private-key",
+      "keywords": [
+        "-----"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "private-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "-----\\s*?BEGIN[ A-Z0-9_-]*?PRIVATE KEY( BLOCK)?\\s*?-----[\\s]*?(?<secret>[A-Za-z0-9=+/\\\\][A-Za-z0-9=+/\\\\\\s]{30,}[A-Za-z0-9=+/\\\\])[\\s]*?-----\\s*?END[ A-Z0-9_-]*? PRIVATE KEY( BLOCK)?\\s*?-----",
+      "severity": "high",
+      "title": "Asymmetric Private Key"
+    },
+    {
+      "category": "Private Packagist",
+      "description": "Private Packagist token",
+      "dialect": "re2",
+      "id": "trivy:private-packagist-token",
+      "keywords": [
+        "packagist_ort_",
+        "packagist_out_",
+        "packagist_uut_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "private-packagist-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "packagist_[ou][ru]t_(?i)[a-f0-9]{68}",
+      "severity": "high",
+      "title": "Private Packagist token"
+    },
+    {
+      "category": "Pulumi",
+      "description": "Pulumi API token",
+      "dialect": "js",
+      "id": "trivy:pulumi-api-token",
+      "keywords": [
+        "pul-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "pulumi-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "pul-[a-f0-9]{40}",
+      "severity": "high",
+      "title": "Pulumi API token"
+    },
+    {
+      "category": "PyPI",
+      "description": "PyPI upload token",
+      "dialect": "js",
+      "id": "trivy:pypi-upload-token",
+      "keywords": [
+        "pypi-AgEIcHlwaS5vcmc"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "pypi-upload-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "pypi-AgEIcHlwaS5vcmc[A-Za-z0-9\\-_]{50,1000}",
+      "severity": "high",
+      "title": "PyPI upload token"
+    },
+    {
+      "category": "Shopify",
+      "description": "Shopify token",
+      "dialect": "js",
+      "id": "trivy:shopify-token",
+      "keywords": [
+        "shpat_",
+        "shpca_",
+        "shppa_",
+        "shpss_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "shopify-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "shp(ss|at|ca|pa)_[a-fA-F0-9]{32}",
+      "severity": "high",
+      "title": "Shopify token"
+    },
+    {
+      "category": "Slack",
+      "description": "Slack token",
+      "dialect": "re2",
+      "id": "trivy:slack-access-token",
+      "keywords": [
+        "xoxa-",
+        "xoxb-",
+        "xoxp-",
+        "xoxr-",
+        "xoxs-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "slack-access-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>xox[baprs]-([0-9a-zA-Z]{10,48})",
+      "severity": "high",
+      "title": "Slack token"
+    },
+    {
+      "category": "Symfony",
+      "description": "Symfony Default Secret",
+      "dialect": "js",
+      "id": "trivy:symfony-default-secret",
+      "keywords": [
+        "TokenIsNotSoSecret"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "symfony-default-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "ThisTokenIsNotSoSecretChangeIt|ThisEzPlatformTokenIsNotSoSecret_PleaseChangeIt",
+      "severity": "high",
+      "title": "Symfony Default Secret"
+    },
+    {
+      "category": "Age",
+      "description": "Age secret key",
+      "dialect": "js",
+      "id": "trivy:age-secret-key",
+      "keywords": [
+        "AGE-SECRET-KEY-1"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "age-secret-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "AGE-SECRET-KEY-1[QPZRY9X8GF2TVDW0S3JN54KHCE6MUA7L]{58}",
+      "severity": "medium",
+      "title": "Age secret key"
+    },
+    {
+      "category": "Asana",
+      "description": "Asana Client ID",
+      "dialect": "js",
+      "id": "trivy:asana-client-id",
+      "keywords": [
+        "asana"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "asana-client-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>asana[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[0-9]{16})['\\\"]",
+      "severity": "medium",
+      "title": "Asana Client ID"
+    },
+    {
+      "category": "Asana",
+      "description": "Asana Client Secret",
+      "dialect": "js",
+      "id": "trivy:asana-client-secret",
+      "keywords": [
+        "asana"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "asana-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>asana[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{32})['\\\"]",
+      "severity": "medium",
+      "title": "Asana Client Secret"
+    },
+    {
+      "category": "Clojars",
+      "description": "Clojars API token",
+      "dialect": "re2",
+      "id": "trivy:clojars-api-token",
+      "keywords": [
+        "CLOJARS_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "clojars-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(CLOJARS_)(?i)[a-z0-9]{60}",
+      "severity": "medium",
+      "title": "Clojars API token"
+    },
+    {
+      "category": "Databricks",
+      "description": "Databricks API token",
+      "dialect": "js",
+      "id": "trivy:databricks-api-token",
+      "keywords": [
+        "dapi"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "databricks-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "dapi[a-h0-9]{32}",
+      "severity": "medium",
+      "title": "Databricks API token"
+    },
+    {
+      "category": "Discord",
+      "description": "Discord API key",
+      "dialect": "js",
+      "id": "trivy:discord-api-token",
+      "keywords": [
+        "discord"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "discord-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>discord[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-h0-9]{64})['\\\"]",
+      "severity": "medium",
+      "title": "Discord API key"
+    },
+    {
+      "category": "Discord",
+      "description": "Discord client ID",
+      "dialect": "js",
+      "id": "trivy:discord-client-id",
+      "keywords": [
+        "discord"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "discord-client-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>discord[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[0-9]{18})['\\\"]",
+      "severity": "medium",
+      "title": "Discord client ID"
+    },
+    {
+      "category": "Discord",
+      "description": "Discord client secret",
+      "dialect": "js",
+      "id": "trivy:discord-client-secret",
+      "keywords": [
+        "discord"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "discord-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>discord[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9=_\\-]{32})['\\\"]",
+      "severity": "medium",
+      "title": "Discord client secret"
+    },
+    {
+      "category": "Doppler",
+      "description": "Doppler API token",
+      "dialect": "re2",
+      "id": "trivy:doppler-api-token",
+      "keywords": [
+        "dp.pt."
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "doppler-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"](dp\\.pt\\.)(?i)[a-z0-9]{43}['\\\"]",
+      "severity": "medium",
+      "title": "Doppler API token"
+    },
+    {
+      "category": "Dynatrace",
+      "description": "Dynatrace API token",
+      "dialect": "re2",
+      "id": "trivy:dynatrace-api-token",
+      "keywords": [
+        "dt0c01."
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "dynatrace-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"]dt0c01\\.(?i)[a-z0-9]{24}\\.[a-z0-9]{64}['\\\"]",
+      "severity": "medium",
+      "title": "Dynatrace API token"
+    },
+    {
+      "category": "Fastly",
+      "description": "Fastly API token",
+      "dialect": "js",
+      "id": "trivy:fastly-api-token",
+      "keywords": [
+        "fastly"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "fastly-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>fastly[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9\\-=_]{32})['\\\"]",
+      "severity": "medium",
+      "title": "Fastly API token"
+    },
+    {
+      "category": "Finicity",
+      "description": "Finicity API token",
+      "dialect": "js",
+      "id": "trivy:finicity-api-token",
+      "keywords": [
+        "finicity"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "finicity-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>finicity[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-f0-9]{32})['\\\"]",
+      "severity": "medium",
+      "title": "Finicity API token"
+    },
+    {
+      "category": "Finicity",
+      "description": "Finicity client secret",
+      "dialect": "js",
+      "id": "trivy:finicity-client-secret",
+      "keywords": [
+        "finicity"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "finicity-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>finicity[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{20})['\\\"]",
+      "severity": "medium",
+      "title": "Finicity client secret"
+    },
+    {
+      "category": "Flutterwave",
+      "description": "Flutterwave encrypted key",
+      "dialect": "re2",
+      "id": "trivy:flutterwave-enc-key",
+      "keywords": [
+        "FLWSECK_TEST"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "flutterwave-enc-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>FLWSECK_TEST[a-h0-9]{12}",
+      "severity": "medium",
+      "title": "Flutterwave encrypted key"
+    },
+    {
+      "category": "Flutterwave",
+      "description": "Flutterwave public/secret key",
+      "dialect": "re2",
+      "id": "trivy:flutterwave-public-key",
+      "keywords": [
+        "FLWPUBK_TEST-",
+        "FLWSECK_TEST-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "flutterwave-public-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>FLW(PUB|SEC)K_TEST-(?i)[a-h0-9]{32}-X",
+      "severity": "medium",
+      "title": "Flutterwave public/secret key"
+    },
+    {
+      "category": "GoCardless",
+      "description": "GoCardless API token",
+      "dialect": "re2",
+      "id": "trivy:gocardless-api-token",
+      "keywords": [
+        "live_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "gocardless-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"]live_(?i)[a-z0-9\\-_=]{40}['\\\"]",
+      "severity": "medium",
+      "title": "GoCardless API token"
+    },
+    {
+      "category": "Grafana",
+      "description": "Grafana API token",
+      "dialect": "re2",
+      "id": "trivy:grafana-api-token",
+      "keywords": [
+        "eyJrIjoi"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "grafana-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"]?eyJrIjoi(?i)[a-z0-9\\-_=]{72,92}['\\\"]?",
+      "severity": "medium",
+      "title": "Grafana API token"
+    },
+    {
+      "category": "HashiCorp",
+      "description": "HashiCorp Terraform user/org API token",
+      "dialect": "re2",
+      "id": "trivy:hashicorp-tf-api-token",
+      "keywords": [
+        "atlasv1."
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "hashicorp-tf-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"](?i)[a-z0-9]{14}\\.atlasv1\\.[a-z0-9\\-_=]{60,70}['\\\"]",
+      "severity": "medium",
+      "title": "HashiCorp Terraform user/org API token"
+    },
+    {
+      "category": "JWT",
+      "description": "JWT token",
+      "dialect": "js",
+      "id": "trivy:jwt-token",
+      "keywords": [
+        ".eyJ"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "jwt-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(?:ghs_[0-9]+_)?(?<secret>ey[a-zA-Z0-9]{17,}\\.ey[a-zA-Z0-9\\/\\\\_-]{17,}\\.(?:[a-zA-Z0-9\\/\\\\_-]{10,}={0,2})?)",
+      "severity": "medium",
+      "title": "JWT token"
+    },
+    {
+      "category": "Linear",
+      "description": "Linear API token",
+      "dialect": "re2",
+      "id": "trivy:linear-api-token",
+      "keywords": [
+        "lin_api_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "linear-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "lin_api_(?i)[a-z0-9]{40}",
+      "severity": "medium",
+      "title": "Linear API token"
+    },
+    {
+      "category": "Linear",
+      "description": "Linear client secret/ID",
+      "dialect": "js",
+      "id": "trivy:linear-client-secret",
+      "keywords": [
+        "linear"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "linear-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>linear[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-f0-9]{32})['\\\"]",
+      "severity": "medium",
+      "title": "Linear client secret/ID"
+    },
+    {
+      "category": "Mailchimp",
+      "description": "Mailchimp API key",
+      "dialect": "js",
+      "id": "trivy:mailchimp-api-key",
+      "keywords": [
+        "mailchimp"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "mailchimp-api-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>mailchimp[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-f0-9]{32}-us20)['\\\"]",
+      "severity": "medium",
+      "title": "Mailchimp API key"
+    },
+    {
+      "category": "Mailgun",
+      "description": "Mailgun webhook signing key",
+      "dialect": "js",
+      "id": "trivy:mailgun-signing-key",
+      "keywords": [
+        "mailgun"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "mailgun-signing-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>mailgun[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-h0-9]{32}-[a-h0-9]{8}-[a-h0-9]{8})['\\\"]",
+      "severity": "medium",
+      "title": "Mailgun webhook signing key"
+    },
+    {
+      "category": "Mailgun",
+      "description": "Mailgun private API token",
+      "dialect": "js",
+      "id": "trivy:mailgun-token",
+      "keywords": [
+        "mailgun"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "mailgun-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>mailgun[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>(pub)?key-[a-f0-9]{32})['\\\"]",
+      "severity": "medium",
+      "title": "Mailgun private API token"
+    },
+    {
+      "category": "Mapbox",
+      "description": "Mapbox API token",
+      "dialect": "js",
+      "id": "trivy:mapbox-api-token",
+      "keywords": [
+        "pk."
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "mapbox-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(pk\\.[a-z0-9]{60}\\.[a-z0-9]{22})",
+      "severity": "medium",
+      "title": "Mapbox API token"
+    },
+    {
+      "category": "MessageBird",
+      "description": "MessageBird API token",
+      "dialect": "js",
+      "id": "trivy:messagebird-api-token",
+      "keywords": [
+        "messagebird"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "messagebird-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>messagebird[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{25})['\\\"]",
+      "severity": "medium",
+      "title": "MessageBird API token"
+    },
+    {
+      "category": "MessageBird",
+      "description": "MessageBird API client ID",
+      "dialect": "js",
+      "id": "trivy:messagebird-client-id",
+      "keywords": [
+        "messagebird"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "messagebird-client-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>messagebird[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-h0-9]{8}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{12})['\\\"]",
+      "severity": "medium",
+      "title": "MessageBird API client ID"
+    },
+    {
+      "category": "NewRelic",
+      "description": "New Relic ingest browser API token",
+      "dialect": "js",
+      "id": "trivy:new-relic-browser-api-token",
+      "keywords": [
+        "NRJS-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "new-relic-browser-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"](NRJS-[a-f0-9]{19})['\\\"]",
+      "severity": "medium",
+      "title": "New Relic ingest browser API token"
+    },
+    {
+      "category": "NewRelic",
+      "description": "New Relic user API ID",
+      "dialect": "js",
+      "id": "trivy:new-relic-user-api-id",
+      "keywords": [
+        "newrelic"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "new-relic-user-api-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>newrelic[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[A-Z0-9]{64})['\\\"]",
+      "severity": "medium",
+      "title": "New Relic user API ID"
+    },
+    {
+      "category": "NewRelic",
+      "description": "New Relic user API Key",
+      "dialect": "js",
+      "id": "trivy:new-relic-user-api-key",
+      "keywords": [
+        "NRAK-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "new-relic-user-api-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"](NRAK-[A-Z0-9]{27})['\\\"]",
+      "severity": "medium",
+      "title": "New Relic user API Key"
+    },
+    {
+      "category": "Planetscale",
+      "description": "PlanetScale API token",
+      "dialect": "re2",
+      "id": "trivy:planetscale-api-token",
+      "keywords": [
+        "pscale_tkn_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "planetscale-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "pscale_tkn_(?i)[a-z0-9\\-_\\.]{43}",
+      "severity": "medium",
+      "title": "PlanetScale API token"
+    },
+    {
+      "category": "Planetscale",
+      "description": "PlanetScale password",
+      "dialect": "re2",
+      "id": "trivy:planetscale-password",
+      "keywords": [
+        "pscale_pw_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "planetscale-password",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "pscale_pw_(?i)[a-z0-9\\-_\\.]{43}",
+      "severity": "medium",
+      "title": "PlanetScale password"
+    },
+    {
+      "category": "Postman",
+      "description": "Postman API token",
+      "dialect": "re2",
+      "id": "trivy:postman-api-token",
+      "keywords": [
+        "PMAK-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "postman-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "PMAK-(?i)[a-f0-9]{24}\\-[a-f0-9]{34}",
+      "severity": "medium",
+      "title": "Postman API token"
+    },
+    {
+      "category": "RubyGems",
+      "description": "Rubygem API token",
+      "dialect": "js",
+      "id": "trivy:rubygems-api-token",
+      "keywords": [
+        "rubygems_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "rubygems-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "rubygems_[a-f0-9]{48}",
+      "severity": "medium",
+      "title": "Rubygem API token"
+    },
+    {
+      "category": "SendGrid",
+      "description": "SendGrid API token",
+      "dialect": "re2",
+      "id": "trivy:sendgrid-api-token",
+      "keywords": [
+        "SG."
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "sendgrid-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "SG\\.(?i)[a-z0-9_\\-\\.]{66}",
+      "severity": "medium",
+      "title": "SendGrid API token"
+    },
+    {
+      "category": "Slack",
+      "description": "Slack Webhook",
+      "dialect": "js",
+      "id": "trivy:slack-web-hook",
+      "keywords": [
+        "hooks.slack.com"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "slack-web-hook",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "https:\\/\\/hooks.slack.com\\/services\\/[A-Za-z0-9+\\/]{44,48}",
+      "severity": "medium",
+      "title": "Slack Webhook"
+    },
+    {
+      "category": "Twilio",
+      "description": "Twilio API Key",
+      "dialect": "js",
+      "id": "trivy:twilio-api-key",
+      "keywords": [
+        "SK"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "twilio-api-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "SK[0-9a-fA-F]{32}",
+      "severity": "medium",
+      "title": "Twilio API Key"
+    },
+    {
+      "category": "Adobe",
+      "description": "Adobe Client ID (Oauth Web)",
+      "dialect": "js",
+      "id": "trivy:adobe-client-id",
+      "keywords": [
+        "adobe"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "adobe-client-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>adobe[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-f0-9]{32})['\\\"]",
+      "severity": "low",
+      "title": "Adobe Client ID (Oauth Web)"
+    },
+    {
+      "category": "Adobe",
+      "description": "Adobe Client Secret",
+      "dialect": "re2",
+      "id": "trivy:adobe-client-secret",
+      "keywords": [
+        "p8e-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "adobe-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "(p8e-)(?i)[a-z0-9]{32}",
+      "severity": "low",
+      "title": "Adobe Client Secret"
+    },
+    {
+      "category": "Beamer",
+      "description": "Beamer API token",
+      "dialect": "js",
+      "id": "trivy:beamer-api-token",
+      "keywords": [
+        "beamer"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "beamer-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>beamer[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>b_[a-z0-9=_\\-]{44})['\\\"]",
+      "severity": "low",
+      "title": "Beamer API token"
+    },
+    {
+      "category": "ContentfulDelivery",
+      "description": "Contentful delivery API token",
+      "dialect": "js",
+      "id": "trivy:contentful-delivery-api-token",
+      "keywords": [
+        "contentful"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "contentful-delivery-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>contentful[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9\\-=_]{43})['\\\"]",
+      "severity": "low",
+      "title": "Contentful delivery API token"
+    },
+    {
+      "category": "Duffel",
+      "description": "Duffel API token",
+      "dialect": "re2",
+      "id": "trivy:duffel-api-token",
+      "keywords": [
+        "duffel_live_",
+        "duffel_test_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "duffel-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"]duffel_(test|live)_(?i)[a-z0-9_-]{43}['\\\"]",
+      "severity": "low",
+      "title": "Duffel API token"
+    },
+    {
+      "category": "Easypost",
+      "description": "EasyPost API token",
+      "dialect": "re2",
+      "id": "trivy:easypost-api-token",
+      "keywords": [
+        "EZAK",
+        "EZAT"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "easypost-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "['\\\"]EZ[AT]K(?i)[a-z0-9]{54}['\\\"]",
+      "severity": "low",
+      "title": "EasyPost API token"
+    },
+    {
+      "category": "Facebook",
+      "description": "Facebook token",
+      "dialect": "js",
+      "id": "trivy:facebook-token",
+      "keywords": [
+        "facebook"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "facebook-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>facebook[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-f0-9]{32})['\\\"]",
+      "severity": "low",
+      "title": "Facebook token"
+    },
+    {
+      "category": "Frameio",
+      "description": "Frame.io API token",
+      "dialect": "re2",
+      "id": "trivy:frameio-api-token",
+      "keywords": [
+        "fio-u-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "frameio-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "fio-u-(?i)[a-z0-9\\-_=]{64}",
+      "severity": "low",
+      "title": "Frame.io API token"
+    },
+    {
+      "category": "HubSpot",
+      "description": "HubSpot API token",
+      "dialect": "js",
+      "id": "trivy:hubspot-api-token",
+      "keywords": [
+        "hubspot"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "hubspot-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>hubspot[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-h0-9]{8}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{12})['\\\"]",
+      "severity": "low",
+      "title": "HubSpot API token"
+    },
+    {
+      "category": "Intercom",
+      "description": "Intercom API token",
+      "dialect": "js",
+      "id": "trivy:intercom-api-token",
+      "keywords": [
+        "intercom"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "intercom-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>intercom[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9=_]{60})['\\\"]",
+      "severity": "low",
+      "title": "Intercom API token"
+    },
+    {
+      "category": "Intercom",
+      "description": "Intercom client secret/ID",
+      "dialect": "js",
+      "id": "trivy:intercom-client-secret",
+      "keywords": [
+        "intercom"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "intercom-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>intercom[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-h0-9]{8}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{12})['\\\"]",
+      "severity": "low",
+      "title": "Intercom client secret/ID"
+    },
+    {
+      "category": "LinkedIn",
+      "description": "LinkedIn Client ID",
+      "dialect": "js",
+      "id": "trivy:linkedin-client-id",
+      "keywords": [
+        "linkedin"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "linkedin-client-id",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>linkedin[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{14})['\\\"]",
+      "severity": "low",
+      "title": "LinkedIn Client ID"
+    },
+    {
+      "category": "LinkedIn",
+      "description": "LinkedIn Client secret",
+      "dialect": "js",
+      "id": "trivy:linkedin-client-secret",
+      "keywords": [
+        "linkedin"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "linkedin-client-secret",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>linkedin[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z]{16})['\\\"]",
+      "severity": "low",
+      "title": "LinkedIn Client secret"
+    },
+    {
+      "category": "Lob",
+      "description": "Lob API Key",
+      "dialect": "js",
+      "id": "trivy:lob-api-key",
+      "keywords": [
+        "lob"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "lob-api-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>lob[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>(live|test)_[a-f0-9]{35})['\\\"]",
+      "severity": "low",
+      "title": "Lob API Key"
+    },
+    {
+      "category": "Lob",
+      "description": "Lob Publishable API Key",
+      "dialect": "js",
+      "id": "trivy:lob-pub-api-key",
+      "keywords": [
+        "lob"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "lob-pub-api-key",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>lob[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>(test|live)_pub_[a-f0-9]{31})['\\\"]",
+      "severity": "low",
+      "title": "Lob Publishable API Key"
+    },
+    {
+      "category": "Sendinblue",
+      "description": "Sendinblue API token",
+      "dialect": "re2",
+      "id": "trivy:sendinblue-api-token",
+      "keywords": [
+        "xkeysib-"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "sendinblue-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "xkeysib-[a-f0-9]{64}\\-(?i)[a-z0-9]{16}",
+      "severity": "low",
+      "title": "Sendinblue API token"
+    },
+    {
+      "category": "Shippo",
+      "description": "Shippo API token",
+      "dialect": "js",
+      "id": "trivy:shippo-api-token",
+      "keywords": [
+        "shippo_live_",
+        "shippo_test_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "shippo-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "shippo_(live|test)_[a-f0-9]{40}",
+      "severity": "low",
+      "title": "Shippo API token"
+    },
+    {
+      "category": "Stripe",
+      "description": "Stripe Publishable Key",
+      "dialect": "re2",
+      "id": "trivy:stripe-publishable-token",
+      "keywords": [
+        "pk_live_",
+        "pk_test_"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "stripe-publishable-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "",
+      "regexSource": "?P<secret>(?i)pk_(test|live)_[0-9a-z]{10,32}",
+      "severity": "low",
+      "title": "Stripe Publishable Key"
+    },
+    {
+      "category": "Twitch",
+      "description": "Twitch API token",
+      "dialect": "js",
+      "id": "trivy:twitch-api-token",
+      "keywords": [
+        "twitch"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "twitch-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>twitch[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-z0-9]{30})['\\\"]",
+      "severity": "low",
+      "title": "Twitch API token"
+    },
+    {
+      "category": "Twitter",
+      "description": "Twitter token",
+      "dialect": "js",
+      "id": "trivy:twitter-token",
+      "keywords": [
+        "twitter"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "twitter-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>twitter[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}['\\\"](?<secret>[a-f0-9]{35,44})['\\\"]",
+      "severity": "low",
+      "title": "Twitter token"
+    },
+    {
+      "category": "Typeform",
+      "description": "Typeform API token",
+      "dialect": "js",
+      "id": "trivy:typeform-api-token",
+      "keywords": [
+        "typeform"
+      ],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "typeform-api-token",
+        "source": "trivy@v0.72.0",
+        "sourceFile": "upstream/trivy/pkg/fanal/secret/builtin-rules.go"
+      },
+      "regexFlags": "i",
+      "regexSource": "(?<key>typeform[a-z0-9_ .\\-,]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}(?<secret>tfp_[a-z0-9\\-_\\.=]{59})",
+      "severity": "low",
+      "title": "Typeform API token"
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    "trivy@v0.72.0"
+  ]
+}

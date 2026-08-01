@@ -1,0 +1,8 @@
+# Generated detector tables. Owned end-to-end by scripts/repo/gen/, which emits
+# deterministic 2-space JSON so `data-is-regenerated` can diff committed bytes
+# against a fresh generation. oxfmt collapses short arrays onto one line, which
+# would make the formatter and the generator permanently disagree: format,
+# drift-check fails, regenerate, format again. Per the fleet rule that
+# generated artifacts are never format-gated, the generator is the sole
+# formatter of this tree.
+**/data/**

@@ -1,0 +1,15 @@
+{
+  "$schema": "./socket-wheelhouse-schema.json",
+  "schemaVersion": 1,
+  "repoName": "scan-patterns",
+  "repo": {
+    "type": "solo"
+  },
+  "build": {
+    "from": "npm-registry",
+    "type": "js"
+  },
+  "contentPolicy": {
+    "packages": ["."]
+  }
+}

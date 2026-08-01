@@ -1,0 +1,167 @@
+{
+  "rules": [
+    {
+      "category": "plugin_skills",
+      "description": "codex-security declares the \"deep_scan_phase_skills\" capability (kind: plugin_skills) for a deep security scan. Requires the plugin skills: attack-path-analysis, finding-discovery, security-scan, threat-model, validation.",
+      "dialect": "js",
+      "id": "codex-security:deep-scan-phase-skills",
+      "keywords": [
+        "attack-path-analysis",
+        "finding-discovery",
+        "security-scan",
+        "threat-model",
+        "validation"
+      ],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "deep_scan_phase_skills",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "deep scan phase skills"
+    },
+    {
+      "category": "config",
+      "description": "codex-security declares the \"agent_depth_2\" capability (kind: config) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:agent-depth-2",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "agent_depth_2",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "agent depth 2"
+    },
+    {
+      "category": "runtime",
+      "description": "codex-security declares the \"delegated_workers\" capability (kind: runtime) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:delegated-workers",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "delegated_workers",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "delegated workers"
+    },
+    {
+      "category": "runtime",
+      "description": "codex-security declares the \"goal_tools\" capability (kind: runtime) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:goal-tools",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "goal_tools",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "goal tools"
+    },
+    {
+      "category": "config",
+      "description": "codex-security declares the \"goals_enabled\" capability (kind: config) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:goals-enabled",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "goals_enabled",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "goals enabled"
+    },
+    {
+      "category": "multi_agent_mode",
+      "description": "codex-security declares the \"native_multi_agent_v2\" capability (kind: multi_agent_mode) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:native-multi-agent-v2",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "native_multi_agent_v2",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "native multi agent v2"
+    },
+    {
+      "category": "config_absent",
+      "description": "codex-security declares the \"sdk_v2_child_config_compatible\" capability (kind: config_absent) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:sdk-v2-child-config-compatible",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "sdk_v2_child_config_compatible",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "sdk v2 child config compatible"
+    },
+    {
+      "category": "multi_agent_capacity",
+      "description": "codex-security declares the \"usable_worker_slots_6\" capability (kind: multi_agent_capacity) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:usable-worker-slots-6",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "usable_worker_slots_6",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "usable worker slots 6"
+    },
+    {
+      "category": "multi_agent_capacity",
+      "description": "codex-security declares the \"usable_worker_slots_8\" capability (kind: multi_agent_capacity) for a deep security scan.",
+      "dialect": "js",
+      "id": "codex-security:usable-worker-slots-8",
+      "keywords": [],
+      "kind": "capability",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "usable_worker_slots_8",
+        "source": "codex-security@npm-v0.1.1",
+        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "usable worker slots 8"
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    "codex-security@npm-v0.1.1"
+  ]
+}

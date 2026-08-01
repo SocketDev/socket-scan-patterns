@@ -1,0 +1,4 @@
+{
+  "extends": "./.config/fleet/tsconfig.base.json",
+  "include": ["src/**/*.mts", "scripts/**/*.mts", "test/**/*.mts"]
+}
