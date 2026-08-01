@@ -8,8 +8,6 @@
 
 Canonical detector pattern tables for Socket's baseline security scanners.
 
-## Why this repo exists
-
 `socket scan secrets|workflows|agent-configs|skills|manifests` needs one
 authoritative set of detector patterns, and so do the composite-action wrappers
 in the public sauce repo. Keeping those tables in each consumer meant two
