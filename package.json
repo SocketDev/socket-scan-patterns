@@ -68,7 +68,8 @@
     "update": "node scripts/fleet/update.mts",
     "weekly-update": "node scripts/fleet/weekly-update.mts",
     "setup:sfw-ca": "node scripts/fleet/setup/sfw-ca.mts",
-    "get-green": "node scripts/fleet/get-green.mts"
+    "get-green": "node scripts/fleet/get-green.mts",
+    "weekly-update:ci": "gh workflow run weekly-update.lock.yml"
   },
   "devDependencies": {
     "@redwoodjs/agent-ci": "catalog:",
