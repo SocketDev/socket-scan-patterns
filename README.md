@@ -1,10 +1,10 @@
 # scan-patterns
 
 <a href="https://badge.socket.dev/npm/package/@socketsecurity/scan-patterns"><img src="https://badge.socket.dev/npm/package/@socketsecurity/scan-patterns" alt="Socket Badge" height="20"></a>
-![Coverage](assets/repo/badges/coverage.svg)
+![Coverage](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/repo/badges/coverage.svg)
 
-[![Follow @SocketSecurity](assets/fleet/badge-follow-x.svg)](https://twitter.com/SocketSecurity)
-[![Follow @socket.dev on Bluesky](assets/fleet/badge-follow-bluesky.svg)](https://bsky.app/profile/socket.dev)
+[![Follow @SocketSecurity](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/badge-follow-x.svg)](https://twitter.com/SocketSecurity)
+[![Follow @socket.dev on Bluesky](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/badge-follow-bluesky.svg)](https://bsky.app/profile/socket.dev)
 
 Canonical detector pattern tables for Socket's baseline security scanners.
 
@@ -118,8 +118,8 @@ MIT
 <br/>
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/fleet/socket-combomark-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/fleet/socket-combomark-light.svg">
-    <img width="420" height="120" alt="Socket" src="assets/fleet/socket-combomark-light.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/socket-combomark-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/socket-combomark-light.svg">
+    <img width="420" height="120" alt="Socket" src="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/socket-combomark-light.svg">
   </picture>
 </div>
