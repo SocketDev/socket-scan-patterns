@@ -50,7 +50,7 @@
     "materialize": "node scripts/repo/materialize-upstream.mts",
     "mcp:reset": "node scripts/fleet/mcp-reset.mts",
     "npm:publish": "node scripts/fleet/publish-pipeline.mts",
-    "prepare": "node scripts/fleet/install-git-hooks.mts && node scripts/fleet/prepare.mts",
+    "prepare": "node scripts/repo/bootstrap/prepare.mts && node scripts/fleet/install-git-hooks.mts && node scripts/fleet/prepare.mts",
     "prepublishOnly": "echo 'ERROR: Use GitHub Actions workflow for publishing' && exit 1",
     "security": "node scripts/fleet/security.mts",
     "setup-security-tools": "node .claude/hooks/fleet/setup-security-tools/install.mts",
@@ -69,9 +69,12 @@
     "weekly-update": "node scripts/fleet/weekly-update.mts",
     "setup:sfw-ca": "node scripts/fleet/setup/sfw-ca.mts",
     "get-green": "node scripts/fleet/get-green.mts",
-    "weekly-update:ci": "gh workflow run weekly-update.lock.yml"
+    "weekly-update:ci": "gh workflow run weekly-update.lock.yml",
+    "prune:backups": "node scripts/fleet/backup-branches.mts prune",
+    "prune:caches": "node scripts/fleet/prune-actions-caches.mts"
   },
   "devDependencies": {
+    "@actions/cache": "catalog:",
     "@redwoodjs/agent-ci": "catalog:",
     "@shadscan/cli": "catalog:",
     "@sinclair/typebox": "catalog:",
