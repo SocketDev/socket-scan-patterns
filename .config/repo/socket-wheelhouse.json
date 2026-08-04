@@ -1,7 +1,7 @@
 {
   "$schema": "./socket-wheelhouse-schema.json",
   "schemaVersion": 1,
-  "repoName": "scan-patterns",
+  "repoName": "socket-scan-patterns",
   "repo": {
     "type": "solo"
   },
