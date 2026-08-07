@@ -30,7 +30,7 @@ interface InstallConfig {
   readonly thin?: boolean | undefined;
   readonly wire?: boolean | undefined;
 }
-interface ThinConfig {
+interface UntrackFleetPackConfig {
   readonly dest: string;
   readonly manifest: BundleManifest;
 }
@@ -85,6 +85,30 @@ declare function beginMarker(style: FleetCommentStyle): string;
  * bare-tag form.
  */
 declare function endMarker(style: FleetCommentStyle): string;
+/**
+ * The open marker for the fetcher-owned `<fleet-pack>` gitignore region — the
+ * manifest-derived untrack entries live here, OUTSIDE the cascade's `<fleet>`
+ * region, so the cascade's block rewrite can never discard them (the defect
+ * that re-tracked every hydrated payload file on the next cascade). Hash form
+ * only: the region exists solely in `.gitignore`.
+ */
+declare function packBeginMarker(): string;
+/**
+ * The close marker for the fetcher-owned `<fleet-pack>` gitignore region.
+ */
+declare function packEndMarker(): string;
+/**
+ * Splice the fetcher-owned `<fleet-pack>` block into `target`. When the
+ * markers exist the whole region (markers inclusive) is REPLACED — that is
+ * what prunes a stale entry; the region is wholly fetcher-owned, so hand
+ * ignores belong outside it. When absent, the block is appended at end of
+ * file, after the cascade's `<fleet>` region and the member's `<repo>`
+ * wrapper, so the fleet splice's repo-region adjacency is never broken.
+ */
+declare function splicePackBlock(config: {
+  readonly packBlock: string;
+  readonly target: string;
+}): string;
 /**
  * The transitional long-form tag, bare form — every existing fleet member's
  * CLAUDE.md / .gitignore / .gitattributes still carries this pre-rename.
@@ -454,7 +478,7 @@ interface FleetFileManifest {
  * explicit list ignores exactly what the bundle supplies and nothing else.
  * The sync-prune is manifest-scoped too — see pruneStaleFleetFiles.
  */
-declare function thinIgnoreEntries(manifest: FleetFileManifest): string[];
+declare function fleetPackOwnedPaths(manifest: FleetFileManifest): string[];
 /**
  * The lines currently inside a target's fleet-marked gitignore block, or an
  * empty array when the target has no block. Used to carry the cascade's rules
@@ -462,12 +486,45 @@ declare function thinIgnoreEntries(manifest: FleetFileManifest): string[];
  */
 declare function extractFleetBlockLines(target: string): string[];
 /**
- * Apply thin mode: write a fleet-managed `.gitignore` block carrying the
- * cascade's existing rules plus the wholly-fleet bundle untrack paths (see
- * thinIgnoreEntries) and `.agents/`, then untrack them from git so the fetch
- * action repopulates them going forward.
+ * Strip the old refresh's per-file untrack entries from INSIDE the `<fleet>`
+ * region — they live in the fetcher-owned `<fleet-pack>` region now. The
+ * cascade's own rules in the region are preserved untouched; a file with no
+ * fleet region is returned unchanged. One-time migration shape: once a member
+ * has been cleaned (or its cascade rewrote the block), this is a no-op.
  */
-declare function applyThinMode(config: ThinConfig): void;
+declare function stripLegacyUntrackEntriesFromFleetBlock(target: string): string;
+/**
+ * Write the fetcher-owned `<fleet-pack>` `.gitignore` region: `.agents/` (the
+ * regenerated agent mirror — dead weight in a thin consumer; the fetch
+ * repopulates it) plus the wholly-fleet bundle untrack paths (see
+ * fleetPackOwnedPaths). The region is REGENERATED from the manifest on every
+ * run — replaced whole, so a stale entry from an earlier pack is pruned
+ * instead of carried forward (the old append-only refresh accreted every
+ * prior line forever). Hand-added ignores belong outside the markers and are
+ * untouched, as is the cascade's `<fleet>` region — the two writers own
+ * disjoint regions, so neither can discard the other's rules. The dep-0
+ * bootstrap (`scripts/repo/bootstrap/`) is NOT listed: it ships via the
+ * manual cascade, never the release bundle, so it never enters this untrack
+ * set and stays tracked by default.
+ *
+ * This is the HALF that is safe to run unconditionally for a thin consumer. It
+ * only edits `.gitignore`; it never touches the git index, so a member whose
+ * payload is still tracked keeps every file it has committed (gitignore has no
+ * effect on tracked paths). The index-mutating half lives in
+ * untrackFleetPackPaths and stays behind an explicit `--thin`.
+ */
+declare function refreshFleetPackIgnores(config: UntrackFleetPackConfig): void;
+/**
+ * Apply thin mode: refresh the gitignore block (refreshFleetPackIgnores), then
+ * untrack those paths from git so the fetch action repopulates them going
+ * forward. The `git rm --cached` is the CONVERSION step and is destructive —
+ * it drops files from the index — so it stays behind an explicit `--thin` and
+ * is never inferred from repo state. socket-vscode is the case that forces the
+ * distinction: it carries a pinned `bundle.ref` AND 81 still-tracked payload
+ * files, so inferring the untrack from the pin alone would silently delete
+ * them from its index on the next ordinary hydrate.
+ */
+declare function untrackFleetPackPaths(config: UntrackFleetPackConfig): void;
 //#endregion
 //#region scripts/repo/gen/bootstrap/src/lockstep.d.mts
 type LockStepStateName = 'current' | 'out-of-sync' | 'update-available';
@@ -600,6 +657,30 @@ declare function assertLockStep(config: {
   readonly manifestTemplateSha: string;
   readonly ref: string;
 }): boolean;
+declare const ERR_BUNDLE_BEHIND_LOCAL = "ERR_WHEELHOUSE_BUNDLE_BEHIND_LOCAL_TEMPLATE";
+/**
+ * True when a sibling wheelhouse checkout exists AND its HEAD is strictly
+ * DESCENDED from the bundle's template SHA — the bundle is a frozen snapshot
+ * of an older template, so unpacking it would roll the member backwards.
+ *
+ * `assertLockStep` only proves the bundle matches its own pin, which is a
+ * self-consistency check. It cannot see that the pin itself went stale. On a
+ * machine that also cascades from a local template, the two writers disagree
+ * and whichever runs last wins: the cascade writes current content, then
+ * `update`'s bundle pass restores the older snapshot over it. That reverted a
+ * Socket catalog pin, dropped fleet rules out of CLAUDE.md, and reintroduced a
+ * duplicated overrides block that broke `pnpm install` — each time reported as
+ * a successful update.
+ *
+ * Returns false when there is no local wheelhouse (a thin member, or CI),
+ * where the bundle IS the only source of truth and applying it is correct.
+ * Any git failure also returns false: this guard refuses a provably stale
+ * bundle, and never blocks on a question it could not answer.
+ */
+declare function isBundleBehindLocalTemplate(config: {
+  readonly dest: string;
+  readonly manifestTemplateSha: string;
+}): boolean;
 /**
  * Resolve the NEWEST `fleet-pack-<hex>` release tag via `gh release list`.
  * Returns the latest tag, or undefined when none / offline. The list is
@@ -643,28 +724,49 @@ interface MergeWorkspaceConfig {
   readonly consumerYaml: string;
   readonly fleetKeys: readonly string[];
 }
-/**
- * Parse a YAML string into an ordered list of top-level key blocks. Each block
- * owns all lines from the key line up to (not including) the next column-0 key
- * line or EOF.
- */
-declare function parseYamlKeyBlocks(yaml: string): Array<{
+interface YamlKeyBlock {
+  head: string[];
   key: string;
   lines: string[];
-}>;
+}
+/**
+ * Splice off a block's trailing separator run — the comment/blank lines at the
+ * END of `blockLines` when the very last line is a comment. That run sits
+ * directly above the NEXT top-level key, so it is that key's preamble, not
+ * documentation of this block's last entry. Mutates `blockLines`; returns the
+ * spliced run (empty when the block ends with content or blank lines only —
+ * bare trailing blanks stay put as inter-block spacing).
+ */
+declare function spliceYamlSeparatorRun(blockLines: string[]): string[];
+/**
+ * Parse a YAML string into an ordered list of top-level key blocks. Each
+ * block's `lines` run from the key line up to (not including) the next
+ * column-0 key line or EOF — except a trailing comment run directly above the
+ * next key, which attaches to that FOLLOWING block as its `head`: it is a
+ * separator headed for the next key (the `overrides:` preamble in a member's
+ * pnpm-workspace.yaml), and leaving it as body tail makes the entry-scoped
+ * merge strand it mid-block when consumer-only entries append after it.
+ * Comment lines before the first key become the first block's head.
+ */
+declare function parseYamlKeyBlocks(yaml: string): YamlKeyBlock[];
 interface YamlEntryChunk {
   id: string;
   lines: string[];
+}
+interface YamlEntryBody {
+  chunks: YamlEntryChunk[];
+  trailing: string[];
 }
 /**
  * Split a top-level key block's BODY lines into entry chunks. A chunk starts
  * at a map-entry or list-item line at the block's entry indent; comment and
  * blank lines BEFORE an entry attach to it as documentation for the entry
- * that immediately follows; deeper-indented lines are continuations. Returns
- * `undefined` when the body has no recognizable entries (scalar block —
- * nothing nested to merge).
+ * that immediately follows; deeper-indented lines are continuations. Comments
+ * and blanks after the last entry come back as `trailing`, unattached, since
+ * they document nothing that a merge can key on. Returns `undefined` when the
+ * body has no recognizable entries — a scalar block, nothing nested to merge.
  */
-declare function parseYamlEntryChunks(bodyLines: readonly string[]): YamlEntryChunk[] | undefined;
+declare function parseYamlEntryChunks(bodyLines: readonly string[]): YamlEntryBody | undefined;
 /**
  * Merge one fleet-managed top-level key block ENTRY-SCOPED — the workspace
  * analog of the Claude-settings splice that keeps repo hook registrations
@@ -673,18 +775,13 @@ declare function parseYamlEntryChunks(bodyLines: readonly string[]): YamlEntryCh
  * entries that appear only in the consumer block survive in their original
  * order after the fleet set. Scalar-shaped blocks (`saveExact: true`) have no
  * nested entries, so the bundle block replaces wholesale. Trailing blank lines
- * follow the consumer block so inter-block spacing is preserved.
+ * follow the consumer block so inter-block spacing is preserved. The merged
+ * block's head (the separator run above its key) is the BUNDLE's when the
+ * bundle ships one — canonical text, and it retires a stale consumer copy —
+ * falling back to the consumer's so local spacing and comments survive when
+ * the bundle has none.
  */
-declare function mergeYamlKeyBlock(bundleBlock: {
-  key: string;
-  lines: string[];
-}, consumerBlock: {
-  key: string;
-  lines: string[];
-}): {
-  key: string;
-  lines: string[];
-};
+declare function mergeYamlKeyBlock(bundleBlock: YamlKeyBlock, consumerBlock: YamlKeyBlock): YamlKeyBlock;
 /**
  * Merge the fleet-managed workspace sections from `bundleFleetSections` into
  * `consumerYaml`, scoped to the keys listed in `fleetKeys` — and, within each
@@ -713,4 +810,4 @@ declare function runStatus(config: InstallConfig): number;
 declare function installFleet(config: InstallConfig): Promise<number>;
 declare function isMainModule(): boolean;
 //#endregion
-export { AuthChallenge, BundleConfig, BundleFetchFn, BundleManifest, ERR_LOCKSTEP_MISMATCH, FLEET_STATUS_SCRIPT, FetchedBundle, FetchedFiles, FleetCommentStyle, FleetFileManifest, GHCR_HOST, GhcrHttpGetFn, GhcrHttpOptions, GhcrHttpResponse, InstallConfig, LockStepConfig, LockStepErrorParts, LockStepInputs, LockStepState, LockStepStateName, MANIFEST_ACCEPT, MergeWorkspaceConfig, NoticeDecisionInputs, NoticeStore, OciLayer, OciManifest, PREPARE_FETCH, PullBundleConfig, RefValidation, SETTINGS_CANDIDATES, SYNC_FLEET_SCRIPT, SegmentEntry, SettingsSegmentEntry, SpliceConfig, TarExtractConfig, ThinConfig, UPDATE_NOTIFIER_OPT_OUT_ENV, WorkspaceSegmentEntry, YamlEntryChunk, applyMovedPaths, applyThinMode, assertLockStep, beginMarker, computeSha256, endMarker, errorMessage, extractFleetBlockLines, extractManifestFromTarball, fetchBlob, fetchBundleSource, fetchOciManifest, firstHeader, formatLockStepError, formatUpdateNotice, getGhcrToken, ghReleaseFetchBundle, ghcrBundleRepo, ghcrFetchBundle, ghcrTokenUrl, httpGet, installFiles, installFleet, installSegments, installSettingsSegment, installWorkspaceSegment, isMainModule, legacyBeginMarker, legacyEndMarker, legacyTagBeginMarker, legacyTagEndMarker, lockStepExitCode, maybeShowUpdateNotice, mergeWorkspaceYaml, mergeYamlKeyBlock, normalizeBundlePath, normalizeManifestEntryPath, parseArgs, parseWwwAuthenticate, parseYamlEntryChunks, parseYamlKeyBlocks, pickBundleLayer, printStatusReport, pruneStaleFleetFiles, pullFleetBundleTarball, readAppliedFiles, readAppliedRef, readBundleConfig, readBundleRef, readManifest, readNoticeStore, removeTombstonedPaths, resolveLockStepState, resolveNewestRef, resolveReleaseTemplateSha, resolveRepoRoot, resolveSettingsPath, run, runStatus, segmentFileName, sha256Hex, shouldShowNotice, spliceFleetBlock, statusJson, tarExecutable, tarExtractArgs, thinIgnoreEntries, tokenFromBody, untrackGeneratedOutputs, validateBundleBlock, validateCascadeSha, validateRef, verifyBundleFiles, verifySegments, wirePackageJson, writeAppliedFiles, writeAppliedRef, writeNoticeStore };
+export { AuthChallenge, BundleConfig, BundleFetchFn, BundleManifest, ERR_BUNDLE_BEHIND_LOCAL, ERR_LOCKSTEP_MISMATCH, FLEET_STATUS_SCRIPT, FetchedBundle, FetchedFiles, FleetCommentStyle, FleetFileManifest, GHCR_HOST, GhcrHttpGetFn, GhcrHttpOptions, GhcrHttpResponse, InstallConfig, LockStepConfig, LockStepErrorParts, LockStepInputs, LockStepState, LockStepStateName, MANIFEST_ACCEPT, MergeWorkspaceConfig, NoticeDecisionInputs, NoticeStore, OciLayer, OciManifest, PREPARE_FETCH, PullBundleConfig, RefValidation, SETTINGS_CANDIDATES, SYNC_FLEET_SCRIPT, SegmentEntry, SettingsSegmentEntry, SpliceConfig, TarExtractConfig, UPDATE_NOTIFIER_OPT_OUT_ENV, UntrackFleetPackConfig, WorkspaceSegmentEntry, YamlEntryBody, YamlEntryChunk, YamlKeyBlock, applyMovedPaths, assertLockStep, beginMarker, computeSha256, endMarker, errorMessage, extractFleetBlockLines, extractManifestFromTarball, fetchBlob, fetchBundleSource, fetchOciManifest, firstHeader, fleetPackOwnedPaths, formatLockStepError, formatUpdateNotice, getGhcrToken, ghReleaseFetchBundle, ghcrBundleRepo, ghcrFetchBundle, ghcrTokenUrl, httpGet, installFiles, installFleet, installSegments, installSettingsSegment, installWorkspaceSegment, isBundleBehindLocalTemplate, isMainModule, legacyBeginMarker, legacyEndMarker, legacyTagBeginMarker, legacyTagEndMarker, lockStepExitCode, maybeShowUpdateNotice, mergeWorkspaceYaml, mergeYamlKeyBlock, normalizeBundlePath, normalizeManifestEntryPath, packBeginMarker, packEndMarker, parseArgs, parseWwwAuthenticate, parseYamlEntryChunks, parseYamlKeyBlocks, pickBundleLayer, printStatusReport, pruneStaleFleetFiles, pullFleetBundleTarball, readAppliedFiles, readAppliedRef, readBundleConfig, readBundleRef, readManifest, readNoticeStore, refreshFleetPackIgnores, removeTombstonedPaths, resolveLockStepState, resolveNewestRef, resolveReleaseTemplateSha, resolveRepoRoot, resolveSettingsPath, run, runStatus, segmentFileName, sha256Hex, shouldShowNotice, spliceFleetBlock, splicePackBlock, spliceYamlSeparatorRun, statusJson, stripLegacyUntrackEntriesFromFleetBlock, tarExecutable, tarExtractArgs, tokenFromBody, untrackFleetPackPaths, untrackGeneratedOutputs, validateBundleBlock, validateCascadeSha, validateRef, verifyBundleFiles, verifySegments, wirePackageJson, writeAppliedFiles, writeAppliedRef, writeNoticeStore };
