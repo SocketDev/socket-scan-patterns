@@ -87,15 +87,17 @@ export function skillSpectorCategoryFromModule(moduleName: string): string {
  */
 export function parseSkillSpectorModuleFlags(source: string): string {
   let flags = ''
-  // oxlint-disable-next-line socket/no-source-sniffing -- upstream is a pinned Python module with no importable typed export; reading its re.* constants is the only way to recover match flags.
+  // Upstream is a pinned Python module with no importable typed export;
+  // reading its re.* constants is the only way to recover match flags.
+  // oxlint-disable-next-line socket/no-source-sniffing -- pinned Python source
   if (source.includes('re.IGNORECASE')) {
     flags += 'i'
   }
-  // oxlint-disable-next-line socket/no-source-sniffing -- see above; pinned Python source.
+  // oxlint-disable-next-line socket/no-source-sniffing -- pinned Python source
   if (source.includes('re.MULTILINE')) {
     flags += 'm'
   }
-  // oxlint-disable-next-line socket/no-source-sniffing -- see above; pinned Python source.
+  // oxlint-disable-next-line socket/no-source-sniffing -- pinned Python source
   if (source.includes('re.DOTALL')) {
     flags += 's'
   }

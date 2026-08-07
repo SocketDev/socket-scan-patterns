@@ -13,7 +13,9 @@
  *   away — a one-line edit rather than a sweep.
  */
 
-// oxlint-disable-next-line socket/prefer-stable-self-import -- package is unpublished (0.0.0), so no -stable surface exists yet; see the docblock above. Single chokepoint for the whole scripts/ tree.
+// The package is unpublished (0.0.0), so no -stable surface exists yet;
+// this file is the single chokepoint for the whole scripts/ tree.
+// oxlint-disable-next-line socket/prefer-stable-self-import -- see docblock
 export type {
   PatternDialect,
   PatternKind,
@@ -24,5 +26,6 @@ export type {
   ScannerName,
 } from '../../../../src/types.mts'
 
-// oxlint-disable-next-line socket/prefer-stable-self-import -- see above; the runtime constant travels with the types it describes.
+// The runtime constant travels with the types it describes.
+// oxlint-disable-next-line socket/prefer-stable-self-import -- see docblock
 export { PATTERN_TABLE_SCHEMA_VERSION } from '../../../../src/types.mts'
