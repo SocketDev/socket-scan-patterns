@@ -3,11 +3,14 @@
   "schemaVersion": 1,
   "repoName": "socket-scan-patterns",
   "bundle": {
-    "ref": "fleet-pack-1e0fb3551ebcf541535e02b08ce452bfb482ed44",
-    "cascadeSha": "1e0fb3551ebcf541535e02b08ce452bfb482ed44"
+    "ref": "fleet-pack-49972f011801b1bfef542097f54d612d80d565c8",
+    "cascadeSha": "49972f011801b1bfef542097f54d612d80d565c8"
   },
   "repo": {
     "type": "solo"
+  },
+  "ai": {
+    "localAssist": true
   },
   "build": {
     "from": "npm-registry",
