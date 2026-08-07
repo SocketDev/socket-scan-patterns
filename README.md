@@ -1,7 +1,7 @@
 # scan-patterns
 
 <a href="https://badge.socket.dev/npm/package/@socketsecurity/scan-patterns"><img src="https://badge.socket.dev/npm/package/@socketsecurity/scan-patterns" alt="Socket Badge" height="20"></a>
-![Coverage](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/repo/badges/coverage.svg)
+<img src="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/coverage.svg" width="90" height="20" alt="Coverage" />
 
 [![Follow @SocketSecurity](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/badge-follow-x.svg)](https://twitter.com/SocketSecurity)
 [![Follow @socket.dev on Bluesky](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/badge-follow-bluesky.svg)](https://bsky.app/profile/socket.dev)
@@ -25,7 +25,7 @@ construction.** Deriving AGPL rules into an MIT package would relicense the
 package, so the posture is clean-room: this repo may observe TruffleHog's
 _tests_ and never its implementation. Its sparse-checkout admits only
 `*_test.go` files and `testdata/` fixtures, so not one line of implementation
-lands on disk — absence is the block, not a rule asking people to behave. The
+lands on disk - absence is the block, not a rule asking people to behave. The
 coverage oracle infers detector families from test file paths alone (that
 `pkg/detectors/stripe/stripe_test.go` exists proves a Stripe detector exists)
 and _reports_ gaps; it never gates. No generator reads TruffleHog, no table row
@@ -44,7 +44,7 @@ authoritative per-package license data through
 `LicenseDetails` carries `spdxDisj` (the SPDX expression in disjunctive normal
 form), `authors[]`, `provenance` (package.json / LICENSE file / README),
 `filepath`, and a confidence score, and the batch endpoints accept
-`include_license_details`. Anything in this repo — or downstream of it — that
+`include_license_details`. Anything in this repo - or downstream of it - that
 needs "what license is this dependency" consumes that. No regex license
 sniffing, ever.
 

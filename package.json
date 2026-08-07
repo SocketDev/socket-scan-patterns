@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Canonical detector pattern tables for Socket's baseline security scanners",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SocketDev/socket-scan-patterns"
+  },
   "files": [
     "CHANGELOG.md",
     "DISCLOSURE",
@@ -95,13 +99,16 @@
     "magic-string": "catalog:",
     "markdownlint-cli2": "catalog:",
     "mdast-util-from-markdown": "catalog:",
+    "mdast-util-gfm": "catalog:",
     "micromark": "catalog:",
+    "micromark-extension-gfm": "catalog:",
     "neosanitize": "catalog:",
     "nock": "catalog:",
     "npm-high-impact": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
+    "parse5": "catalog:",
     "playwright-core": "catalog:",
     "portless": "catalog:",
     "regjsparser": "catalog:",

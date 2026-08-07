@@ -59,5 +59,8 @@ openly for the same reason.
 Reporting
 ---------
 
+The full source, including every generator and pinned upstream slice, is
+public at https://github.com/SocketDev/socket-scan-patterns for review.
+
 Security concerns about this package: https://socket.dev/security or the
 repository's SECURITY policy.
