@@ -1,7 +1,7 @@
 # scan-patterns
 
 <a href="https://badge.socket.dev/npm/package/@socketsecurity/scan-patterns"><img src="https://badge.socket.dev/npm/package/@socketsecurity/scan-patterns" alt="Socket Badge" height="20"></a>
-<img src="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/coverage.svg" width="90" height="20" alt="Coverage" />
+<img src="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/repo/coverage.svg" width="90" height="20" alt="Coverage" />
 
 [![Follow @SocketSecurity](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/badge-follow-x.svg)](https://twitter.com/SocketSecurity)
 [![Follow @socket.dev on Bluesky](https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/badge-follow-bluesky.svg)](https://bsky.app/profile/socket.dev)
