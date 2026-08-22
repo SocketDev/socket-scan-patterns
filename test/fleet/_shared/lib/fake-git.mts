@@ -1,7 +1,7 @@
 /**
  * @file An in-process `GitRunner` that answers canned output, so a test can
  *   drive git-shaped code with zero subprocesses. This is the fast path: pair
- *   it with the `GitRunner` seam in
+ *   it with the injected `GitRunner` in
  *   `.claude/hooks/fleet/_shared/git-runner.mts` and a suite that spent seconds
  *   forking git spends microseconds instead. Reach for the real fixtures in
  *   `./git-fixture.mts` only when the test is about git's own behavior. **An
@@ -285,9 +285,9 @@ export function fakeGitRunner(
 }
 
 /**
- * Narrow a {@link FakeGitRunner} to the plain seam type. Handy when passing one
- * into a function that takes a `GitRunner` and the extra members would widen an
- * inferred type.
+ * Narrow a {@link FakeGitRunner} to the plain runner type. Handy when passing
+ * one into a function that takes a `GitRunner` and the extra members would
+ * widen an inferred type.
  */
 export function asGitRunner(fake: FakeGitRunner): GitRunner {
   return fake

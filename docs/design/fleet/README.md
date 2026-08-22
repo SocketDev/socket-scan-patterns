@@ -340,7 +340,7 @@ For Node CLIs / TUI tools, mirror the CSS palette in your terminal with the
 matching socket-lib helper:
 
 ```ts
-import { getPalette } from '@socketsecurity/lib/colors/socket-palette'
+import { getPalette } from '@socketsecurity/lib/term/colors/palette/socket'
 
 const palette = getPalette('dark')
 console.log(palette.success('Done'))

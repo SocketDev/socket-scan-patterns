@@ -19,6 +19,7 @@ import { afterAll, afterEach, beforeAll, expect } from 'vitest'
 
 import { isolateGitEnv } from '../../../.git-hooks/_shared/isolate-git-env.mts'
 import { prepareSubprocessCoverageEnv } from '../_shared/lib/coverage-env.mts'
+import { isolateHomeEnv } from '../_shared/lib/isolate-home-env.mts'
 import { toContainPathResult } from '../_shared/lib/matchers.mts'
 
 // Neutralize the inherited git env so a test's `git` spawns can't touch the
@@ -27,6 +28,18 @@ import { toContainPathResult } from '../_shared/lib/matchers.mts'
 // that do live under node:test, which strips-only). Single source of truth in
 // .git-hooks/_shared/isolate-git-env.mts.
 isolateGitEnv({ pinConfigToNull: true })
+
+// Point HOME and the XDG dirs at a throwaway dir under os.tmpdir(), so a test
+// cannot read or write the developer's real home. This is the filesystem
+// counterpart to the git isolation above and the network fail-closed below: a
+// run should not depend on, or disturb, anything outside the repo and tmp.
+//
+// Measured, not assumed: a socket-lib run with HOME redirected leaves
+// `.socket/_dlx/{jre,sbt}`, `.socket/_cacache/`, `.npm/_logs/` and
+// `Library/Caches/` behind. Unredirected, all of that lands in the real home,
+// and a test enumerating the dlx cache then counts binaries the machine
+// happened to download rather than the ones it created.
+isolateHomeEnv()
 
 // Subprocess coverage capture (cover.mts sets FLEET_CHILD_V8_COVERAGE_DIR).
 // This also drops the already-consumed COVERAGE flag so a test-spawned Vitest

@@ -12,6 +12,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { whichSync } from '@socketsecurity/lib-stable/bin/which'
 import { isSpawnExitError } from '@socketsecurity/lib-stable/process/spawn/errors'
 import { spawn } from '@socketsecurity/lib-stable/process/spawn/child'
 import { describe, expect, it } from 'vitest'
@@ -19,6 +20,26 @@ import { describe, expect, it } from 'vitest'
 const CLI = fileURLToPath(
   new URL('../../../scripts/fleet/comment-voice.mts', import.meta.url),
 )
+
+/**
+ * The interpreter to spawn the CLI with. The CLI reaches `node:sqlite` via
+ * `process.getBuiltinModule`, which Bun does not back the same way — under
+ * `bun test`, `process.execPath` IS bun, so spawning the CLI with it runs the
+ * Node-only tool under Bun and crashes. The CLI is Node-targeted regardless of
+ * which runtime hosts this test, so the bun case resolves node off PATH.
+ */
+function resolveNodeBinSync(): string {
+  if (!process.versions['bun']) {
+    return process.execPath
+  }
+  const resolved = whichSync('node')
+  if (typeof resolved !== 'string') {
+    throw new Error('no node binary on PATH to host the Node-targeted CLI')
+  }
+  return resolved
+}
+
+const NODE_BIN = resolveNodeBinSync()
 
 /**
  * Runs the CLI and answers its exit code plus stdout. A non-zero exit is a
@@ -29,7 +50,7 @@ async function runProc(
   args: string[],
   stdin?: string | undefined,
 ): Promise<{ code: number; stdout: string }> {
-  const running = spawn(process.execPath, [CLI, ...args], {
+  const running = spawn(NODE_BIN, [CLI, ...args], {
     // NO_HYPERLINK pins the copy affordance to its pbcopy-line branch so
     // the assertion does not depend on the invoking terminal.
     env: { ...process.env, NO_HYPERLINK: '1' },
