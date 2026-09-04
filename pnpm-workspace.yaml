@@ -251,6 +251,7 @@ catalog:
   'vitiate': 0.3.1
   '@vitiate/core': 0.3.1
 
+  'yaml': 2.9.0
 overrides:
   # Fleet-canonical overrides (managed by socket-wheelhouse sync; do not edit).
   '@sinclair/typebox': 'catalog:'
