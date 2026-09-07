@@ -227,7 +227,7 @@ export async function main(): Promise<number> {
     bypassPhrasePresent(
       payload.transcript_path,
       BYPASS_PHRASE,
-      BYPASS_LOOKBACK_USER_TURNS,
+      { lookbackUserTurns: BYPASS_LOOKBACK_USER_TURNS },
     )
   ) {
     return 0

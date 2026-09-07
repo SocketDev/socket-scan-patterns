@@ -158,7 +158,7 @@ export function parseZizmorAuditDocs(
  * capability table, and the reference-link definitions that follow it.
  */
 export function extractZizmorSummary(sectionBody: string): string {
-  const lines = sectionBody.split('\n')
+  const lines = sectionBody.split(/\r?\n/)
   const paragraph: string[] = []
   for (let i = 1, { length } = lines; i < length; i += 1) {
     const line = lines[i]!.trim()

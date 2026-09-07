@@ -151,7 +151,7 @@ export function splitTrivyRuleBodies(source: string): readonly string[] {
   }
   const region = source.slice(start)
   const bodies: string[] = []
-  const lines = region.split('\n')
+  const lines = region.split(/\r?\n/)
   let current: string[] | undefined
   let depth = 0
   for (let i = 1, { length } = lines; i < length; i += 1) {

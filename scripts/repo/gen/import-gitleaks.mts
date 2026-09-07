@@ -48,7 +48,7 @@ export const GITLEAKS_DEFAULT_SEVERITY = 'high'
  */
 export function splitGitleaksRuleBlocks(toml: string): readonly string[] {
   const blocks: string[] = []
-  const lines = toml.split('\n')
+  const lines = toml.split(/\r?\n/)
   let current: string[] | undefined
   for (let i = 0, { length } = lines; i < length; i += 1) {
     const line = lines[i]!

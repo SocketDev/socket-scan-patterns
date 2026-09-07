@@ -62,7 +62,7 @@ export function parseCodexCapabilities(
   toml: string,
 ): readonly CodexCapability[] {
   const capabilities: CodexCapability[] = []
-  const lines = toml.split('\n')
+  const lines = toml.split(/\r?\n/)
   let name: string | undefined
   let body: string[] = []
 
