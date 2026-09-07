@@ -116,6 +116,7 @@ pnpm run check:coverage-oracle
 MIT
 
 <br/>
+
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SocketDev/socket-scan-patterns/HEAD/assets/fleet/socket-combomark-dark.svg">
