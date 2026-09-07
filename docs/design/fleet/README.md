@@ -25,11 +25,10 @@ order:
 2. **Tokens + components - this guide.** `tokens.css` + `components.css` are the
    single source of truth for color, type, spacing, motion, and the component
    recipes. Never hand-roll a hex or spacing value a token already names.
-3. **Brand assets - `assets/`.** The Socket wordmark lockups (light/dark),
-   favicon, avatar, shield, and follow badges live under `assets/`. The
-   `assets/` subset cascades to every repo; the full kit stays in the
-   wheelhouse. Use the lockup for the README `<picture>` footer and the favicon
-   for hosted surfaces - don't recreate the mark from the brand colors below.
+3. **Brand assets - `assets/fleet/`.** Shared Socket marks and follow badges
+   live under `assets/fleet/`. Repo-specific marks and coverage badges live
+   under `assets/repo/`. Use the Socket combomark near the README title when
+   the repo has no mark of its own. Keep the footer free of repeated marks.
 
 Onboarding a UI repo (e.g. meander) means opting into `docs/design/fleet/`: copy it
 once and the cascade keeps it byte-identical thereafter; your own app-specific
@@ -60,7 +59,7 @@ That's it. No build step, no PostCSS, no preprocessor.
 
 ## Themes
 
-Four themes ship in `tokens.css`:
+Three theme settings ship in `tokens.css`:
 
 ```text
   light       Default. Cream + ink for product surfaces.
@@ -73,20 +72,6 @@ Switch themes by setting `data-theme` on `<html>`:
 ```js
 document.documentElement.setAttribute('data-theme', 'dark')
 ```
-
-<details>
-<summary><b>ASCII swatches</b>: the four themes side by side</summary>
-
-```text
-  light       dark        system
-  ┌─────┐     ┌─────┐     ┌─────┐      ┌─────┐
-  │ FFF │     │ 0A0 │     │ 1A0 │      │ ??? │
-  │ 18Z │     │ F4Z │     │ F8F │      │ OS  │
-  │ purp│     │ lav │     │ pink│      │     │
-  └─────┘     └─────┘     └─────┘      └─────┘
-```
-
-</details>
 
 If you don't set `data-theme`, you get `light`. If you set `data-theme="system"`,
 the user's OS preference picks light or dark.
@@ -106,9 +91,8 @@ mode) or `--mkt-glow` instead.
 
 ### Core (shadcn) vs marketing
 
-The core UI tokens follow shadcn/ui's semantic naming - every surface has a
-paired `-foreground`, so text-on-surface contrast is guaranteed. Pick based on
-what you're building:
+The core UI tokens follow shadcn/ui's semantic naming. Use each surface with
+its paired `-foreground` token, then check contrast in the rendered UI.
 
 ```text
   shadcn core   Chrome — dashboards, extensions, dev tools, popups.
@@ -138,13 +122,13 @@ Mockups, side-by-side:
 
 Semantic palette - same names across all themes, hue tuned per theme:
 
-| Token              | Light     | Dark      | Synthwave | Use case               |
-| ------------------ | --------- | --------- | --------- | ---------------------- |
-| `--status-success` | `#15803d` | `#4ade80` | `#50fa7b` | Deploy completed       |
-| `--status-warning` | `#a16207` | `#facc15` | `#f1fa8c` | Stale data in field    |
-| `--status-alert`   | `#9a3412` | `#fb923c` | `#ffb86c` | In-progress retry      |
-| `--destructive`   | `#b91c1c` | `#f87171` | `#ff6b9d` | Run failed, fix needed |
-| `--status-info`    | `#1d4ed8` | `#60a5fa` | `#8be9fd` | Neutral information    |
+| Token              | Light     | Dark      | Use case               |
+| ------------------ | --------- | --------- | ---------------------- |
+| `--status-success` | `#15803d` | `#4ade80` | Deploy completed       |
+| `--status-warning` | `#a16207` | `#facc15` | Stale data in field    |
+| `--status-alert`   | `#9a3412` | `#fb923c` | In-progress retry      |
+| `--destructive`    | `#b91c1c` | `#f87171` | Run failed, fix needed |
+| `--status-info`    | `#1d4ed8` | `#60a5fa` | Neutral information    |
 
 Use case rules of thumb:
 
@@ -292,28 +276,10 @@ when the moment passes.
 
 ## Accessibility
 
-Every color pair in `tokens.css` has been verified to clear **WCAG AA**
-(contrast ratio ≥ 4.5:1) against its native background. The fleet ships a
-contrast lint:
-
-```bash
-node scripts/check-contrast.mts
-```
-
-Wired into `pnpm check`, so a token tweak that drops a pair below AA fails
-the build. Example output:
-
-```text
-  log .ok    #9af7c0   7.34  AAA
-  log .warn  #ffd285   6.61  AAA
-  log .err   #ffaaaa   5.17  AA
-  ticker.ok  #0a5e2c   7.26  AAA  (light theme)
-
-  All status colors clear WCAG AA.
-```
-
-If you add a new color combination, add it to the `design.contrast` block of
-your repo's `.config/repo/socket-wheelhouse.json` marker so the lint covers it.
+Check text contrast against its rendered background in light and dark modes.
+Use at least 4.5:1 for normal text. Tokens alone do not verify contrast after
+opacity, overlays, or component styles change the colors. Add contrast checks
+to the consuming UI's tests; this template does not include a contrast checker.
 
 ## Animations
 
@@ -370,7 +336,7 @@ to `getPalette()`.
 - **Don't disable a button by removing its click handler.** Apply `:disabled`
   or `aria-disabled="true"` so screen readers and keyboard users know.
 - **Don't ship contrast < 4.5:1 even if it "looks fine" on your monitor.**
-  Run the lint - your screen isn't the user's.
+  Check the rendered color pair.
 - **Don't write custom `@keyframes` when one of `spin` / `shimmer` /
   `pulse` already covers it.** Fewer animations = more predictable.
 - **Don't override tokens in component CSS.** If a component needs a
@@ -382,7 +348,7 @@ to `getPalette()`.
 
 Copy a section of `tokens.css`, change the `data-theme` selector, override
 **only** the tokens that should change. The cascade handles the rest. Run
-the contrast lint to verify any combination you didn't inherit.
+contrast checks to verify any combination you didn't inherit.
 
 ### Add a new component
 
@@ -395,5 +361,5 @@ hex literals, no magic numbers - even `padding: 13px` is a smell (use
 Add it to all three theme blocks in `tokens.css` (light, dark,
 and the `prefers-color-scheme: dark` system override). Pick perceptually
 matched values, same lightness but different hue, so the token tells the
-same story across themes. Run the contrast lint to verify any pair against
+same meaning across themes. Check each pair against
 its surface.

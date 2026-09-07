@@ -9,9 +9,28 @@ import { mkdtempSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 
-import { describe, expect, it } from 'vitest'
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
+import { safeDelete } from '@socketsecurity/lib-stable/fs/safe'
+import { closeSocketState } from '../../../scripts/fleet/state/db.mts'
+import { clearPath, setPath } from '../../../scripts/fleet/paths.mts'
 
 import { runCli } from '../../../scripts/fleet/comment-voice.mts'
+
+const stateDirectory = mkdtempSync(
+  path.join(os.tmpdir(), 'comment-voice-integration-'),
+)
+
+beforeAll(() => {
+  closeSocketState()
+  setPath('socket-state-dir', stateDirectory)
+  vi.stubEnv('VOICE_PROFILE_JSON', '')
+})
+afterAll(async () => {
+  closeSocketState()
+  clearPath('socket-state-dir')
+  vi.unstubAllEnvs()
+  await safeDelete(stateDirectory)
+})
 
 const capture = () => {
   const lines: string[] = []
@@ -37,8 +56,7 @@ describe('runCli', () => {
   })
 
   it('reads a file argument and passes a clean draft', async () => {
-    const dir = mkdtempSync(path.join(os.tmpdir(), 'comment-voice-'))
-    const file = path.join(dir, 'draft.md')
+    const file = path.join(stateDirectory, 'draft.md')
     writeFileSync(file, '👍 - resolved at head.')
     const io = capture()
     expect(await runCli(['--thread', file], io)).toBe(0)

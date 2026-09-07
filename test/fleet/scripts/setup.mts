@@ -24,7 +24,7 @@ import { toContainPathResult } from '../_shared/lib/matchers.mts'
 
 // Neutralize the inherited git env so a test's `git` spawns can't touch the
 // live repo. The stronger `pinConfigToNull` form is safe here — no vitest
-// fixture manipulates a controlled global git config (the signing-gate tests
+// fixture manipulates a controlled global `git config` (the signing-gate tests
 // that do live under node:test, which strips-only). Single source of truth in
 // .git-hooks/_shared/isolate-git-env.mts.
 isolateGitEnv({ pinConfigToNull: true })
@@ -77,13 +77,16 @@ expect.extend({
 })
 
 declare module 'vitest' {
-  // Declaration merging requires the exact upstream type parameters (vitest's
-  // Matchers<T = any>).
-  // oxlint-disable-next-line typescript/no-explicit-any -- declaration merging
-  interface Matchers<T = any> {
+  // Declaration merging requires the EXACT upstream type parameters. vitest 5
+  // reordered them to `<R extends void | Promise<void>, T = unknown>`, so the
+  // former single `<T = any>` no longer merges and tsc rejects the file.
+  interface Matchers<
+    R extends void | Promise<void> = void | Promise<void>,
+    T = unknown,
+  > {
     // Assert the received path string contains `expected` after both are
     // normalized to "/" separators — cross-platform path assertions without
     // per-OS branching.
-    toContainPath: (expected: string) => T
+    toContainPath: (expected: string) => R
   }
 }

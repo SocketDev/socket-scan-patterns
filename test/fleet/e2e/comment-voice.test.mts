@@ -12,10 +12,16 @@ import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { whichSync } from '@socketsecurity/lib-stable/bin/which'
+import { whichSync } from '@socketsecurity/lib-stable/exe/path/which'
 import { isSpawnExitError } from '@socketsecurity/lib-stable/process/spawn/errors'
 import { spawn } from '@socketsecurity/lib-stable/process/spawn/child'
-import { describe, expect, it } from 'vitest'
+import { afterAll, describe, expect, it } from 'vitest'
+import { safeDelete } from '@socketsecurity/lib-stable/fs/safe'
+
+const stateDirectory = mkdtempSync(path.join(os.tmpdir(), 'comment-voice-e2e-'))
+afterAll(async () => {
+  await safeDelete(stateDirectory)
+})
 
 const CLI = fileURLToPath(
   new URL('../../../scripts/fleet/comment-voice.mts', import.meta.url),
@@ -53,7 +59,12 @@ async function runProc(
   const running = spawn(NODE_BIN, [CLI, ...args], {
     // NO_HYPERLINK pins the copy affordance to its pbcopy-line branch so
     // the assertion does not depend on the invoking terminal.
-    env: { ...process.env, NO_HYPERLINK: '1' },
+    env: {
+      ...process.env,
+      NO_HYPERLINK: '1',
+      SOCKET_STATE_DIR: stateDirectory,
+      VOICE_PROFILE_JSON: '',
+    },
     stdio: ['pipe', 'pipe', 'pipe'],
   })
   if (stdin !== undefined) {
@@ -91,8 +102,7 @@ describe('comment-voice CLI end to end', () => {
   })
 
   it('clean draft from a file exits 0 with a copy affordance', async () => {
-    const dir = mkdtempSync(path.join(os.tmpdir(), 'comment-voice-e2e-'))
-    const file = path.join(dir, 'draft.md')
+    const file = path.join(stateDirectory, 'draft.md')
     writeFileSync(file, '👍 - resolved at head.')
     const { code, stdout } = await runProc(['--thread', file])
     expect(code).toBe(0)

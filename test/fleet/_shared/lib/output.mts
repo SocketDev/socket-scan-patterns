@@ -2,13 +2,13 @@
  * @file Fleet-canonical output normalization for tests: strip ANSI color/style
  *   escapes and trim, so assertions match the plain text a user reads rather
  *   than the styled bytes a TTY renders. Wraps the single-source-of-truth
- *   `stripAnsi` from `@socketsecurity/lib-stable/ansi/strip` (the same helper
- *   socket-cli's test utils use) so there's one ANSI definition fleet-wide.
- *   Pairs with `./platform.mts`, path normalization — reach for `cleanOutput`
- *   instead of hand-rolling an ANSI regex at each call site.
+ *   `stripAnsi` from `@socketsecurity/lib-stable/term/ansi/strip` (the same
+ *   helper socket-cli's test utils use) so there's one ANSI definition
+ *   fleet-wide. Pairs with `./platform.mts`, path normalization — reach for
+ *   `cleanOutput` instead of hand-rolling an ANSI regex at each call site.
  */
 
-import { stripAnsi } from '@socketsecurity/lib-stable/ansi/strip'
+import { stripAnsi } from '@socketsecurity/lib-stable/term/ansi/strip'
 
 // Decorative glyphs the fleet loggers prefix (⚡ banner, ✧ sparkle, and the
 // bare variation-selector that can trail an emoji) — stripped alongside ANSI so
