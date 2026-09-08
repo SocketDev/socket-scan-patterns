@@ -5,11 +5,11 @@
  *   paths. Both the received and expected paths are run through the canonical
  *   `normalizePath` (folding `\` → `/`) before the `.includes()` check, so a
  *   test written once passes on darwin / linux / win32 without per-OS
- *   branching. Pairs with `./platform.mts` (the `normalizePath` source) — reach
- *   for this instead of hand-normalizing both sides at every call site.
+ *   branching. Imports the normalization leaf directly so global setup does
+ *   not load unrelated platform and environment helpers.
  */
 
-import { normalizePath } from './platform.mts'
+import { normalizePath } from '@socketsecurity/lib-stable/paths/normalize'
 
 export interface PathMatcherResult {
   pass: boolean
