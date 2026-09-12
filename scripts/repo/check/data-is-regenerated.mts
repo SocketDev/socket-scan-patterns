@@ -25,7 +25,12 @@ import { safeDeleteSync } from '@socketsecurity/lib-stable/fs/safe'
 import { getDefaultLogger } from '@socketsecurity/lib-stable/logger/default'
 import { spawn } from '@socketsecurity/lib-stable/process/spawn/child'
 
-import { DATA_DIR, REPO_ROOT, UPSTREAM_DIR } from '../paths.mts'
+import {
+  DATA_DIR,
+  GEN_ALL_SCRIPT_PATH,
+  REPO_ROOT,
+  UPSTREAM_DIR,
+} from '../paths.mts'
 import { listUpstreamSliceConfigs } from '../upstream-config.mts'
 
 const logger = getDefaultLogger()
@@ -129,15 +134,11 @@ export function compareDataTrees(
 export async function checkDataIsRegenerated(): Promise<DriftReport> {
   const scratch = mkdtempSync(path.join(os.tmpdir(), 'scan-patterns-drift-'))
   try {
-    await spawn(
-      process.execPath,
-      [path.join(REPO_ROOT, 'scripts', 'repo', 'gen', 'all.mts')],
-      {
-        cwd: REPO_ROOT,
-        env: { ...process.env, SCAN_PATTERNS_DATA_DIR: scratch },
-        stdio: 'ignore',
-      },
-    )
+    await spawn(process.execPath, [GEN_ALL_SCRIPT_PATH], {
+      cwd: REPO_ROOT,
+      env: { ...process.env, SCAN_PATTERNS_DATA_DIR: scratch },
+      stdio: 'ignore',
+    })
     return compareDataTrees(readDataTree(DATA_DIR), readDataTree(scratch))
   } finally {
     safeDeleteSync(scratch)

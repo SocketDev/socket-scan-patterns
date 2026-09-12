@@ -24,7 +24,7 @@ import process from 'node:process'
 import { getDefaultLogger } from '@socketsecurity/lib-stable/logger/default'
 import { spawn } from '@socketsecurity/lib-stable/process/spawn/child'
 
-import { REPO_ROOT, UPSTREAM_DIR } from './paths.mts'
+import { GEN_ALL_SCRIPT_PATH, REPO_ROOT, UPSTREAM_DIR } from './paths.mts'
 import { listUpstreamSliceConfigs } from './upstream-config.mts'
 
 const logger = getDefaultLogger()
@@ -48,11 +48,10 @@ export function canRegenerateTables(): boolean {
  * Regenerate `data/` from the pinned slices.
  */
 export async function runTableGeneration(): Promise<void> {
-  await spawn(
-    process.execPath,
-    [path.join(REPO_ROOT, 'scripts', 'repo', 'gen', 'all.mts')],
-    { cwd: REPO_ROOT, stdio: 'inherit' },
-  )
+  await spawn(process.execPath, [GEN_ALL_SCRIPT_PATH], {
+    cwd: REPO_ROOT,
+    stdio: 'inherit',
+  })
 }
 
 /**

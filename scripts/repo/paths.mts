@@ -25,6 +25,17 @@ export const DATA_DIR =
 export const DATA_SOURCES_DIR = path.join(DATA_DIR, 'sources')
 
 /**
+ * Detector table generation entry point.
+ */
+export const GEN_ALL_SCRIPT_PATH = path.join(
+  REPO_ROOT,
+  'scripts',
+  'repo',
+  'gen',
+  'all.mts',
+)
+
+/**
  * Materialized upstream reference slices. Git-ignored, pinned in `.gitmodules`.
  */
 export const UPSTREAM_DIR = path.join(REPO_ROOT, 'upstream')
