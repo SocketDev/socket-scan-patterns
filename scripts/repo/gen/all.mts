@@ -1,3 +1,7 @@
+import type { ScriptMeta } from '../../fleet/process/run-main.mts'
+import { isMainModule } from '../../fleet/process/is-main-module.mts'
+import { runMain } from '../../fleet/process/run-main.mts'
+
 /**
  * @file Runs every generator, then composes the five consumer tables.
  *   Deterministic and idempotent: two runs over the same pinned slices produce
@@ -10,9 +14,6 @@
  *   Usage: node scripts/repo/gen/all.mts [--out-dir <dir>]
  */
 
-import process from 'node:process'
-
-import { errorMessage } from '@socketsecurity/lib-stable/errors/message'
 import { getDefaultLogger } from '@socketsecurity/lib-stable/logger/default'
 
 import type { DerivedRowSet } from './_shared/emit-table.mts'
@@ -92,9 +93,12 @@ export function main(): void {
   logger.info(`wrote ${composed.length} table(s)`)
 }
 
-try {
-  main()
-} catch (error) {
-  logger.error(errorMessage(error))
-  process.exitCode = 1
+const SCRIPT_META: ScriptMeta = {
+  describe: 'Generate scanner pattern tables from pinned inputs.',
+  help: 'Usage: node scripts/repo/gen/all.mts',
+  json: 'result',
+}
+
+if (isMainModule(import.meta.url)) {
+  runMain(main, SCRIPT_META)
 }

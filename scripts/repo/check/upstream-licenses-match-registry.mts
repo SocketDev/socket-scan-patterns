@@ -1,3 +1,7 @@
+import type { ScriptMeta } from '../../fleet/process/run-main.mts'
+import { isMainModule } from '../../fleet/process/is-main-module.mts'
+import { runMain } from '../../fleet/process/run-main.mts'
+
 /*
  * @file `check --all` gate: each upstream's RECORDED license still matches what
  *   Socket's API reports for it.
@@ -25,7 +29,6 @@
 
 import process from 'node:process'
 
-import { errorMessage } from '@socketsecurity/lib-stable/errors/message'
 import { getDefaultLogger } from '@socketsecurity/lib-stable/logger/default'
 import { readSocketApiTokenSync } from '@socketsecurity/lib-stable/secrets/socket-api-token'
 
@@ -126,7 +129,10 @@ export async function fetchReportedLicenses(
   try {
     const { SocketSdk } = await import('@socketsecurity/sdk')
     const sdk = new SocketSdk(token)
-    const components = [...purlsBySlice.values()].map(purl => ({ purl }))
+    const components = [...purlsBySlice.values()].map(purl => ({
+      __proto__: null,
+      purl,
+    }))
     const result = await sdk.batchPackageFetch(
       { components },
       { include_license_details: true },
@@ -358,8 +364,12 @@ export async function main(): Promise<void> {
   process.exitCode = 1
 }
 
-main().catch((error: unknown) => {
-  logger.info(
-    `upstream-licenses-match-registry: skipped — ${errorMessage(error)}`,
-  )
-})
+const SCRIPT_META: ScriptMeta = {
+  describe: 'Check upstream license metadata against registry records.',
+  help: 'Usage: node scripts/repo/check/upstream-licenses-match-registry.mts',
+  json: 'result',
+}
+
+if (isMainModule(import.meta.url)) {
+  runMain(main, SCRIPT_META)
+}

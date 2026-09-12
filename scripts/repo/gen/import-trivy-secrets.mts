@@ -210,40 +210,21 @@ export function deriveTrivyRules(slice: UpstreamSlice): DerivedRowSet {
 
   for (let i = 0, { length } = bodies; i < length; i += 1) {
     const body = bodies[i]!
-    const rawId = readTrivyField(body, 'ID')
-    const id = rawId ? /^"([^"]*)"/.exec(rawId)?.[1] : undefined
+    const id = readTrivyQuotedField(body, 'ID')
     if (!id) {
       continue
     }
-    const rawTitle = readTrivyField(body, 'Title')
-    const title = rawTitle ? (/^"([^"]*)"/.exec(rawTitle)?.[1] ?? id) : id
-    const rawSeverity = readTrivyField(body, 'Severity')
+    const title = readTrivyQuotedField(body, 'Title') ?? id
     const severity = trivySeverityToPatternSeverity(
-      rawSeverity ? /^"([^"]*)"/.exec(rawSeverity)?.[1] : undefined,
+      readTrivyQuotedField(body, 'Severity'),
     )
     const categoryAlias = readTrivyField(body, 'Category')
     const category = categoryAlias
       ? (categories.get(categoryAlias) ?? categoryAlias)
       : 'generic'
 
-    const regexExpr = readTrivyField(body, 'Regex')
-    const regexInner = regexExpr
-      ? // Unwraps `MustCompile(<arg>)` / `MustCompileWithoutWordPrefix(<arg>)`,
-        // capturing the whole argument expression (which may itself be a Sprintf).
-        /^MustCompile(?:WithoutWordPrefix)?\(([\s\S]*)\)$/.exec(regexExpr)?.[1]
-      : undefined
-    const regexSource = regexInner
-      ? resolveTrivyRegex(regexInner, fragments)
-      : undefined
-
-    const pathExpr = readTrivyField(body, 'Path')
-    const pathInner = pathExpr
-      ? // Same unwrap as above, for the Path: field's compiled expression.
-        /^MustCompile(?:WithoutWordPrefix)?\(([\s\S]*)\)$/.exec(pathExpr)?.[1]
-      : undefined
-    const pathRegexSource = pathInner
-      ? resolveTrivyRegex(pathInner, fragments)
-      : undefined
+    const regexSource = readTrivyCompiledPattern(body, 'Regex', fragments)
+    const pathRegexSource = readTrivyCompiledPattern(body, 'Path', fragments)
 
     const translated = regexSource
       ? translateRegexForJs(regexSource)
@@ -252,11 +233,7 @@ export function deriveTrivyRules(slice: UpstreamSlice): DerivedRowSet {
       ? translateRegexForJs(pathRegexSource)
       : undefined
     // A path-scoped rule is only JS-safe when BOTH of its patterns translated.
-    const dialect =
-      translated?.dialect === 'js' &&
-      (translatedPath === undefined || translatedPath.dialect === 'js')
-        ? 'js'
-        : 're2'
+    const dialect = trivyPatternDialect(translated, translatedPath)
     rules.push({
       category,
       description: title,
@@ -305,4 +282,35 @@ export function generateTrivySource(): DerivedRowSet {
   const rowSet = deriveTrivyRules(slice)
   writeSourceRowSet('trivy', rowSet)
   return rowSet
+}
+
+export function readTrivyQuotedField(
+  body: string,
+  field: string,
+): string | undefined {
+  const value = readTrivyField(body, field)
+  return value ? /^"([^"]*)"/.exec(value)?.[1] : undefined
+}
+
+export function readTrivyCompiledPattern(
+  body: string,
+  field: string,
+  fragments: ReadonlyMap<string, string>,
+): string | undefined {
+  const expression = readTrivyField(body, field)
+  const inner = expression
+    ? // Unwrap either MustCompile variant and preserve its complete argument expression.
+      /^MustCompile(?:WithoutWordPrefix)?\(([\s\S]*)\)$/.exec(expression)?.[1]
+    : undefined
+  return inner ? resolveTrivyRegex(inner, fragments) : undefined
+}
+
+export function trivyPatternDialect(
+  content: ReturnType<typeof translateRegexForJs> | undefined,
+  scopedPath: ReturnType<typeof translateRegexForJs> | undefined,
+): 'js' | 're2' {
+  return content?.dialect === 'js' &&
+    (scopedPath === undefined || scopedPath.dialect === 'js')
+    ? 'js'
+    : 're2'
 }

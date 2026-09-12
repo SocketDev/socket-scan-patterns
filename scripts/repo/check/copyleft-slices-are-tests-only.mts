@@ -1,3 +1,7 @@
+import type { ScriptMeta } from '../../fleet/process/run-main.mts'
+import { isMainModule } from '../../fleet/process/is-main-module.mts'
+import { runMain } from '../../fleet/process/run-main.mts'
+
 /*
  * @file `check --all` gate: a copyleft upstream slice admits TESTS ONLY, and
  *   nothing in this repo derives from one.
@@ -275,4 +279,12 @@ export function main(): void {
   process.exitCode = 1
 }
 
-main()
+const SCRIPT_META: ScriptMeta = {
+  describe: 'Check that copyleft upstream slices contain only tests.',
+  help: 'Usage: node scripts/repo/check/copyleft-slices-are-tests-only.mts',
+  json: 'result',
+}
+
+if (isMainModule(import.meta.url)) {
+  runMain(main, SCRIPT_META)
+}

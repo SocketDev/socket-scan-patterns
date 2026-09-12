@@ -1,3 +1,7 @@
+import type { ScriptMeta } from '../../fleet/process/run-main.mts'
+import { isMainModule } from '../../fleet/process/is-main-module.mts'
+import { runMain } from '../../fleet/process/run-main.mts'
+
 /**
  * @file Coverage-comparison ORACLE. Reports which secret-detector families
  *   TruffleHog covers that this package's `secrets` table does not.
@@ -198,4 +202,12 @@ export function main(): void {
   )
 }
 
-main()
+const SCRIPT_META: ScriptMeta = {
+  describe: 'Report detector family coverage against upstream test paths.',
+  help: 'Usage: node scripts/repo/check/detector-coverage-is-reported.mts',
+  json: 'result',
+}
+
+if (isMainModule(import.meta.url)) {
+  runMain(main, SCRIPT_META)
+}
