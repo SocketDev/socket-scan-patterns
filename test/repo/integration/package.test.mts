@@ -10,6 +10,12 @@ import { withPrunedPackManifest } from '../../../scripts/fleet/registry-infra/np
 import { REPO_ROOT } from '../../../scripts/repo/paths.mts'
 
 it('loads all scanner tables from the packed npm artifact', async () => {
+  const build = spawnSync(
+    process.execPath,
+    [path.join(REPO_ROOT, 'scripts', 'repo', 'build.mts'), '--no-gen'],
+    { cwd: REPO_ROOT },
+  )
+  expect(build.status, build.stderr.toString()).toBe(0)
   const inspection = await withPrunedPackManifest(REPO_ROOT, async () =>
     packAndInspect(REPO_ROOT),
   )
