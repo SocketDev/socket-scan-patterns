@@ -208,7 +208,7 @@ runs:
         if [ -d template/base/universal ]; then
           HYDRATE_ARGS+=(--from-template)
         else
-          HYDRATE_ARGS+=(--ensure-current --quiet)
+          HYDRATE_ARGS+=(--quiet)
         fi
         if ! node scripts/repo/bootstrap/fleet.mjs "${HYDRATE_ARGS[@]+"${HYDRATE_ARGS[@]}"}"; then
           echo "::error title=fleet payload hydration failed::node scripts/repo/bootstrap/fleet.mjs exited non-zero"

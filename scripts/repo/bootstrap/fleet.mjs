@@ -3616,7 +3616,6 @@ function parseArgs(argv) {
     bundle: void 0,
     dest: repoRoot,
     dryRun: false,
-    ensureCurrent: false,
     json: false,
     manifest: void 0,
     quiet: false,
@@ -3635,7 +3634,6 @@ function parseArgs(argv) {
     if (arg === '--dest') opts.dest = argv[++i] ?? repoRoot
     else if (arg === '--bundle') opts.bundle = argv[++i]
     else if (arg === '--dry-run') opts.dryRun = true
-    else if (arg === '--ensure-current') opts.ensureCurrent = true
     else if (arg === '--json') opts.json = true
     else if (arg === '--from-template') opts.fromTemplate = true
     else if (arg === '--manifest') opts.manifest = argv[++i]
@@ -3844,7 +3842,6 @@ async function ensureCurrentFleet(config, dependencies) {
     if (readAppliedRef(dest) !== ref || !appliedPayloadIsComplete(dest, ref)) {
       const result = await (deps.install ?? installFleet)({
         ...cfg,
-        ensureCurrent: false,
         expectedReceipt: oci,
         ref,
       })
