@@ -3,8 +3,8 @@
   "schemaVersion": 1,
   "repoName": "socket-scan-patterns",
   "bundle": {
-    "ref": "fleet-pack-34b047176c416cd46f1919ad0bba35a0bb7b84b3",
-    "cascadeSha": "34b047176c416cd46f1919ad0bba35a0bb7b84b3"
+    "ref": "fleet-pack-5fc381fd65a1960c3f7534cee7c4f17a103fa27c",
+    "cascadeSha": "5fc381fd65a1960c3f7534cee7c4f17a103fa27c"
   },
   "repo": {
     "type": "solo"
@@ -18,5 +18,14 @@
   },
   "contentPolicy": {
     "packages": ["."]
+  },
+  "cover": {
+    "thresholds": {
+      "statements": 95,
+      "branches": 91,
+      "functions": 99,
+      "lines": 95
+    },
+    "typeThreshold": 99
   }
 }

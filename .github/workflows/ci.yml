@@ -3,7 +3,8 @@
 # under .github/actions/fleet/ (cascade-updated), referenced by ./ path — no
 # cross-repo reusable workflow, no first-party `uses:@sha`. Add repo-specific
 # jobs anywhere under `jobs:`.
-name: ⚡ CI
+name: 🧪 CI
+run-name: CI (${{ github.ref_name }})
 
 on:
   push:
@@ -20,23 +21,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-# Fleet no-phone-home posture: CI runners don't source the shell-rc that dev
-# machines get from setup-security-tools, so set every FLEET_ENV knob
-# workflow-level or the telemetry-env-is-disabled +
-# package-manager-auto-update-is-disabled gates (under `check --all`) fail.
-# Lockstep source: .claude/hooks/fleet/_shared/fleet-env.mts (FLEET_ENV) —
-# the telemetry-env-is-disabled check asserts each knob at CI runtime.
 env:
-  CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1'
-  COREPACK_ENABLE_PROJECT_SPEC: '0'
-  DISABLE_TELEMETRY: '1'
-  DO_NOT_TRACK: '1'
-  # Markdown conformance gate (markdownlint-cli2 + the socket-* GFM rules)
-  # runs inside `pnpm run lint` when set. Flipped on 2026-07-12 after the
-  # fleet-wide burn-down took every member to zero findings.
   LINT_MARKDOWN: '1'
-  NO_UPDATE_NOTIFIER: '1'
-  OTEL_SDK_DISABLED: 'true'
 
 jobs:
   # First step of every job is an inline git-fetch bootstrap (no third-party
@@ -52,7 +38,7 @@ jobs:
   # `strategy.job-total < 2` skip runs it in the non-matrix check job, skips it
   # in the test matrix).
   check:
-    name: 🔎 Check
+    name: Check
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -65,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           SERVER_URL: ${{ github.server_url }}
           REPOSITORY: ${{ github.repository }}
-          TRIGGER_REF: ${{ github.ref }}
+          TRIGGER_REF: ${{ github.sha }}
         run: |
           set -euo pipefail
           git init -q
@@ -80,7 +66,8 @@ jobs:
             git fetch "${FETCH_ARGS[@]}"
           fi
           git checkout -q --detach FETCH_HEAD
-      - uses: ./.github/actions/fleet/setup-and-install
+      - name: Set up and install
+        uses: ./.github/actions/fleet/setup-and-install
         with:
           # Full history: the commit-history checks (AI-attribution,
           # release-boundary) read the default branch's history and refuse a
@@ -93,14 +80,15 @@ jobs:
           # empty on a non-thin member (var/secret unset) — the mint is skipped
           # and the fetch no-ops. A thin member sets a dedicated read-only App's
           # SOCKET_PAYLOAD_CLIENT_ID var + SOCKET_PAYLOAD_APP_PRIVATE_KEY secret.
-          payload-token-client-id: ${{ vars.SOCKET_PAYLOAD_CLIENT_ID }}
-          payload-token-private-key: ${{ secrets.SOCKET_PAYLOAD_APP_PRIVATE_KEY }}
-      - uses: ./.github/actions/fleet/run-script
+          payload-token-client-id: ${{ secrets.SOCKET_PR_CLIENT_ID }}
+          payload-token-private-key: ${{ secrets.SOCKET_PR_APP_PRIVATE_KEY }}
+      - name: Run verification
+        uses: ./.github/actions/fleet/run-script
         with:
           main-script: pnpm run check --all
 
   test:
-    name: 🧪 Test
+    name: Test (${{ matrix.os }})
     strategy:
       fail-fast: false
       max-parallel: 4
@@ -118,7 +106,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           SERVER_URL: ${{ github.server_url }}
           REPOSITORY: ${{ github.repository }}
-          TRIGGER_REF: ${{ github.ref }}
+          TRIGGER_REF: ${{ github.sha }}
         run: |
           set -euo pipefail
           git init -q
@@ -133,7 +121,8 @@ jobs:
             git fetch "${FETCH_ARGS[@]}"
           fi
           git checkout -q --detach FETCH_HEAD
-      - uses: ./.github/actions/fleet/setup-and-install
+      - name: Set up and install
+        uses: ./.github/actions/fleet/setup-and-install
         with:
           socket-api-token: ${{ secrets.SOCKET_API_TOKEN_FOR_CLI_AND_SFW }}
           # Thin-distribution CI auth: mint a contents:read-only token so the
@@ -142,14 +131,14 @@ jobs:
           # empty on a non-thin member (var/secret unset) — the mint is skipped
           # and the fetch no-ops. A thin member sets a dedicated read-only App's
           # SOCKET_PAYLOAD_CLIENT_ID var + SOCKET_PAYLOAD_APP_PRIVATE_KEY secret.
-          payload-token-client-id: ${{ vars.SOCKET_PAYLOAD_CLIENT_ID }}
-          payload-token-private-key: ${{ secrets.SOCKET_PAYLOAD_APP_PRIVATE_KEY }}
+          payload-token-client-id: ${{ secrets.SOCKET_PR_CLIENT_ID }}
+          payload-token-private-key: ${{ secrets.SOCKET_PR_APP_PRIVATE_KEY }}
       # The SFW proxy interposes crates.io at the system level. Other tools
       # receive its CA via NODE_EXTRA_CA_CERTS; cargo needs CARGO_HTTP_CAINFO
       # explicitly, and on Windows schannel additionally demands revocation
       # status the proxy-minted certs cannot publish. A no-op for repos (and
       # steps) that never invoke cargo.
-      - name: Trust the firewall CA in cargo
+      - name: Trust the firewall CA in Cargo
         # CARGO_HTTP_CAINFO REPLACES cargo's trust store. The fleet bypass
         # list routes the registry hosts (index.crates.io, static.crates.io,
         # crates.io) DIRECT past the proxy, so the CA file must merge the
@@ -165,7 +154,8 @@ jobs:
           if [ "$RUNNER_OS" = "Windows" ]; then
             echo "CARGO_HTTP_CHECK_REVOKE=false" >> "$GITHUB_ENV"
           fi
-      - uses: ./.github/actions/fleet/run-script
+      - name: Run verification
+        uses: ./.github/actions/fleet/run-script
         env:
           # Authenticate build-time GitHub API reads (release listings,
           # prebuilt-artifact downloads). Unauthenticated calls share the
@@ -173,4 +163,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         with:
           setup-script: pnpm run build
-          main-script: pnpm run test --all
+          main-script: pnpm test --ci
