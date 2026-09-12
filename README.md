@@ -64,14 +64,19 @@ npm install @socketsecurity/scan-patterns
 ## Usage
 
 ```js
-import { secrets, workflows } from '@socketsecurity/scan-patterns'
+import {
+  getSecretsTable,
+  getWorkflowsTable,
+} from '@socketsecurity/scan-patterns'
 
-const awsRule = secrets.rules.find(rule => rule.id === 'aws-access-key-id')
+const awsRule = getSecretsTable().rules.find(
+  rule => rule.id === 'trivy:aws-access-key-id',
+)
 
 console.log(awsRule.severity, awsRule.provenance.source)
 // 'critical' 'trivy@v0.72.0'
 
-for (const audit of workflows.rules) {
+for (const audit of getWorkflowsTable().rules) {
   console.log(audit.id, audit.provenance.ruleId)
 }
 ```
