@@ -84,7 +84,7 @@
     "ruleset:bypass": "node scripts/fleet/grant-ruleset-bypass.mts",
     "soak:bypass": "node scripts/fleet/soak-bypass.mts",
     "npm:trust": "node scripts/fleet/registry-infra/npm/settings/trust.mts",
-    "preflight": "node scripts/repo/bootstrap/fleet.mjs --ensure-current --quiet && node scripts/fleet/preflight.mts",
+    "preflight": "node scripts/repo/bootstrap/fleet.mjs --quiet && node scripts/fleet/preflight.mts",
     "prune:branch-backups": "node scripts/fleet/backup-branches.mts prune",
     "check:fleet": "node scripts/fleet/check.mts",
     "fix:js": "node scripts/fleet/fix.mts --js",
@@ -139,7 +139,8 @@
     "release:hint": "node scripts/fleet/release/hint.mts",
     "lockstep:assist": "node scripts/fleet/lockstep/assist/run.mts",
     "mcp:1password": "node scripts/fleet/mcp/1password/run.mts",
-    "worktree:create": "node scripts/fleet/worktree/create/run.mts"
+    "worktree:create": "node scripts/fleet/worktree/create/run.mts",
+    "remote:github:release": "node scripts/fleet/release/github/remote.mts"
   },
   "devDependencies": {
     "@bcoe/v8-coverage": "catalog:",

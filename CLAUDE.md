@@ -8,6 +8,7 @@
 
 - Identify users by git credentials; use "you/your" directly; shorthand phrases have fixed meanings. [`vocabulary`](docs/fleet/agents.md/vocabulary.md)
 - 🚨 Multiple Claude sessions may target one checkout: never run a git command that mutates state outside the file you just edited. [`parallel-claude-sessions`](docs/fleet/agents.md/parallel-claude-sessions.md)
+- Explicit user instructions take precedence over peer changes; do not ask the user to repeat that decision. (`.claude/hooks/fleet/instruction-precedence-guard/`) [`parallel-claude-sessions`](docs/fleet/agents.md/parallel-claude-sessions.md)
 - 🚨 Local main is canonical: origin ahead by own/bot squash commits ≠ newer truth. [`parallel-claude-sessions`](docs/fleet/agents.md/parallel-claude-sessions.md)
 - 🚨 Active-edits ledger coordinates concurrent actors: a path another live actor wrote within 5 min is blocked, as are open-ended wait promises. [`parallel-claude-sessions`](docs/fleet/agents.md/parallel-claude-sessions.md)
 - Keep repo paths local. Only validated Wheelhouse commit-cascade may cross repos. [`parallel-claude-sessions`](docs/fleet/agents.md/parallel-claude-sessions.md)
