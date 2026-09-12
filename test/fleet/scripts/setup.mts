@@ -14,6 +14,9 @@
  *   belongs in `test/repo/scripts/setup.mts`.
  */
 
+import '../_shared/lib/network-preload.mjs'
+import process from 'node:process'
+
 import nock from 'nock'
 import { afterAll, afterEach, beforeAll, expect } from 'vitest'
 
@@ -46,6 +49,19 @@ isolateHomeEnv()
 // child cannot clean the outer run's shared coverage/.tmp reports.
 prepareSubprocessCoverageEnv(process.env)
 
+// The parent reporter owns the job summary; fixture subprocesses cannot append to it.
+delete process.env['GITHUB_STEP_SUMMARY']
+
+const networkPreload = new URL(
+  '../_shared/lib/network-preload.mjs',
+  import.meta.url,
+).href
+const preloadOption = `--import=${networkPreload}`
+if (!process.env['NODE_OPTIONS']?.includes(preloadOption)) {
+  process.env['NODE_OPTIONS'] =
+    `${process.env['NODE_OPTIONS'] ?? ''} ${preloadOption}`.trim()
+}
+
 // Fail network CLOSED fleet-wide: block every real connection so an unmocked
 // third-party request throws instead of reaching the internet. Loopback stays
 // reachable for local fixture servers. Tests mock remote endpoints with nock;
@@ -53,12 +69,8 @@ prepareSubprocessCoverageEnv(process.env)
 // repo inherits it.)
 beforeAll(() => {
   nock.disableNetConnect()
-  // Matches loopback hostnames optionally followed by a port.
-  // `^` start-of-string anchor
-  // `(?:127\.0\.0\.1|localhost)` non-capturing group: IPv4 loopback or "localhost"
-  // `(?::\d+)?` non-capturing group: optional colon + decimal port digits
-  // `$` end-of-string anchor
-  nock.enableNetConnect(/^(?:127\.0\.0\.1|localhost)(?::\d+)?$/)
+  // Match IPv4 loopback, bracketed IPv6 loopback, or localhost with an optional numeric port.
+  nock.enableNetConnect(/^(?:127\.\d+\.\d+\.\d+|\[::1\]|localhost)(?::\d+)?$/)
 })
 
 afterEach(() => {
