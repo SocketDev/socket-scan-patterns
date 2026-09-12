@@ -149,10 +149,3 @@ export function listUpstreamSliceConfigs(): readonly UpstreamSliceConfig[] {
   }
   return names.map(name => readUpstreamSliceConfig(name))
 }
-
-/**
- * Slices that are copyleft and therefore tests-only.
- */
-export function listCopyleftSliceConfigs(): readonly UpstreamSliceConfig[] {
-  return listUpstreamSliceConfigs().filter(config => config.copyleft)
-}

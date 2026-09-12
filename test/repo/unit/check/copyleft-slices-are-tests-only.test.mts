@@ -5,7 +5,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { isTestOnlySparsePattern } from '../../../scripts/repo/check/copyleft-slices-are-tests-only.mts'
+import { isTestOnlySparsePattern } from '../../../../scripts/repo/check/copyleft-slices-are-tests-only.mts'
 
 describe('isTestOnlySparsePattern', () => {
   it('accepts a file-level test glob', () => {

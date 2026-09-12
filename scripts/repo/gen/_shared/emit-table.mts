@@ -1,3 +1,7 @@
+import {
+  getDefaultFormatting,
+  stringifyWithFormatting,
+} from '@socketsecurity/lib-stable/json/format'
 /**
  * @file Deterministic table emission. Every generator funnels through here so
  *   two runs over the same pinned slice produce byte-identical JSON — that
@@ -138,7 +142,11 @@ export function writeSourceRowSet(name: string, rowSet: DerivedRowSet): string {
     schemaVersion: PATTERN_TABLE_SCHEMA_VERSION,
     sources: [...rowSet.sources].toSorted(),
   }
-  writeFileSync(outPath, `${JSON.stringify(payload, undefined, 2)}\n`, 'utf8')
+  writeFileSync(
+    outPath,
+    stringifyWithFormatting(payload, getDefaultFormatting()),
+    'utf8',
+  )
   return outPath
 }
 

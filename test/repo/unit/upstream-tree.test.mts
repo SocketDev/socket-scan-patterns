@@ -10,7 +10,7 @@ import { isAllowedCopyleftPath } from '../../../scripts/repo/upstream-tree.mts'
 describe('isAllowedCopyleftPath', () => {
   it.each([
     'pkg/detectors/stripe/stripe_test.go',
-    'pkg/detectors/x/testdata/fixture.txt',
+    'pkg/detectors/example-detector/testdata/fixture.txt',
   ])('allows the test path %s', candidate => {
     expect(isAllowedCopyleftPath(candidate)).toBe(true)
   })
@@ -25,7 +25,11 @@ describe('isAllowedCopyleftPath', () => {
   })
 
   it('normalizes Windows separators before matching', () => {
-    expect(isAllowedCopyleftPath('pkg\\detectors\\x\\x_test.go')).toBe(true)
+    expect(
+      isAllowedCopyleftPath(
+        'pkg\\detectors\\example-detector\\example_test.go',
+      ),
+    ).toBe(true)
   })
 
   it('allows ROOT metadata, which LICENSE verification depends on', () => {

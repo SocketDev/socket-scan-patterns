@@ -1,3 +1,7 @@
+import type { ScriptMeta } from '../fleet/process/run-main.mts'
+import { isMainModule } from '../fleet/process/is-main-module.mts'
+import { runMain } from '../fleet/process/run-main.mts'
+
 /*
  * @file Build the publishable artifact.
  *
@@ -17,7 +21,6 @@ import { existsSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 
-import { errorMessage } from '@socketsecurity/lib-stable/errors/message'
 import { getDefaultLogger } from '@socketsecurity/lib-stable/logger/default'
 import { spawn } from '@socketsecurity/lib-stable/process/spawn/child'
 
@@ -46,7 +49,7 @@ export function canRegenerateTables(): boolean {
  */
 export async function runTableGeneration(): Promise<void> {
   await spawn(
-    'node',
+    process.execPath,
     [path.join(REPO_ROOT, 'scripts', 'repo', 'gen', 'all.mts')],
     { cwd: REPO_ROOT, stdio: 'inherit' },
   )
@@ -60,7 +63,7 @@ export async function runTableGeneration(): Promise<void> {
  */
 export async function runDeclarations(): Promise<void> {
   await spawn(
-    'node',
+    process.execPath,
     [
       path.join(REPO_ROOT, 'node_modules', 'typescript', 'bin', 'tsc'),
       '--project',
@@ -75,7 +78,7 @@ export async function runDeclarations(): Promise<void> {
  */
 export async function runBundle(): Promise<void> {
   await spawn(
-    'node',
+    process.execPath,
     [
       path.join(REPO_ROOT, 'node_modules', 'rolldown', 'bin', 'cli.mjs'),
       '--config',
@@ -119,10 +122,12 @@ export async function main(): Promise<void> {
   logger.info('build: done')
 }
 
-main().then(
-  () => process.exit(0),
-  (error: unknown) => {
-    logger.error(errorMessage(error))
-    process.exit(1)
-  },
-)
+const SCRIPT_META: ScriptMeta = {
+  describe: 'Build the scanner package and declarations.',
+  help: 'Usage: node scripts/repo/build.mts',
+  json: 'result',
+}
+
+if (isMainModule(import.meta.url)) {
+  runMain(main, SCRIPT_META)
+}

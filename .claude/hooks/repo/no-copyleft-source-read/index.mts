@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { verdictLine } from '../../fleet/_shared/verdict.mts'
 // Claude Code PreToolUse hook — no-copyleft-source-read (repo-tier).
 //
 // BLOCKS every route by which a copyleft upstream's IMPLEMENTATION could be
@@ -235,24 +236,9 @@ export async function main(): Promise<number> {
 
   process.stderr.write(
     [
-      `🚨 no-copyleft-source-read: blocked a read of ${finding.license} implementation.`,
-      ``,
-      `What:   this package is MIT. ${finding.slice} is ${finding.license}.`,
-      `        Reading its implementation contaminates a clean-room derivation —`,
-      `        deriving from it would relicense @socketsecurity/scan-patterns.`,
-      `Where:  upstream/${finding.slice}`,
-      `Saw:    ${finding.detail}`,
-      `Wanted: TESTS ONLY — \`*_test.go\` files and \`testdata/\` fixtures. The`,
-      `        coverage oracle infers detector families from test FILE PATHS`,
-      `        (that \`stripe/stripe_test.go\` exists proves a Stripe detector`,
-      `        exists). It never reads implementation, and no generator or table`,
-      `        row may cite ${finding.slice} as a source.`,
-      `Fix:    for secret detection, derive from ${SANCTIONED_ALTERNATIVE}.`,
-      `        For coverage questions, run pnpm run check:coverage-oracle.`,
-      ``,
-      `This block is the license boundary, not a style rule. If you genuinely`,
-      `need it, the user must type \`${BYPASS_PHRASE}\` verbatim in a recent turn.`,
-      ``,
+      verdictLine('block', 'no-copyleft-source-read', `Blocked ${finding.license} implementation; only test paths are permitted.`),
+      `Where: upstream/${finding.slice}; ${finding.detail}`,
+      `Fix: derive from ${SANCTIONED_ALTERNATIVE}, or run pnpm run check:coverage-oracle.`,
     ].join('\n'),
   )
   return 2

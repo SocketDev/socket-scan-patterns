@@ -1,3 +1,7 @@
+import type { ScriptMeta } from '../fleet/process/run-main.mts'
+import { isMainModule } from '../fleet/process/is-main-module.mts'
+import { runMain } from '../fleet/process/run-main.mts'
+
 /**
  * @file Materializes a pinned `upstream/<name>` slice, honoring the
  *   `sparse-mode` field the fleet clone does not know about.
@@ -18,7 +22,6 @@ import { existsSync } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 
-import { errorMessage } from '@socketsecurity/lib-stable/errors/message'
 import { getDefaultLogger } from '@socketsecurity/lib-stable/logger/default'
 import { spawn } from '@socketsecurity/lib-stable/process/spawn/child'
 
@@ -37,7 +40,7 @@ const logger = getDefaultLogger()
  */
 export async function cloneUpstreamSlice(name: string): Promise<void> {
   await spawn(
-    'node',
+    process.execPath,
     [
       path.join(REPO_ROOT, 'scripts', 'fleet', 'git-partial-submodule.mts'),
       'clone',
@@ -126,10 +129,12 @@ export async function main(): Promise<void> {
   logger.info(`materialized ${names.length} upstream slice(s)`)
 }
 
-main().then(
-  () => process.exit(0),
-  (error: unknown) => {
-    logger.error(errorMessage(error))
-    process.exit(1)
-  },
-)
+const SCRIPT_META: ScriptMeta = {
+  describe: 'Materialize pinned upstream test and derivation slices.',
+  help: 'Usage: node scripts/repo/materialize-upstream.mts',
+  json: 'result',
+}
+
+if (isMainModule(import.meta.url)) {
+  runMain(main, SCRIPT_META)
+}
