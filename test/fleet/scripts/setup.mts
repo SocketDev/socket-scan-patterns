@@ -5,25 +5,32 @@
  *   `test/**` can use them without an import. Currently: `toContainPath` — a
  *   separator-agnostic path-substring assertion (see ./../_shared/lib/
  *   matchers.mts). Also isolates git so a test's git ops can't touch the live
- *   repo, and FAILS NETWORK CLOSED (nock.disableNetConnect; loopback allowed)
+ *   repo, and blocks external connections at the socket, DNS and UDP boundaries
  *   so any test hitting an unmocked third-party server throws — the fleet
  *   "tests never connect to third-party servers" rule, enforced fleet-wide here
- *   so it isn't per-repo. This is transport-complete: nock (>=14) intercepts
- *   `fetch`/undici as well as `http`/`https`, so `disableNetConnect()` blocks
- *   every client — no separate `fetch` wrapper is needed. Repo-specific setup
- *   belongs in `test/repo/scripts/setup.mts`.
+ *   so it isn't per-repo. Nock lifecycle hooks configure and clean mocks only
+ *   when tests load Nock. Repo-specific setup belongs in
+ *   `test/repo/scripts/setup.mts`.
  */
 
 import '../_shared/lib/network-preload.mjs'
+import { createRequire } from 'node:module'
 import process from 'node:process'
 
-import nock from 'nock'
+import type nock from 'nock'
 import { afterAll, afterEach, beforeAll, expect } from 'vitest'
 
 import { isolateGitEnv } from '../../../.git-hooks/_shared/isolate-git-env.mts'
 import { prepareSubprocessCoverageEnv } from '../_shared/lib/coverage-env.mts'
 import { isolateHomeEnv } from '../_shared/lib/isolate-home-env.mts'
 import { toContainPathResult } from '../_shared/lib/matchers.mts'
+
+const require = createRequire(import.meta.url)
+const nockPath = require.resolve('nock')
+
+function getLoadedNetworkMock(): typeof nock | undefined {
+  return require.cache[nockPath]?.exports as typeof nock | undefined
+}
 
 // Neutralize the inherited git env so a test's `git` spawns can't touch the
 // live repo. The stronger `pinConfigToNull` form is safe here — no vitest
@@ -68,18 +75,19 @@ if (!process.env['NODE_OPTIONS']?.includes(preloadOption)) {
 // everything else fails closed. (Was repo-only — promoted here so every fleet
 // repo inherits it.)
 beforeAll(() => {
-  nock.disableNetConnect()
+  const nock = getLoadedNetworkMock()
+  nock?.disableNetConnect()
   // Match IPv4 loopback, bracketed IPv6 loopback, or localhost with an optional numeric port.
-  nock.enableNetConnect(/^(?:127\.\d+\.\d+\.\d+|\[::1\]|localhost)(?::\d+)?$/)
+  nock?.enableNetConnect(/^(?:127\.\d+\.\d+\.\d+|\[::1\]|localhost)(?::\d+)?$/)
 })
 
 afterEach(() => {
   // Reset nock interceptors between tests so a registration cannot leak forward.
-  nock.cleanAll()
+  getLoadedNetworkMock()?.cleanAll()
 })
 
 afterAll(() => {
-  nock.enableNetConnect()
+  getLoadedNetworkMock()?.enableNetConnect()
 })
 
 expect.extend({
