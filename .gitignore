@@ -186,20 +186,9 @@ opencode.json
 .claude/commands/fleet/update-hooks-dry.md
 .claude/commands/fleet/update-pricing.md
 .claude/commands/fleet/update-security.md
+.claude/hooks/fleet/_dist/fleet-pack.excluded.generated.cjs
 .claude/hooks/fleet/_dist/fleet-pack.generated.cjs
-.claude/hooks/fleet/_dist/launchers/dispatch-launcher-darwin-arm64
-.claude/hooks/fleet/_dist/launchers/dispatch-launcher-darwin-x64
-.claude/hooks/fleet/_dist/launchers/dispatch-launcher-linux-arm64
-.claude/hooks/fleet/_dist/launchers/dispatch-launcher-linux-x64
-.claude/hooks/fleet/_dist/launchers/dispatch-launcher-win32-arm64.exe
-.claude/hooks/fleet/_dist/launchers/dispatch-launcher-win32-x64.exe
-.claude/hooks/fleet/_dist/statusline/statusline-render-darwin-arm64
-.claude/hooks/fleet/_dist/statusline/statusline-render-darwin-x64
-.claude/hooks/fleet/_dist/statusline/statusline-render-linux-arm64
-.claude/hooks/fleet/_dist/statusline/statusline-render-linux-arm64-musl
-.claude/hooks/fleet/_dist/statusline/statusline-render-linux-x64
-.claude/hooks/fleet/_dist/statusline/statusline-render-linux-x64-musl
-.claude/hooks/fleet/_dist/statusline/statusline-render-win32-x64.exe
+.claude/hooks/fleet/_dist/fleet-pack.snapshot.generated.cjs
 .claude/hooks/fleet/_shared/.clangd
 .claude/hooks/fleet/_shared/README.md
 .claude/hooks/fleet/_shared/active-edits-ledger.mts
@@ -793,6 +782,9 @@ opencode.json
 .claude/hooks/fleet/inline-script-defer-guard/index.mts
 .claude/hooks/fleet/inline-script-defer-guard/package.json
 .claude/hooks/fleet/inline-script-defer-guard/tsconfig.json
+.claude/hooks/fleet/instruction-precedence-guard/index.mts
+.claude/hooks/fleet/instruction-precedence-guard/package.json
+.claude/hooks/fleet/instruction-precedence-guard/tsconfig.json
 .claude/hooks/fleet/issue-autolink-nudge/README.md
 .claude/hooks/fleet/issue-autolink-nudge/index.mts
 .claude/hooks/fleet/issue-autolink-nudge/package.json
@@ -2709,6 +2701,7 @@ docs/fleet/workflows/practices.md
 docs/fleet/workflows/publishing.md
 docs/fleet/workflows/registry-settings.md
 docs/references/fleet/sfw-local-install.md
+opencode.json
 scripts/fleet/agent-orphan-sweep.mts
 scripts/fleet/ai-backends-status.mts
 scripts/fleet/ai-codify/cli.mts
@@ -2760,8 +2753,6 @@ scripts/fleet/ai/balancer/refresh-control.mts
 scripts/fleet/ai/balancer/refresh-runtime.mts
 scripts/fleet/ai/balancer/refresh-source.mts
 scripts/fleet/ai/balancer/refresh-state.mts
-scripts/fleet/ai/balancer/request-facts.mts
-scripts/fleet/ai/balancer/request-route.mts
 scripts/fleet/ai/balancer/request/facts.mts
 scripts/fleet/ai/balancer/request/policy.mts
 scripts/fleet/ai/balancer/request/route.mts
@@ -2893,7 +2884,6 @@ scripts/fleet/browser/open-url.mts
 scripts/fleet/browser/timeouts.mts
 scripts/fleet/build-hook-bundle.mts
 scripts/fleet/build-hook-snapshot.mts
-scripts/fleet/build-infra/lib/external-tools-schema.json
 scripts/fleet/build-oxlint-bundle.mts
 scripts/fleet/build-snapshot-launcher.mts
 scripts/fleet/build/infra/lib/external-tools-schema.json
@@ -3092,7 +3082,6 @@ scripts/fleet/check/mcp-client-configs-are-current.mts
 scripts/fleet/check/mcp-servers-expose-named-tools.mts
 scripts/fleet/check/member-ci-fires-on-push.mts
 scripts/fleet/check/member-dirs-are-not-nested.mts
-scripts/fleet/check/member-fetcher-matches-pinned-pack.mts
 scripts/fleet/check/member-repos-resolve.mts
 scripts/fleet/check/memories-are-codified-at-commit.mts
 scripts/fleet/check/model-fallback-persists-per-repo.mts
@@ -3161,7 +3150,6 @@ scripts/fleet/check/published-packages-are-release-ready.mts
 scripts/fleet/check/published-packages-have-files-field.mts
 scripts/fleet/check/published-versions-have-releases.mts
 scripts/fleet/check/reader-workloads-are-bounded.mts
-scripts/fleet/check/release-and-cascade-are-paired.mts
 scripts/fleet/check/release-pins-are-canonical.mts
 scripts/fleet/check/release-publish-scripts-are-conventionally-named.mts
 scripts/fleet/check/release-receipts-match-observable-state.mts
@@ -3479,6 +3467,7 @@ scripts/fleet/github/actions-runtime.mts
 scripts/fleet/github/app-credentials.mts
 scripts/fleet/github/apps.mts
 scripts/fleet/github/ci/secrets.json
+scripts/fleet/github/ci/variables.json
 scripts/fleet/github/commit.mts
 scripts/fleet/github/ghcr-package.mts
 scripts/fleet/github/managed-ruleset-identity.mts
@@ -3673,7 +3662,6 @@ scripts/fleet/pack/fetcher.mts
 scripts/fleet/pack/files.mts
 scripts/fleet/pack/inspect.mts
 scripts/fleet/pack/launcher-variants.mts
-scripts/fleet/pack/pinned-manifest-cache.mts
 scripts/fleet/pack/pinned-ref.mts
 scripts/fleet/pack/ref.mts
 scripts/fleet/pack/structure.mts
@@ -4013,6 +4001,7 @@ scripts/fleet/team-activity/lib/state.mts
 scripts/fleet/team-activity/lib/types.mts
 scripts/fleet/temporal/calendar-month.mts
 scripts/fleet/test-runner/cli-args.mts
+scripts/fleet/test-runner/discovery.mts
 scripts/fleet/test-runner/git-files.mts
 scripts/fleet/test-runner/mirror-resolver.mts
 scripts/fleet/test-runner/read-summary.mts
