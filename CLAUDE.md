@@ -37,6 +37,7 @@
 - [Agent output uses `isAgent()`](docs/fleet/agents.md/self-describing-scripts.md).
 - [Scripts read environment through Socket Lib helpers](docs/fleet/agents.md/environment-reads.md).
 - Use repo scripts for wrapped tools. (`.claude/hooks/fleet/prefer-script-emission-guard/`)
+- Admit local tests, coverage, builds, and type checks through the shared heavy-job runner. [`heavy-jobs`](docs/fleet/agents.md/heavy-jobs.md)
 - A raw `node <file>` call is BLOCKED when a script wraps it: run `pnpm run <name>`, or add one. (`.claude/hooks/fleet/use-the-script-guard/`) [`code-first-then-ai`](docs/fleet/agents.md/code-first-then-ai.md)
 - zsh does not word-split `$var`: a space-joined list in a variable passes as ONE arg. [`tooling`](docs/fleet/agents.md/tooling.md)
 - 🚨 rg's `-r` never clusters: `rg -rln` parses as `--replace 'ln'` and corrupts output; spell `-r` separately. [`tooling`](docs/fleet/agents.md/tooling.md)
@@ -153,7 +154,7 @@
 - 🚨 GitHub CLI tokens: keychain only; `workflow` scope off by default; 8-hour age cap. [`gh-token-hygiene`](docs/fleet/agents.md/gh-token-hygiene.md)
 - 🚨 Commits on `main`/`master` must be signed. [`commit-signing`](docs/fleet/agents.md/commit-signing.md) [`git-config-write-guard`](docs/fleet/agents.md/git-config-write-guard.md) [`security-stack`](docs/fleet/agents.md/security-stack.md)
 - Keep AI logic canonical; generate client aliases during setup, never commit them. [`release-vs-cascade`](docs/fleet/agents.md/release-vs-cascade.md)
-- Skills/commands/agent-instruction docs are THIN wrappers. [`agents-and-skills`](docs/fleet/agents.md/agents-and-skills.md) [`agent-delegation`](docs/fleet/agents.md/agent-delegation.md) [`security-stack`](docs/fleet/agents.md/security-stack.md)
+- Skills, commands, and agent instructions are thin wrappers. [`agents-and-skills`](docs/fleet/agents.md/agents-and-skills.md)
 - Fleet/repo segmentation on every surface; a `-guard` BLOCKS, a `-nudge` NUDGES. [`hook-registry`](docs/fleet/agents.md/hook-registry.md)
 - Guard output is pithy: silent on pass, one line to nudge, ≤3 lines to block. (`scripts/fleet/check/guard-blocks-are-pithy.mts`, `socket/no-error-message-assertions`) [`quiet-guards`](docs/fleet/agents.md/quiet-guards.md)
 - npm-run-all2 is REMOVED. [`script-aggregation`](docs/fleet/agents.md/script-aggregation.md) <!-- enforcement: off-machine - wheelhouse commit-cascade package-scripts check -->

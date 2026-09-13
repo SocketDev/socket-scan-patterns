@@ -67,7 +67,7 @@
     "sync-oxlint-rules": "node scripts/fleet/sync-oxlint-rules.mts",
     "sync-package-manager-pins": "node scripts/fleet/sync-package-manager-pins.mts",
     "test": "node scripts/fleet/test.mts",
-    "type": "node node_modules/typescript/bin/tsc --noEmit -p .config/fleet/tsconfig.check.json",
+    "type": "node scripts/fleet/type.mts",
     "update": "node scripts/fleet/update.mts",
     "weekly-update": "node scripts/fleet/weekly-update.mts",
     "setup:sfw-ca": "node scripts/fleet/setup/sfw-ca.mts",
@@ -112,7 +112,7 @@
     "ai:odai:diagnose": "node scripts/fleet/ai/odai/run.mts diagnose",
     "ai:read": "node scripts/fleet/ai/bounded-reader.mts",
     "spend-usage": "node scripts/fleet/spend-usage.mts",
-    "update:chrome": "node scripts/fleet/ai/odai/run.mts verify-chrome",
+    "update:chrome": "node scripts/fleet/update/chrome.mts",
     "build:oxlint-bundle": "node scripts/fleet/build-oxlint-bundle.mts",
     "check:test-budget-headroom": "node scripts/fleet/check/test-budget-headroom.mts",
     "check:workspace-installation": "node scripts/fleet/check/workspace-installation.mts",
@@ -140,7 +140,10 @@
     "lockstep:assist": "node scripts/fleet/lockstep/assist/run.mts",
     "mcp:1password": "node scripts/fleet/mcp/1password/run.mts",
     "worktree:create": "node scripts/fleet/worktree/create/run.mts",
-    "remote:github:release": "node scripts/fleet/release/github/remote.mts"
+    "remote:github:release": "node scripts/fleet/release/github/remote.mts",
+    "slack:auth": "node scripts/fleet/mcp/connect.mts slack --client claude --reauthenticate",
+    "slack:token": "node scripts/fleet/setup/slack-token.mts",
+    "github:browser": "node scripts/fleet/browser/github-auth.mts"
   },
   "devDependencies": {
     "@bcoe/v8-coverage": "catalog:",
