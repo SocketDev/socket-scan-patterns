@@ -1,6 +1,6 @@
 {
   "name": "@socketsecurity/scan-patterns",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Canonical detector pattern tables for Socket's baseline security scanners",
   "license": "MIT",
   "repository": {
