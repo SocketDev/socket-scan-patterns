@@ -171,16 +171,16 @@
   lands on disk and cannot be read; observe tests, never implementation, and never
   widen the cone. (`.claude/hooks/repo/no-copyleft-source-read/`)
   (`scripts/repo/check/copyleft-slices-are-tests-only.mts`)
-  [`upstream-slices`](docs/agents.md/repo/upstream-slices.md)
+  [`upstream-slices`](docs/repo/agents.md/upstream-slices.md)
 - 🚨 TruffleHog (AGPL-3.0) is a coverage oracle inferred from test FILE PATHS only;
   no generator reads it, no table row cites it, its bytes are never vendored;
   gitleaks (MIT) is the sanctioned secret-detection source.
-  [`upstream-slices`](docs/agents.md/repo/upstream-slices.md)
-- 🚨 `data/*.json` is generated; never hand-edit a table; fix the generator under
+  [`upstream-slices`](docs/repo/agents.md/upstream-slices.md)
+- `data/*.json` is generated; never hand-edit a table; fix the generator under
   `scripts/gen/` and re-run `pnpm run gen`.
-- 🚨 Every generated row carries `provenance: { source, ruleId, license }`; a row
+- Every generated row carries `provenance: { source, ruleId, license }`; a row
   without provenance is a defect, not an omission.
-- 🚨 A generator reads ONLY its own pinned `upstream/<name>` slice, is idempotent,
+- A generator reads ONLY its own pinned `upstream/<name>` slice, is idempotent,
   and fails loud (What / Where / Saw-vs-wanted / Fix) rather than emitting a
   partial table.
 - Apache-2.0 derivations (Trivy, codex-security) require the `NOTICE` attribution
