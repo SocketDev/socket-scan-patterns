@@ -6,6 +6,7 @@ import path from 'node:path'
 import { expect, it } from 'vitest'
 
 import { packAndInspect } from '../../../scripts/fleet/pack/inspect.mts'
+import { tarExecutable } from '../../../scripts/fleet/archives/tar-executable.mts'
 import { withPrunedPackManifest } from '../../../scripts/fleet/registry-infra/npm/pack-manifest.mts'
 import { REPO_ROOT } from '../../../scripts/repo/paths.mts'
 
@@ -25,13 +26,13 @@ it('loads all scanner tables from the packed npm artifact', async () => {
   }
   const directory = mkdtempSync(path.join(os.tmpdir(), 'scanner-package-'))
   try {
-    const unpack = spawnSync('tar', [
+    const unpack = spawnSync(tarExecutable(), [
       '-xf',
       inspection.tarball,
       '-C',
       directory,
     ])
-    expect(unpack.status).toBe(0)
+    expect(unpack.status, unpack.stderr.toString()).toBe(0)
     const loadPackage = createRequire(path.join(directory, 'consumer.cjs'))
     const api = loadPackage(
       './package',
