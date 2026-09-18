@@ -194,7 +194,13 @@
     "check:deps": "node scripts/fleet/check.mts --category=deps",
     "check:hooks": "node scripts/fleet/check.mts --category=hooks",
     "check:types": "node scripts/fleet/check.mts --category=types",
-    "npm:trust:browser": "node scripts/fleet/registry-infra/npm/settings/trusted-publisher/browser.mts"
+    "npm:trust:browser": "node scripts/fleet/registry-infra/npm/settings/trusted-publisher/browser.mts",
+    "jev:benchmark": "node scripts/fleet/ai/eval/cli.mts",
+    "jev:events": "node scripts/fleet/ai/balancer/events/cli.mts",
+    "review:comments": "node scripts/fleet/review-comments.mts",
+    "browser:advice": "node scripts/fleet/browser/agent/jev/run.mts",
+    "cover:aggregate": "node scripts/fleet/cover-aggregate.mts",
+    "cover:shard": "node scripts/fleet/cover-shard.mts"
   },
   "devDependencies": {
     "@bcoe/v8-coverage": "catalog:",
