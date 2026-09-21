@@ -24,6 +24,7 @@ const srcPath = path.join(REPO_ROOT, 'src')
 const distPath = path.join(REPO_ROOT, 'dist')
 
 const config: RolldownOptions = {
+  experimental: { attachDebugInfo: 'none' },
   external: [
     // Keep the tables as sibling JSON, loaded at runtime — see the file docblock.
     /^\.\.\/data\/.*\.json$/,
