@@ -5,7 +5,7 @@ import { runMain } from '../fleet/process/run-main.mts'
 /**
  * @file Materializes a pinned `upstream/<name>` slice, honoring the
  *   `sparse-mode` field the fleet clone does not know about.
- *   The fleet's `git-partial-submodule.mts clone` applies sparse patterns in
+ *   The fleet's `git/submodule/partial.mts clone` applies sparse patterns in
  *   git's default CONE mode, which can only express directory prefixes. A
  *   copyleft slice must admit individual FILE globs — `*_test.go` and nothing
  *   else — so it needs NO-CONE. This script runs the fleet clone first, then
@@ -42,7 +42,7 @@ export async function cloneUpstreamSlice(name: string): Promise<void> {
   await spawn(
     process.execPath,
     [
-      path.join(REPO_ROOT, 'scripts', 'fleet', 'git-partial-submodule.mts'),
+      path.join(REPO_ROOT, 'scripts', 'fleet', 'git', 'submodule', 'partial.mts'),
       'clone',
       `upstream/${name}`,
     ],
