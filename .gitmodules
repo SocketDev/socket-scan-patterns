@@ -28,12 +28,12 @@
 	ignore = dirty
 	sparse-checkout = pkg/fanal/secret
 	verify = none
-# codex-security-npm-v0.1.1 sha256:41b96760817d37b6b9aaab37286cf9c51d8fb55e3d21b73b0636c666ff751a5b
+# codex-security-npm-v0.1.30 (2026-09-23) sha256:cd7d609a80fd4820c036871038ced979f87ece152ff6938c763c5ff545a6602d
 [submodule "upstream/codex-security"]
-	ref = e94d6bef9797a192febfde89a26ec7f831bc09b2
+	ref = 6eecd8ca2587fe44d3b971026d32d591b5ecd315
 	path = upstream/codex-security
 	url = https://github.com/openai/codex-security.git
-	branch = npm-v0.1.1
+	branch = npm-v0.1.30
 	shallow = true
 	ignore = dirty
 	sparse-checkout = sdk/typescript/_bundled_plugin/preflight sdk/typescript/_bundled_plugin/schemas sdk/typescript/_bundled_plugin/skills
@@ -80,12 +80,12 @@
 	sparse-checkout = **/*_test.go **/testdata/** /AUTHORS* /CONTRIBUTORS* /COPYING* /LICENSE* /NOTICE* /README*
 	verify = none
 	sparse-mode = no-cone
-# skillspector-v2.5.0 sha256:56012ec197ac45ac572fb39260e2811f17ede92c6d821dc5947220a9a14e69e4
+# skillspector-v2.11.2 (2026-09-09) sha256:a8f5d57ad1be3164c3a8e890e262f26b98a2133dd9251539b22fa992797747a0
 [submodule "upstream/skillspector"]
-	ref = 34f60308522f45447cd343da0aad77bcea308ad4
+	ref = 69dcdfb74487d361ba4c811d088cfdea2ff3a9dc
 	path = upstream/skillspector
 	url = https://github.com/NVIDIA/SkillSpector.git
-	branch = v2.5.0
+	branch = v2.11.2
 	shallow = true
 	ignore = dirty
 	sparse-checkout = src/skillspector/nodes/analyzers
