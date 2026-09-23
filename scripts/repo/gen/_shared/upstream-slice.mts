@@ -128,7 +128,7 @@ export function resolveUpstreamSlice(name: string): UpstreamSlice {
         `  where: ${rootPath}\n` +
         `  saw:   the directory does not exist\n` +
         `  wanted: the pinned ${name}@${tag} tree on disk\n` +
-        `  fix:   node scripts/fleet/git-partial-submodule.mts clone upstream/${name}`,
+        `  fix:   node scripts/fleet/git/submodule/partial.mts clone upstream/${name}`,
     )
   }
 
@@ -150,7 +150,7 @@ export function readSliceFile(slice: UpstreamSlice, relPath: string): string {
         `  wanted: ${relPath} readable from the materialized slice\n` +
         `  fix:   widen sparse-checkout for [submodule "upstream/${slice.name}"] ` +
         `in .gitmodules to cover ${relPath}, then re-run ` +
-        `node scripts/fleet/git-partial-submodule.mts clone upstream/${slice.name}`,
+        `node scripts/fleet/git/submodule/partial.mts clone upstream/${slice.name}`,
     )
   }
   return readFileSync(absPath, 'utf8')

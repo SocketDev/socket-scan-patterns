@@ -135,7 +135,7 @@ export async function fetchReportedLicenses(
     }))
     const result = await sdk.batchPackageFetch(
       { components },
-      { include_license_details: true },
+      { licensedetails: true },
     )
     return reduceBatchResult(result, purlsBySlice)
   } catch {
