@@ -24,6 +24,7 @@
     "hardcoded-container-credentials": { "status": "implemented" },
     "impostor-commit": { "status": "planned" },
     "insecure-commands": { "status": "implemented" },
+    "insecure-url-scheme": { "status": "planned" },
     "known-vulnerable-actions": {
       "status": "declined",
       "reason": "Requires a live advisory feed at scan time. Socket serves this from its own vulnerability data rather than a static table."
@@ -36,6 +37,7 @@
     "secrets-inherit": { "status": "implemented" },
     "secrets-outside-env": { "status": "planned" },
     "self-hosted-runner": { "status": "implemented" },
+    "self-repository": { "status": "planned" },
     "stale-action-refs": { "status": "planned" },
     "superfluous-actions": {
       "status": "declined",

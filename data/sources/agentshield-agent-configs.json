@@ -10,12 +10,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-allowlist-bypass",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "critical",
       "title": "Exec Allowlist / Approval Bypass"
+    },
+    {
+      "category": "agents",
+      "description": "Checks subagent permissionMode for bypassPermissions or dontAsk",
+      "dialect": "js",
+      "id": "agentshield:agents-bypass-permission-mode",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-bypass-permission-mode",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Subagent runs without permission prompts"
     },
     {
       "category": "secrets",
@@ -27,7 +44,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-config-secret-leakage",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -44,7 +61,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-crypto-mining",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -61,7 +78,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-data-exfil-instructions",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -78,7 +95,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-data-harvesting",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -95,7 +112,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-end-sequence-injection",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -112,7 +129,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-external-url-loading",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -129,7 +146,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-filesystem-destruction",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -146,7 +163,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-hidden-instructions",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -163,7 +180,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-obfuscated-code",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -180,7 +197,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-persistence-mechanism",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -197,7 +214,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-privilege-escalation-chain",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -214,12 +231,165 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-reflection-attacks",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "critical",
       "title": "Agent Contains Prompt Reflection/Override Instructions"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags .codex/agents/*.toml with danger-full-access or injection phrases in developer_instructions",
+      "dialect": "js",
+      "id": "agentshield:codex-agent-role-full-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-agent-role-full-access",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Codex agent role escalates or carries injection"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags approval_policy = \"never\" and granular approval sub-flags turned off",
+      "dialect": "js",
+      "id": "agentshield:codex-approval-never",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-approval-never",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Codex approvals disabled"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags sandbox_mode = \"danger-full-access\" in any Codex config scope or profile",
+      "dialect": "js",
+      "id": "agentshield:codex-danger-full-access",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-danger-full-access",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Codex sandbox disabled"
+    },
+    {
+      "category": "hooks",
+      "description": "Flags .codex/hooks.json PreToolUse or PermissionRequest commands that emit permissionDecision allow unconditionally",
+      "dialect": "js",
+      "id": "agentshield:codex-hooks-auto-allow",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-hooks-auto-allow",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Codex hook auto-approves permissions"
+    },
+    {
+      "category": "hooks",
+      "description": "A permission-gate hook whose command unconditionally emits permission allow",
+      "dialect": "js",
+      "id": "agentshield:cursor-hook-auto-allow",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "cursor-hook-auto-allow",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Cursor Hook Auto-Allows Tool Calls"
+    },
+    {
+      "category": "permissions",
+      "description": "Gemini settings that approve every tool call without asking",
+      "dialect": "js",
+      "id": "agentshield:gemini-yolo-mode",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "gemini-yolo-mode",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Gemini CLI YOLO Approval Mode"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags approvals.mode off (yolo), approvals.mode smart, and approvals.cron_mode approve",
+      "dialect": "js",
+      "id": "agentshield:hermes-approvals-off",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-approvals-off",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hermes approvals off, smart, or auto for cron"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks hook and editor automation configs for known AI developer-tool supply-chain persistence indicators",
+      "dialect": "js",
+      "id": "agentshield:hooks-ai-tool-persistence-ioc",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-ai-tool-persistence-ioc",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "AI Tool Persistence IOC"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks PreToolUse and PermissionRequest hooks that emit permissionDecision allow with no condition",
+      "dialect": "js",
+      "id": "agentshield:hooks-auto-allow-decision",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-auto-allow-decision",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Hook auto-approves tool calls"
     },
     {
       "category": "hooks",
@@ -231,7 +401,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-container-escape",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -248,7 +418,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-credential-access",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -265,7 +435,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-cron-persistence",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -282,7 +452,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-disk-wipe",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -299,7 +469,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-dns-exfiltration",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -316,7 +486,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-env-exfiltration",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -333,7 +503,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-firewall-modification",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -350,7 +520,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-injection",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -367,7 +537,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-log-tampering",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -384,7 +554,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-network-listener",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -401,7 +571,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-privilege-escalation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -418,7 +588,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-reverse-shell",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -435,7 +605,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-shell-profile-modification",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -452,7 +622,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-ssh-key-operations",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -469,7 +639,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-user-account-modification",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -486,7 +656,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-auto-approve-project-servers",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -503,7 +673,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-description-poisoning",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
       },
       "regexFlags": "",
@@ -520,7 +690,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-disabled-security",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -537,7 +707,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-env-override",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -554,12 +724,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-hardcoded-env",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "critical",
       "title": "MCP Hardcoded Environment Variables"
+    },
+    {
+      "category": "secrets",
+      "description": "Authorization, X-Api-Key, Cookie, or any key/token header on an MCP server whose value is a literal credential or a ${VAR:-literal} default carrying one",
+      "dialect": "js",
+      "id": "agentshield:mcp-header-literal-token",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-header-literal-token",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP Header Contains Literal Credential"
     },
     {
       "category": "mcp",
@@ -571,7 +758,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-known-vulnerable-server",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-cve.ts"
       },
       "regexFlags": "",
@@ -588,7 +775,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-malicious-package",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-cve.ts"
       },
       "regexFlags": "",
@@ -605,12 +792,97 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-remote-command",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "critical",
       "title": "MCP Remote Command Execution"
+    },
+    {
+      "category": "mcp",
+      "description": "command is a shell (sh, bash, zsh, cmd, cmd.exe, powershell, pwsh), an interpreter with -e/-c/eval inline code, or args carry a pipe to a shell, curl/wget, or base64 -d",
+      "dialect": "js",
+      "id": "agentshield:mcp-stdio-shell-command",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-stdio-shell-command",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP stdio Server Spawns a Shell or Inline Code"
+    },
+    {
+      "category": "secrets",
+      "description": "MCP server url containing ?token=, api_key=, access_token=, apikey=, key= with a value, or user:pass@ userinfo",
+      "dialect": "js",
+      "id": "agentshield:mcp-token-in-url",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-token-in-url",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "MCP URL Carries Credential"
+    },
+    {
+      "category": "permissions",
+      "description": "permission.bash or permission[*] set to allow at top level or on an agent",
+      "dialect": "js",
+      "id": "agentshield:opencode-permission-allow-all",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "opencode-permission-allow-all",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "OpenCode Permission Allows Everything"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks package-manager configs for plaintext registry credentials",
+      "dialect": "js",
+      "id": "agentshield:package-manager-registry-credentials",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "package-manager-registry-credentials",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/package-manager.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Package Manager Registry Credentials"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks permissions.defaultMode for bypassPermissions, dontAsk, or auto",
+      "dialect": "js",
+      "id": "agentshield:permissions-bypass-default-mode",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-bypass-default-mode",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Permission prompts disabled by defaultMode"
     },
     {
       "category": "permissions",
@@ -622,7 +894,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-dangerous-skip",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -639,12 +911,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-model-endpoint-override",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
       "severity": "critical",
       "title": "Model Endpoint Override"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Marketplace entries whose source is produced by running a command or a headers helper",
+      "dialect": "js",
+      "id": "agentshield:plugins-marketplace-source-command",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-marketplace-source-command",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Marketplace Plugin Source Runs a Command"
     },
     {
       "category": "secrets",
@@ -656,7 +945,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-hardcoded",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -673,12 +962,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-private-key-material",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
       "severity": "critical",
       "title": "Private Key Material in Config"
+    },
+    {
+      "category": "exposure",
+      "description": "Checks the env block for variables that redirect traffic, weaken TLS, or inject code into processes",
+      "dialect": "js",
+      "id": "agentshield:settings-env-override",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-env-override",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "env block overrides a security-sensitive variable"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks helper keys such as apiKeyHelper and statusLine.command that run a command when Claude Code starts",
+      "dialect": "js",
+      "id": "agentshield:settings-helper-executes-command",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-helper-executes-command",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Helper command runs at session start"
+    },
+    {
+      "category": "skills",
+      "description": "Checks SKILL.md bodies for !`command` and ```! blocks, which run through Bash before the skill loads",
+      "dialect": "js",
+      "id": "agentshield:skills-dynamic-shell-injection",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-dynamic-shell-injection",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "critical",
+      "title": "Dynamic context shell in skill"
     },
     {
       "category": "injection",
@@ -690,7 +1030,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-claude-md-instructions",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -707,7 +1047,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-claude-md-url-execution",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -724,7 +1064,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-comment-injection",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -741,7 +1081,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-destructive-tool-usage",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -758,7 +1098,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-encoded-payload",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -775,12 +1115,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-environment-probing",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Agent Instructed to Probe Environment"
+    },
+    {
+      "category": "agents",
+      "description": "Checks subagent frontmatter hooks for PreToolUse allow output or network commands",
+      "dialect": "js",
+      "id": "agentshield:agents-frontmatter-hooks-allow",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-frontmatter-hooks-allow",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Subagent hooks approve or reach the network"
     },
     {
       "category": "agents",
@@ -792,7 +1149,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-full-tool-escalation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -809,12 +1166,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-identity-impersonation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Agent Instructed to Impersonate Identity"
+    },
+    {
+      "category": "agents",
+      "description": "Checks mcpServers inline definitions for authenticated remote urls or unpinned npx packages",
+      "dialect": "js",
+      "id": "agentshield:agents-inline-mcp-server",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-inline-mcp-server",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Subagent installs an MCP server inline"
     },
     {
       "category": "injection",
@@ -826,7 +1200,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-jailbreak-framing",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -843,7 +1217,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-markdown-exfil-links",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -860,7 +1234,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-no-tools-restriction",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -877,7 +1251,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-output-manipulation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -894,7 +1268,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-prompt-injection-patterns",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -911,7 +1285,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-role-hijacking",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -928,7 +1302,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-russian-doll-injection",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -945,7 +1319,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-secrets-in-output",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -962,7 +1336,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-security-suppression",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -979,7 +1353,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-skill-tampering",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -996,7 +1370,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-social-engineering",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -1013,7 +1387,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-system-prompt-extraction",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -1030,7 +1404,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-time-bomb",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -1047,7 +1421,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-tool-poisoning",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -1064,7 +1438,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-unrestricted-tools",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -1081,12 +1455,250 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-web-write-combo",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Agent Has Web Fetch + Write Access"
+    },
+    {
+      "category": "secrets",
+      "description": "Flags [mcp_servers.<n>] http_headers with a literal Authorization, key, or token value",
+      "dialect": "js",
+      "id": "agentshield:codex-mcp-header-secret",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-mcp-header-secret",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Codex MCP header carries a literal secret"
+    },
+    {
+      "category": "mcp",
+      "description": "Flags [mcp_servers.<n>] url = \"http://...\" to a non-loopback host",
+      "dialect": "js",
+      "id": "agentshield:codex-mcp-remote-http",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-mcp-remote-http",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Codex MCP server over plain HTTP"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags [sandbox_workspace_write] network_access = true with no [features.network_proxy] domain allowlist",
+      "dialect": "js",
+      "id": "agentshield:codex-network-without-allowlist",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-network-without-allowlist",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Codex workspace network without allowlist"
+    },
+    {
+      "category": "exposure",
+      "description": "Flags [model_providers.<id>] base_url over http:// or a non-OpenAI host with literal auth headers",
+      "dialect": "js",
+      "id": "agentshield:codex-provider-redirect",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-provider-redirect",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Codex model provider redirected insecurely"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags [projects.\"<home>\"] or [projects.\"/\"] with trust_level = \"trusted\"",
+      "dialect": "js",
+      "id": "agentshield:codex-trusted-home",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-trusted-home",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Codex trusts the home directory"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags writable_roots entries that cover the home directory, system directories, or the whole filesystem",
+      "dialect": "js",
+      "id": "agentshield:codex-writable-roots-broad",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-writable-roots-broad",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Codex writable roots too broad"
+    },
+    {
+      "category": "agents",
+      "description": "Custom agent with the shell tool and an inline remote MCP server",
+      "dialect": "js",
+      "id": "agentshield:copilot-agent-shell-with-remote-mcp",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "copilot-agent-shell-with-remote-mcp",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Copilot Agent Combines Shell With Remote MCP"
+    },
+    {
+      "category": "mcp",
+      "description": "mcp-servers entry with tools [\"*\"]",
+      "dialect": "js",
+      "id": "agentshield:copilot-mcp-tools-star",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "copilot-mcp-tools-star",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Copilot MCP Server Allows All Tools"
+    },
+    {
+      "category": "permissions",
+      "description": "security.toolSandboxing false or tools.sandboxNetworkAccess true",
+      "dialect": "js",
+      "id": "agentshield:gemini-sandbox-off",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "gemini-sandbox-off",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Gemini CLI Tool Sandboxing Disabled"
+    },
+    {
+      "category": "mcp",
+      "description": "MCP servers with trust true, which skips all tool confirmations",
+      "dialect": "js",
+      "id": "agentshield:gemini-trusted-server",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "gemini-trusted-server",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Gemini CLI Trusted MCP Server"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags command_allowlist entries that permanently approve rm, sudo, curl, wget, shells, eval, or match everything",
+      "dialect": "js",
+      "id": "agentshield:hermes-command-allowlist-broad",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-command-allowlist-broad",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hermes command allowlist too broad"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags terminal.backend local or ssh while approvals.mode is set to something other than manual",
+      "dialect": "js",
+      "id": "agentshield:hermes-local-terminal-unattended",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-local-terminal-unattended",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hermes host terminal without manual approvals"
+    },
+    {
+      "category": "secrets",
+      "description": "Flags mcp_servers.<n>.headers or env with literal credentials and url over http:// to a non-loopback host",
+      "dialect": "js",
+      "id": "agentshield:hermes-mcp-secret-inline",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-mcp-secret-inline",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hermes MCP server has inline secret or plain HTTP URL"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags platform_toolsets for public messaging platforms that include terminal, shell, exec, file, or code_execution toolsets",
+      "dialect": "js",
+      "id": "agentshield:hermes-public-platform-shell",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-public-platform-shell",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hermes exposes shell toolsets to a chat platform"
     },
     {
       "category": "hooks",
@@ -1098,7 +1710,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-background-process",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1115,7 +1727,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-background-process",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1132,7 +1744,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-clipboard-access",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1149,7 +1761,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-exfiltration",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1166,7 +1778,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-file-deletion",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1183,7 +1795,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-git-config-modification",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1200,7 +1812,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-global-package-install",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1217,12 +1829,46 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-hook-code-remote-shell-payload",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Hook Code Remote Shell Payload"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks type http hooks on transcript-bearing events that post to an external host",
+      "dialect": "js",
+      "id": "agentshield:hooks-http-exfil",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-http-exfil",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "HTTP hook ships transcript data off the machine"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks type http hooks with an http:// url to a non-loopback host",
+      "dialect": "js",
+      "id": "agentshield:hooks-http-plaintext",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-http-plaintext",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "HTTP hook posts over plaintext"
     },
     {
       "category": "hooks",
@@ -1234,7 +1880,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-logging-disabled",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1251,7 +1897,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-output-to-world-readable",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1268,7 +1914,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-sensitive-file-access",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1285,7 +1931,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-session-start-download",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1302,12 +1948,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-source-from-env",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Hook Sources Script from Environment Path"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks hooks whose output adds permission rules through updatedPermissions",
+      "dialect": "js",
+      "id": "agentshield:hooks-updated-permissions",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-updated-permissions",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Hook grants permissions"
     },
     {
       "category": "mcp",
@@ -1319,12 +1982,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-auto-approve",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "MCP Server Has Auto-Approve Enabled"
+    },
+    {
+      "category": "permissions",
+      "description": "Cline/Roo autoApprove or alwaysAllow containing * or every declared tool, Gemini trust: true, Copilot tools: [\"*\"], OpenCode permission allow for the server, or Cursor/Windsurf empty disabledTools alongside an auto-approve key",
+      "dialect": "js",
+      "id": "agentshield:mcp-auto-approve-wildcard",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-auto-approve-wildcard",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Server Tools Auto-Approved Wholesale"
     },
     {
       "category": "mcp",
@@ -1336,7 +2016,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-bind-all-interfaces",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1353,7 +2033,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-database-connection-string",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1370,7 +2050,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-env-exfiltration-urls",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
       },
       "regexFlags": "",
@@ -1387,12 +2067,80 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-git-url-dependency",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "MCP Git URL Dependency"
+    },
+    {
+      "category": "mcp",
+      "description": "headersHelper points the harness at an executable that produces request headers; in project scope a cloned repo controls what runs",
+      "dialect": "js",
+      "id": "agentshield:mcp-headers-helper",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-headers-helper",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP headersHelper Executable"
+    },
+    {
+      "category": "mcp",
+      "description": "Checks for MCP servers using `npx -c` / `--call` (including `--call=…`) — these pass the argument to the user's shell, giving RCE equivalent to `sh -c`.",
+      "dialect": "js",
+      "id": "agentshield:mcp-npx-shell-exec",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-npx-shell-exec",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP npx shell-exec flag"
+    },
+    {
+      "category": "mcp",
+      "description": "authServerMetadataUrl, authorizationUrl, or tokenUrl over http://, or a redirectUri that is neither loopback nor https",
+      "dialect": "js",
+      "id": "agentshield:mcp-oauth-endpoint-insecure",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-oauth-endpoint-insecure",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP OAuth Endpoint Not HTTPS"
+    },
+    {
+      "category": "secrets",
+      "description": "oauth.clientSecret, oauth.client_secret, or auth.CLIENT_SECRET set to a literal instead of a ${VAR} reference",
+      "dialect": "js",
+      "id": "agentshield:mcp-oauth-secret-inline",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-oauth-secret-inline",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP OAuth Client Secret Inline"
     },
     {
       "category": "mcp",
@@ -1404,12 +2152,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-overly-broad-access",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "MCP Server Has Overly Broad File Access"
+    },
+    {
+      "category": "mcp",
+      "description": "Remote MCP transport (http, sse, ws, streamable-http) over http:// or ws:// to a non-loopback host; info-level note for deprecated SSE over https",
+      "dialect": "js",
+      "id": "agentshield:mcp-remote-plaintext",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-remote-plaintext",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP Remote Transport Without TLS"
     },
     {
       "category": "mcp",
@@ -1421,7 +2186,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-risky-servers",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1438,7 +2203,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-sensitive-file-args",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1455,12 +2220,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-shell-wrapper",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "MCP Server Uses Shell Wrapper"
+    },
+    {
+      "category": "mcp",
+      "description": "env sets HTTPS_PROXY/HTTP_PROXY, NODE_EXTRA_CA_CERTS, NODE_TLS_REJECT_UNAUTHORIZED=0, or DYLD_INSERT_LIBRARIES (LD_PRELOAD and PYTHONPATH are covered by mcp-env-override)",
+      "dialect": "js",
+      "id": "agentshield:mcp-stdio-env-proxy",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-stdio-env-proxy",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "MCP stdio Env Enables Interception"
     },
     {
       "category": "mcp",
@@ -1472,7 +2254,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-suspicious-url-args",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
       },
       "regexFlags": "",
@@ -1489,7 +2271,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-tool-name-injection",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp-tool-poisoning.ts"
       },
       "regexFlags": "",
@@ -1506,7 +2288,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-unrestricted-root-path",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1523,12 +2305,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-url-transport",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "MCP External URL Transport"
+    },
+    {
+      "category": "secrets",
+      "description": "{file:} or {env:} substitutions that load credentials into prompts, headers, or instructions",
+      "dialect": "js",
+      "id": "agentshield:opencode-file-substitution-secret",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "opencode-file-substitution-secret",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "OpenCode Substitution Pulls a Secret"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks package-manager configs for risky dependency lifecycle script settings",
+      "dialect": "js",
+      "id": "agentshield:package-manager-lifecycle-scripts",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "package-manager-lifecycle-scripts",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/package-manager.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Package Manager Lifecycle Scripts"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks permissions.additionalDirectories for the home directory, root, or credential stores",
+      "dialect": "js",
+      "id": "agentshield:permissions-additional-directories-broad",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-additional-directories-broad",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "additionalDirectories grants a sensitive directory"
     },
     {
       "category": "permissions",
@@ -1540,7 +2373,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-all-mutable-tools",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1557,7 +2390,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-claude-md-world-writable",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1574,7 +2407,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-destructive-git",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1591,7 +2424,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-env-in-allow",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1608,7 +2441,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-no-deny-list",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1625,7 +2458,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-overly-permissive",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1642,7 +2475,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-sensitive-path-access",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1659,7 +2492,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-unrestricted-network",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
@@ -1676,12 +2509,80 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-wildcard-root-paths",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Wildcard Root Path in Allow List"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Inline mcpServers entries with a url and a literal credential in headers",
+      "dialect": "js",
+      "id": "agentshield:plugins-bundled-remote-mcp",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-bundled-remote-mcp",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Plugin Bundles a Remote MCP Server With Static Credentials"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Manifest path values that traverse with ../ or point at an absolute path",
+      "dialect": "js",
+      "id": "agentshield:plugins-path-traversal",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-path-traversal",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Plugin Manifest Path Escapes the Plugin"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "git or url sources fetched over plain http or from a raw IP address",
+      "dialect": "js",
+      "id": "agentshield:plugins-source-insecure",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-source-insecure",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Marketplace Plugin Source Over Insecure Transport"
+    },
+    {
+      "category": "injection",
+      "description": "Checks whether system prompt files contain defensive instructions against common LLM attack vectors.",
+      "dialect": "js",
+      "id": "agentshield:prompt-defense-posture",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "prompt-defense-posture",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/prompt-defense.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Prompt defense posture audit"
     },
     {
       "category": "secrets",
@@ -1693,7 +2594,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-credential-file-reference",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -1710,7 +2611,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-env-in-claude-md",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -1727,7 +2628,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-env-in-config",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -1744,7 +2645,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-url-credentials",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -1761,12 +2662,148 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-webhook-url",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
       "severity": "high",
       "title": "Webhook URL with Secret Token"
+    },
+    {
+      "category": "secrets",
+      "description": "Checks env values for credential shapes that are not ${VAR} references",
+      "dialect": "js",
+      "id": "agentshield:settings-env-secret-literal",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-env-secret-literal",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Literal credential in env block"
+    },
+    {
+      "category": "exposure",
+      "description": "Checks forceLoginMethod and forceLoginGatewayUrl in files that are not managed settings",
+      "dialect": "js",
+      "id": "agentshield:settings-login-redirect",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-login-redirect",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Login redirected to a custom gateway"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks sandbox settings for options that defeat the sandbox while it is enabled",
+      "dialect": "js",
+      "id": "agentshield:settings-sandbox-escape",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-sandbox-escape",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Sandbox enabled with an escape hatch"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks sandbox.network.allowedDomains for a wildcard entry",
+      "dialect": "js",
+      "id": "agentshield:settings-sandbox-network-any",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-sandbox-network-any",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Sandbox network allowlist is a wildcard"
+    },
+    {
+      "category": "skills",
+      "description": "Checks allowed-tools for unrestricted Bash, shell or downloader prefixes, MCP wildcards, or write plus WebFetch",
+      "dialect": "js",
+      "id": "agentshield:skills-allowed-tools-broad",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-allowed-tools-broad",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Skill pre-approves broad tools"
+    },
+    {
+      "category": "skills",
+      "description": "Checks skill frontmatter hooks for PreToolUse allow, Stop continue, or SessionStart commands",
+      "dialect": "js",
+      "id": "agentshield:skills-hooks-persist",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-hooks-persist",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "high",
+      "title": "Skill registers session-persistent hooks"
+    },
+    {
+      "category": "agents",
+      "description": "Checks subagent tools for mcp__*",
+      "dialect": "js",
+      "id": "agentshield:agents-mcp-wildcard-tools",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-mcp-wildcard-tools",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Subagent tools include every MCP tool"
+    },
+    {
+      "category": "agents",
+      "description": "Checks memory user together with WebFetch or MCP tools",
+      "dialect": "js",
+      "id": "agentshield:agents-memory-user-with-network",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-memory-user-with-network",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Subagent with user memory can fetch remote content"
     },
     {
       "category": "agents",
@@ -1778,7 +2815,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-oversized-prompt",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
@@ -1795,12 +2832,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-prompt-injection-surface",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Agent Prompt Injection Surface"
+    },
+    {
+      "category": "agents",
+      "description": "Checks tools for bare Agent or Agent(*) together with Bash",
+      "dialect": "js",
+      "id": "agentshield:agents-spawn-any-with-bash",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "agents-spawn-any-with-bash",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Subagent can spawn any agent and run shell"
     },
     {
       "category": "agents",
@@ -1812,12 +2866,165 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-unrestricted-delegation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Agent Has Unrestricted Delegation Instructions"
+    },
+    {
+      "category": "hooks",
+      "description": "Flags [features] hooks = false inside a repo .codex/ config",
+      "dialect": "js",
+      "id": "agentshield:codex-hooks-disabled-in-project",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-hooks-disabled-in-project",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Project Codex config disables hooks"
+    },
+    {
+      "category": "exposure",
+      "description": "Flags env_vars globs that forward credentials and shell_environment_policy that inherits everything",
+      "dialect": "js",
+      "id": "agentshield:codex-mcp-env-passthrough",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-mcp-env-passthrough",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Codex passes secrets through the environment"
+    },
+    {
+      "category": "mcp",
+      "description": "Flags npx/uvx/pipx MCP servers without a pinned version and mcp-remote style bridges to http:// endpoints",
+      "dialect": "js",
+      "id": "agentshield:codex-mcp-unpinned",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-mcp-unpinned",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Codex MCP server unpinned or bridged insecurely"
+    },
+    {
+      "category": "hooks",
+      "description": "Flags a notify array that invokes sh/bash/zsh, curl, wget, osascript with a URL, or -c",
+      "dialect": "js",
+      "id": "agentshield:codex-notify-executes-shell",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-notify-executes-shell",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Codex notify runs a shell or network command"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Flags a repo .codex/config.toml that sets approval, sandbox, MCP, notify, provider, env, or hook policy",
+      "dialect": "js",
+      "id": "agentshield:codex-project-config-escalates",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-project-config-escalates",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Project Codex config drives policy"
+    },
+    {
+      "category": "permissions",
+      "description": "security.folderTrust.enabled false, so every folder is treated as trusted",
+      "dialect": "js",
+      "id": "agentshield:gemini-folder-trust-off",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "gemini-folder-trust-off",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Gemini CLI Folder Trust Disabled"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags terminal.docker_mount_cwd_to_workspace: true",
+      "dialect": "js",
+      "id": "agentshield:hermes-docker-mount-cwd",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-docker-mount-cwd",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hermes docker backend mounts the working directory"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags gateway.unauthorized_dm_behavior set to allow, respond, or accept",
+      "dialect": "js",
+      "id": "agentshield:hermes-gateway-open-dm",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-gateway-open-dm",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hermes gateway answers unauthorized DMs"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks async hooks whose command uses curl, wget, nc, fetch, or a URL",
+      "dialect": "js",
+      "id": "agentshield:hooks-async-network",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-async-network",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Async hook makes network calls"
     },
     {
       "category": "hooks",
@@ -1829,12 +3036,46 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-chained-commands",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Hook Chained Shell Commands"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks ConfigChange hooks that deny user_settings or policy_settings changes",
+      "dialect": "js",
+      "id": "agentshield:hooks-configchange-lockout",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-configchange-lockout",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "ConfigChange hook blocks user or policy settings"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks for disableAllHooks true in a repository-scoped settings file",
+      "dialect": "js",
+      "id": "agentshield:hooks-disabled-in-project",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-disabled-in-project",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "disableAllHooks in a project settings file"
     },
     {
       "category": "hooks",
@@ -1846,12 +3087,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-env-mutation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Hook Mutates Environment Variables"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks http hook headers for literal credentials or secret env references without allowedEnvVars",
+      "dialect": "js",
+      "id": "agentshield:hooks-http-header-secret",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-http-header-secret",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "HTTP hook header carries a secret"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks allowedHttpHookUrls for a wildcard or an http:// entry",
+      "dialect": "js",
+      "id": "agentshield:hooks-http-url-unrestricted",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-http-url-unrestricted",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "allowedHttpHookUrls allows any or plaintext host"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks command hooks that pass more than 200 characters to node -e, python -c, bash -c, eval, or base64 -d",
+      "dialect": "js",
+      "id": "agentshield:hooks-inline-eval-payload",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-inline-eval-payload",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hook runs a long inline payload"
     },
     {
       "category": "misconfiguration",
@@ -1863,7 +3155,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-missing-pretooluse",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -1880,12 +3172,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-no-error-handling",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Hook Missing Error Handling"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks Stop and SubagentStop hooks that always emit continue true",
+      "dialect": "js",
+      "id": "agentshield:hooks-stop-force-continue",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-stop-force-continue",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Stop hook forces the session to continue"
     },
     {
       "category": "hooks",
@@ -1897,12 +3206,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-unthrottled-network",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Hook Unthrottled Network Requests"
+    },
+    {
+      "category": "hooks",
+      "description": "Checks hooks whose output rewrites the tool call through updatedInput",
+      "dialect": "js",
+      "id": "agentshield:hooks-updated-input",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hooks-updated-input",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hook rewrites tool input"
+    },
+    {
+      "category": "injection",
+      "description": "HTML comments that pair a URL with an imperative not caught by agents-comment-injection",
+      "dialect": "js",
+      "id": "agentshield:instructions-hidden-comment-payload",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "instructions-hidden-comment-payload",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Hidden Comment Contains a Network Instruction"
+    },
+    {
+      "category": "exposure",
+      "description": "@imports that resolve to home, absolute, or parent paths outside the repository",
+      "dialect": "js",
+      "id": "agentshield:instructions-import-external",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "instructions-import-external",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Instruction File Imports Outside the Repository"
     },
     {
       "category": "misconfiguration",
@@ -1914,7 +3274,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-dual-transport",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1931,12 +3291,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-env-inheritance",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "MCP Server Inherits Full Environment"
+    },
+    {
+      "category": "exposure",
+      "description": "env entry whose key matches KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL and whose value is ${SAME_NAME}, forwarding a host secret into a third-party server, or Codex-style env_vars [\"*\"]",
+      "dialect": "js",
+      "id": "agentshield:mcp-env-mirrors-host-secret",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-env-mirrors-host-secret",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Env Forwards Host Secret"
     },
     {
       "category": "mcp",
@@ -1948,7 +3325,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-no-version-pin",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1965,12 +3342,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-npx-supply-chain",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "MCP npx Supply Chain Risk"
+    },
+    {
+      "category": "mcp",
+      "description": "oauth.scopes containing *, all, full-access, admin:*, delete_repo, or write:* style wildcards",
+      "dialect": "js",
+      "id": "agentshield:mcp-oauth-scope-wildcard",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-oauth-scope-wildcard",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP OAuth Scope Too Broad"
     },
     {
       "category": "mcp",
@@ -1982,7 +3376,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-privileged-port",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -1999,12 +3393,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-shell-metacharacters",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "MCP Shell Metacharacters in Args"
+    },
+    {
+      "category": "mcp",
+      "description": "mcp-remote, supergateway, or mcp-proxy wrapping a remote URL; the URL gets the remote checks and --allow-http or literal --header credentials are flagged",
+      "dialect": "js",
+      "id": "agentshield:mcp-stdio-remote-bridge",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-stdio-remote-bridge",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP stdio Bridge to Remote Server"
+    },
+    {
+      "category": "mcp",
+      "description": "command docker (or podman) run with an image reference lacking an @sha256: digest",
+      "dialect": "js",
+      "id": "agentshield:mcp-unpinned-docker-image",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-unpinned-docker-image",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP Docker Image Not Pinned by Digest"
+    },
+    {
+      "category": "mcp",
+      "description": "MCP server url host in 10/8, 172.16/12, 192.168/16, 169.254/16, fc00::/7, or a .internal name; metadata endpoints are high",
+      "dialect": "js",
+      "id": "agentshield:mcp-url-private-range",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "mcp-url-private-range",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/mcp-remote.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "MCP URL Targets Private or Metadata Address"
     },
     {
       "category": "mcp",
@@ -2016,12 +3461,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-wildcard-cors",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "MCP Server Has Wildcard CORS"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "instructions entries with ../ or an absolute path",
+      "dialect": "js",
+      "id": "agentshield:opencode-instructions-external",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "opencode-instructions-external",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "OpenCode Instructions Reach Outside the Repository"
+    },
+    {
+      "category": "exposure",
+      "description": "share set to auto, which publishes every session",
+      "dialect": "js",
+      "id": "agentshield:opencode-share-auto",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "opencode-share-auto",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "OpenCode Auto-Shares Sessions"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks package-manager configs for missing or weak package release-age cooldowns",
+      "dialect": "js",
+      "id": "agentshield:package-manager-release-age-gates",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "package-manager-release-age-gates",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/package-manager.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Package Manager Release Age Gates"
     },
     {
       "category": "permissions",
@@ -2033,12 +3529,80 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "permissions-no-permissions-block",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "No Permissions Block Configured"
+    },
+    {
+      "category": "permissions",
+      "description": "Finds allow entries that are fully covered by a broader prefix rule, so narrowing or removing them changes nothing",
+      "dialect": "js",
+      "id": "agentshield:permissions-shadowed-allow",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-shadowed-allow",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/permissions.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Allow Rule Shadowed by Broader Prefix Rule"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Hook commands that run scripts by a relative path without ${CLAUDE_PLUGIN_ROOT}",
+      "dialect": "js",
+      "id": "agentshield:plugins-hooks-relative-script",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-hooks-relative-script",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Plugin Hook Runs a Relative Script"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "github or git sources without a ref, npm or pip sources without a version",
+      "dialect": "js",
+      "id": "agentshield:plugins-source-unpinned",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-source-unpinned",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Marketplace Plugin Source Not Pinned"
+    },
+    {
+      "category": "secrets",
+      "description": "userConfig keys that name a credential but are not flagged sensitive",
+      "dialect": "js",
+      "id": "agentshield:plugins-userconfig-secret-not-sensitive",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-userconfig-secret-not-sensitive",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Plugin userConfig Secret Not Marked Sensitive"
     },
     {
       "category": "secrets",
@@ -2050,7 +3614,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-base64-obfuscation",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -2067,7 +3631,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-hardcoded-ip-port",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
@@ -2084,12 +3648,63 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-sensitive-env-passthrough",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/secrets.ts"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "Sensitive Env Var Passthrough"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "Checks extraKnownMarketplaces entries for http:// or raw IP sources",
+      "dialect": "js",
+      "id": "agentshield:settings-marketplace-insecure",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "settings-marketplace-insecure",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Plugin marketplace over plaintext or raw IP"
+    },
+    {
+      "category": "skills",
+      "description": "Checks skills that mention deploy, push, publish, delete, send, pay, or rm -rf without disable-model-invocation",
+      "dialect": "js",
+      "id": "agentshield:skills-auto-invoke-side-effect",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-auto-invoke-side-effect",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Side-effect skill can be invoked by the model"
+    },
+    {
+      "category": "skills",
+      "description": "Checks description and when_to_use for trigger-hijack phrases or excessive length",
+      "dialect": "js",
+      "id": "agentshield:skills-description-trigger-hijack",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-description-trigger-hijack",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "medium",
+      "title": "Skill description steers model selection"
     },
     {
       "category": "misconfiguration",
@@ -2101,12 +3716,46 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "agents-expensive-model-readonly",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/agents.ts"
       },
       "regexFlags": "",
       "severity": "low",
       "title": "Expensive Model for Read-Only Agent"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags web_search = \"live\" combined with approval_policy = \"never\"",
+      "dialect": "js",
+      "id": "agentshield:codex-web-search-live-unattended",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "codex-web-search-live-unattended",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/codex.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Codex live web search without approvals"
+    },
+    {
+      "category": "permissions",
+      "description": "Flags delegation.max_iterations over 50 or unset while approvals.mode is off",
+      "dialect": "js",
+      "id": "agentshield:hermes-delegation-unbounded",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "hermes-delegation-unbounded",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/hermes.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Hermes delegation unbounded with approvals off"
     },
     {
       "category": "hooks",
@@ -2118,7 +3767,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-expensive-unscoped",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -2135,12 +3784,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-no-stop-hooks",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
       "severity": "low",
       "title": "No Stop Hooks for Session Verification"
+    },
+    {
+      "category": "exposure",
+      "description": "Rules applied to every path that tell the agent to use curl, wget, ssh, or a URL",
+      "dialect": "js",
+      "id": "agentshield:instructions-rules-paths-global",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "instructions-rules-paths-global",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Global Rules File Carries a Network Instruction"
     },
     {
       "category": "mcp",
@@ -2152,7 +3818,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-excessive-server-count",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
@@ -2169,12 +3835,97 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-timeout-missing",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "low",
       "title": "MCP Server Has No Timeout Configuration"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "plugin entries that are bare npm names without a version",
+      "dialect": "js",
+      "id": "agentshield:opencode-plugin-unpinned",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "opencode-plugin-unpinned",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "OpenCode Plugin Not Pinned"
+    },
+    {
+      "category": "permissions",
+      "description": "Checks for skipDangerousModePermissionPrompt set to true",
+      "dialect": "js",
+      "id": "agentshield:permissions-skip-dangerous-prompt",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "permissions-skip-dangerous-prompt",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Dangerous mode confirmation skipped"
+    },
+    {
+      "category": "misconfiguration",
+      "description": "dependencies entries given as bare names without a version",
+      "dialect": "js",
+      "id": "agentshield:plugins-dependency-unpinned",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "plugins-dependency-unpinned",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "Plugin Dependency Not Pinned"
+    },
+    {
+      "category": "hooks",
+      "description": "Posture note: guard hooks on shell or MCP execution without failClosed true",
+      "dialect": "js",
+      "id": "agentshield:cursor-hook-guard-fail-open",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "cursor-hook-guard-fail-open",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "Cursor Guard Hook Fails Open"
+    },
+    {
+      "category": "permissions",
+      "description": "Posture note: security.disableYoloMode is not true",
+      "dialect": "js",
+      "id": "agentshield:gemini-disable-yolo-guard-missing",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "gemini-disable-yolo-guard-missing",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/harnesses.ts"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "Gemini CLI YOLO Guard Not Set"
     },
     {
       "category": "hooks",
@@ -2186,7 +3937,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-hook-code-context-output",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -2203,7 +3954,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hooks-hook-code-transcript-access",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/hooks.ts"
       },
       "regexFlags": "",
@@ -2220,16 +3971,33 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "mcp-no-description",
-        "source": "agentshield@v1.4.0",
+        "source": "agentshield@v1.6.0",
         "sourceFile": "upstream/agentshield/src/rules/mcp.ts"
       },
       "regexFlags": "",
       "severity": "info",
       "title": "MCP Server Missing Description"
+    },
+    {
+      "category": "skills",
+      "description": "Checks for a tools key in SKILL.md frontmatter, which Claude Code ignores",
+      "dialect": "js",
+      "id": "agentshield:skills-tools-key-misuse",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "skills-tools-key-misuse",
+        "source": "agentshield@v1.6.0",
+        "sourceFile": "upstream/agentshield/src/rules/claude-code.ts"
+      },
+      "regexFlags": "",
+      "severity": "info",
+      "title": "SKILL.md uses tools instead of allowed-tools"
     }
   ],
   "schemaVersion": 1,
   "sources": [
-    "agentshield@v1.4.0"
+    "agentshield@v1.6.0"
   ]
 }

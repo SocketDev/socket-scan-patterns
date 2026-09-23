@@ -10,7 +10,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "artipacked",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -27,7 +27,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "bot-conditions",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -44,7 +44,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "dangerous-triggers",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -61,7 +61,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "excessive-permissions",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -78,7 +78,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "github-env",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -95,7 +95,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "hardcoded-container-credentials",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -112,7 +112,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "insecure-commands",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -129,7 +129,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "overprovisioned-secrets",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -146,7 +146,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-inherit",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -163,7 +163,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "self-hosted-runner",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -180,7 +180,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "template-injection",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -197,7 +197,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unpinned-images",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -214,7 +214,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unpinned-uses",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -224,14 +224,14 @@
     {
       "category": "planned",
       "dialect": "js",
-      "description": "Detects `#!yaml run:` steps that install packages in an ad-hoc manner, i.e. outside of a managed and locked manifest.",
+      "description": "Detects `#!yaml run:` steps that install or manipulate packages in an ad-hoc manner, i.e. outside of a managed and locked manifest.",
       "id": "zizmor:adhoc-packages",
       "keywords": [],
       "kind": "audit",
       "provenance": {
         "license": "MIT",
         "ruleId": "adhoc-packages",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -248,7 +248,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "anonymous-definition",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -265,7 +265,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "archived-uses",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -282,7 +282,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "cache-poisoning",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -299,7 +299,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "dependabot-cooldown",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -316,7 +316,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "dependabot-execution",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -333,7 +333,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "github-app",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -343,19 +343,36 @@
     {
       "category": "planned",
       "dialect": "js",
-      "description": "Detects commits within a repository action's network that are not present on the repository itself, also known as \"impostor\" commits.",
+      "description": "Detects commits within a repository Git's network that are not present on the repository itself, also known as \"impostor\" commits.",
       "id": "zizmor:impostor-commit",
       "keywords": [],
       "kind": "audit",
       "provenance": {
         "license": "MIT",
         "ruleId": "impostor-commit",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
       "severity": "low",
       "title": "impostor-commit"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "At the moment, this audit is limited to just the `#!yaml repo:` fields within pre-commit configuration files.",
+      "id": "zizmor:insecure-url-scheme",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "insecure-url-scheme",
+        "source": "zizmor@v1.30.1",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "insecure-url-scheme"
     },
     {
       "category": "planned",
@@ -367,7 +384,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "misfeature",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -384,7 +401,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "obfuscation",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -401,7 +418,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "ref-confusion",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -418,7 +435,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "ref-version-mismatch",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -435,12 +452,29 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "secrets-outside-env",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
       "severity": "low",
       "title": "secrets-outside-env"
+    },
+    {
+      "category": "planned",
+      "dialect": "js",
+      "description": "Detects uses of in-repo actions or reusable workflows that don't use GitHub's dedicated \"self-repository\" syntax.",
+      "id": "zizmor:self-repository",
+      "keywords": [],
+      "kind": "audit",
+      "provenance": {
+        "license": "MIT",
+        "ruleId": "self-repository",
+        "source": "zizmor@v1.30.1",
+        "sourceFile": "upstream/zizmor/docs/audits.md"
+      },
+      "regexFlags": "",
+      "severity": "low",
+      "title": "self-repository"
     },
     {
       "category": "planned",
@@ -452,7 +486,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "stale-action-refs",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -469,7 +503,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "typosquat-uses",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -486,7 +520,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unpinned-tools",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -503,7 +537,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unredacted-secrets",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -520,7 +554,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unsound-condition",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -537,7 +571,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unsound-contains",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -554,7 +588,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "unsound-ternary",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -571,7 +605,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "use-trusted-publishing",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -588,7 +622,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "concurrency-limits",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -605,7 +639,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "forbidden-uses",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -622,7 +656,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "known-vulnerable-actions",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -639,7 +673,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "superfluous-actions",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -656,7 +690,7 @@
       "provenance": {
         "license": "MIT",
         "ruleId": "undocumented-permissions",
-        "source": "zizmor@v1.28.0",
+        "source": "zizmor@v1.30.1",
         "sourceFile": "upstream/zizmor/docs/audits.md"
       },
       "regexFlags": "",
@@ -666,6 +700,6 @@
   ],
   "schemaVersion": 1,
   "sources": [
-    "zizmor@v1.28.0"
+    "zizmor@v1.30.1"
   ]
 }

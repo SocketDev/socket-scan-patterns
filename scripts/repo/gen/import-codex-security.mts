@@ -1,7 +1,7 @@
 /**
  * @file Derives plugin-capability rows from codex-security's bundled plugin.
  *   Apache-2.0 — attribution is required and lives in `NOTICE`. Reads only
- *   `upstream/codex-security/sdk/typescript/_bundled_plugin/`.
+ *   `upstream/codex-security/plugins/codex-security/`.
  *   codex-security is an AI-agent-driven scanner: its findings come from model
  *   analysis, not a pattern table, so there are no regexes to derive. What it
  *   DOES declare, machine-readably, is the shape a well-formed security plugin
@@ -33,7 +33,7 @@ export const CODEX_CAPABILITIES_REL_PATH = 'preflight/capability-profiles.toml'
 /**
  * Prefix of the bundled-plugin tree inside the slice.
  */
-export const CODEX_PLUGIN_REL_DIR = 'sdk/typescript/_bundled_plugin'
+export const CODEX_PLUGIN_REL_DIR = 'plugins/codex-security'
 
 /**
  * Rows the upstream is known to carry at the pinned tag.

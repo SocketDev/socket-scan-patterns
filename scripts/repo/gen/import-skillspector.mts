@@ -22,6 +22,7 @@ import type { PatternRule, PatternSeverity } from './_shared/table-types.mts'
 import type { UpstreamSlice } from './_shared/upstream-slice.mts'
 
 import { isDeclaredDivergence } from './_shared/divergence.mts'
+import { parseSkillSpectorLanguageRules } from './import-skillspector/language.mts'
 import { assertRowsPresent, writeSourceRowSet } from './_shared/emit-table.mts'
 import {
   mergeRegexFlags,
@@ -110,7 +111,10 @@ export function parseSkillSpectorModuleFlags(source: string): string {
 export interface SkillSpectorPattern {
   readonly code: string
   readonly confidence: number
+  readonly pathRegexSource?: string | undefined
+  readonly severity?: PatternSeverity | undefined
   readonly source: string
+  readonly title?: string | undefined
 }
 
 /**
@@ -154,7 +158,7 @@ export function unescapePythonString(raw: string): string {
 export function parseSkillSpectorPatterns(
   source: string,
 ): readonly SkillSpectorPattern[] {
-  const patterns: SkillSpectorPattern[] = []
+  const patterns: SkillSpectorPattern[] = parseSkillSpectorLanguageRules(source)
   // Matches a group assignment `CODE_PATTERNS = [ … ]` at module scope:
   // capture 1 is the finding code, capture 2 is the bracketed body. A leading
   // underscore is excluded by the character class — those groups are upstream
@@ -242,13 +246,14 @@ export function deriveSkillSpectorRules(slice: UpstreamSlice): DerivedRowSet {
         category,
         description:
           explanation ??
+          entry.title ??
           `SkillSpector ${entry.code} pattern in the ${category} analyzer.`,
         dialect: translated.dialect,
         entropy: undefined,
         id: `skillspector:${entry.code.toLowerCase()}-${ordinal}`,
         keywords: [],
         kind: 'regex',
-        pathRegexSource: undefined,
+        pathRegexSource: entry.pathRegexSource,
         provenance: {
           license: slice.license,
           ruleId: entry.code,
@@ -257,8 +262,8 @@ export function deriveSkillSpectorRules(slice: UpstreamSlice): DerivedRowSet {
         },
         regexFlags: mergeRegexFlags(translated.flags, moduleFlags),
         regexSource: translated.source,
-        severity: skillSpectorSeverity(entry.confidence),
-        title: `${entry.code} ${category}`,
+        severity: entry.severity ?? skillSpectorSeverity(entry.confidence),
+        title: entry.title ?? `${entry.code} ${category}`,
       })
     }
   }

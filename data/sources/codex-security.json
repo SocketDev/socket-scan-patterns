@@ -1,29 +1,6 @@
 {
   "rules": [
     {
-      "category": "plugin_skills",
-      "description": "codex-security declares the \"deep_scan_phase_skills\" capability (kind: plugin_skills) for a deep security scan. Requires the plugin skills: attack-path-analysis, finding-discovery, security-scan, threat-model, validation.",
-      "dialect": "js",
-      "id": "codex-security:deep-scan-phase-skills",
-      "keywords": [
-        "attack-path-analysis",
-        "finding-discovery",
-        "security-scan",
-        "threat-model",
-        "validation"
-      ],
-      "kind": "capability",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "deep_scan_phase_skills",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
-      },
-      "regexFlags": "",
-      "severity": "high",
-      "title": "deep scan phase skills"
-    },
-    {
       "category": "config",
       "description": "codex-security declares the \"agent_depth_2\" capability (kind: config) for a deep security scan.",
       "dialect": "js",
@@ -33,8 +10,8 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "agent_depth_2",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+        "source": "codex-security@npm-v0.1.30",
+        "sourceFile": "upstream/codex-security/plugins/codex-security/preflight/capability-profiles.toml"
       },
       "regexFlags": "",
       "severity": "medium",
@@ -50,8 +27,8 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "delegated_workers",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+        "source": "codex-security@npm-v0.1.30",
+        "sourceFile": "upstream/codex-security/plugins/codex-security/preflight/capability-profiles.toml"
       },
       "regexFlags": "",
       "severity": "medium",
@@ -67,8 +44,8 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "goal_tools",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+        "source": "codex-security@npm-v0.1.30",
+        "sourceFile": "upstream/codex-security/plugins/codex-security/preflight/capability-profiles.toml"
       },
       "regexFlags": "",
       "severity": "medium",
@@ -84,46 +61,12 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "goals_enabled",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+        "source": "codex-security@npm-v0.1.30",
+        "sourceFile": "upstream/codex-security/plugins/codex-security/preflight/capability-profiles.toml"
       },
       "regexFlags": "",
       "severity": "medium",
       "title": "goals enabled"
-    },
-    {
-      "category": "multi_agent_mode",
-      "description": "codex-security declares the \"native_multi_agent_v2\" capability (kind: multi_agent_mode) for a deep security scan.",
-      "dialect": "js",
-      "id": "codex-security:native-multi-agent-v2",
-      "keywords": [],
-      "kind": "capability",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "native_multi_agent_v2",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
-      },
-      "regexFlags": "",
-      "severity": "info",
-      "title": "native multi agent v2"
-    },
-    {
-      "category": "config_absent",
-      "description": "codex-security declares the \"sdk_v2_child_config_compatible\" capability (kind: config_absent) for a deep security scan.",
-      "dialect": "js",
-      "id": "codex-security:sdk-v2-child-config-compatible",
-      "keywords": [],
-      "kind": "capability",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "sdk_v2_child_config_compatible",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
-      },
-      "regexFlags": "",
-      "severity": "info",
-      "title": "sdk v2 child config compatible"
     },
     {
       "category": "multi_agent_capacity",
@@ -135,8 +78,8 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "usable_worker_slots_6",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+        "source": "codex-security@npm-v0.1.30",
+        "sourceFile": "upstream/codex-security/plugins/codex-security/preflight/capability-profiles.toml"
       },
       "regexFlags": "",
       "severity": "info",
@@ -152,8 +95,8 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "usable_worker_slots_8",
-        "source": "codex-security@npm-v0.1.1",
-        "sourceFile": "upstream/codex-security/sdk/typescript/_bundled_plugin/preflight/capability-profiles.toml"
+        "source": "codex-security@npm-v0.1.30",
+        "sourceFile": "upstream/codex-security/plugins/codex-security/preflight/capability-profiles.toml"
       },
       "regexFlags": "",
       "severity": "info",
@@ -162,6 +105,6 @@
   ],
   "schemaVersion": 1,
   "sources": [
-    "codex-security@npm-v0.1.1"
+    "codex-security@npm-v0.1.30"
   ]
 }
