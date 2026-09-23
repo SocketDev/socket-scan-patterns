@@ -37,11 +37,10 @@
       "kind": "version-pin",
       "id": "agentshield",
       "upstream": "agentshield",
-      "pinned_sha": "9bbc007cf5afb562c324bbad4ce6c544420f49f6",
       "upgrade_policy": "track-latest",
       "criticality": 8,
       "notes": "Agent-config rule source (MIT). Supplies all 131 rows in data/agent-configs.json plus the SKILL.md governance rules.",
-      "pinned_tag": "v1.4.0"
+      "pinned_tag": "v1.6.0"
     },
     {
       "kind": "version-pin",

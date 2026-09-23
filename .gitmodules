@@ -36,14 +36,14 @@
 	branch = npm-v0.1.30
 	shallow = true
 	ignore = dirty
-	sparse-checkout = sdk/typescript/_bundled_plugin/preflight sdk/typescript/_bundled_plugin/schemas sdk/typescript/_bundled_plugin/skills
+	sparse-checkout = plugins/codex-security/preflight plugins/codex-security/schemas plugins/codex-security/skills
 	verify = none
-# agentshield-v1.4.0 sha256:724d667818e21113ced33d3d292280ac1d5b8c273ec3a01db3f1fe207af8df94
+# agentshield-v1.6.0 (2026-09-10) sha256:c4e61fe7677fd7cdff9616ec0d1b167ab5c003ca16b6ac85c2f085a6470564c2
 [submodule "upstream/agentshield"]
-	ref = 9bbc007cf5afb562c324bbad4ce6c544420f49f6
+	ref = b0891303bdcd6037376a94263d45cfd2ff3dfb98
 	path = upstream/agentshield
 	url = https://github.com/affaan-m/agentshield.git
-	branch = v1.4.0
+	branch = v1.6.0
 	shallow = true
 	ignore = dirty
 	sparse-checkout = src
