@@ -8,42 +8,42 @@
 	ignore = dirty
 	sparse-checkout = config testdata/config
 	verify = none
-# zizmor-v1.28.0 sha256:06e12a304238f8d632158b84220063c1c31538596f042ac6e03591ae0a1abfc6
+# zizmor-v1.30.1 (2026-09-09) sha256:32e54fb73f6172bd53194d25b9270dcd7abe0a44daa97999f000a2d2c8fb9f5c
 [submodule "upstream/zizmor"]
-	ref = 4381cc6339bb76a1004a99da929fe8f8f1143d94
+	ref = 99a054ed9283c90abdd2d5b9fb5101d27dde9783
 	path = upstream/zizmor
 	url = https://github.com/zizmorcore/zizmor.git
-	branch = v1.28.0
+	branch = v1.30.1
 	shallow = true
 	ignore = dirty
 	sparse-checkout = docs crates/zizmor/tests
 	verify = none
-# trivy-v0.72.0 sha256:5a922c388846d11345ce8283e4373be312458f002abc667c3cd1f77c43163725
+# trivy-v0.74.0 (2026-08-14) sha256:285594b257470eb444fd2836be95a835565ee600382320c977b3993d8efbb767
 [submodule "upstream/trivy"]
-	ref = 8a32853686209a428179bb3a1688802b25691564
+	ref = e1fd17a0ea4a8cf24bc4b4dd7e2cfbf4bb31b994
 	path = upstream/trivy
 	url = https://github.com/aquasecurity/trivy.git
-	branch = v0.72.0
+	branch = v0.74.0
 	shallow = true
 	ignore = dirty
 	sparse-checkout = pkg/fanal/secret
 	verify = none
-# codex-security-npm-v0.1.1 sha256:41b96760817d37b6b9aaab37286cf9c51d8fb55e3d21b73b0636c666ff751a5b
+# codex-security-npm-v0.1.30 (2026-09-23) sha256:cd7d609a80fd4820c036871038ced979f87ece152ff6938c763c5ff545a6602d
 [submodule "upstream/codex-security"]
-	ref = e94d6bef9797a192febfde89a26ec7f831bc09b2
+	ref = 6eecd8ca2587fe44d3b971026d32d591b5ecd315
 	path = upstream/codex-security
 	url = https://github.com/openai/codex-security.git
-	branch = npm-v0.1.1
+	branch = npm-v0.1.30
 	shallow = true
 	ignore = dirty
-	sparse-checkout = sdk/typescript/_bundled_plugin/preflight sdk/typescript/_bundled_plugin/schemas sdk/typescript/_bundled_plugin/skills
+	sparse-checkout = plugins/codex-security/preflight plugins/codex-security/schemas plugins/codex-security/skills
 	verify = none
-# agentshield-v1.4.0 sha256:724d667818e21113ced33d3d292280ac1d5b8c273ec3a01db3f1fe207af8df94
+# agentshield-v1.6.0 (2026-09-10) sha256:c4e61fe7677fd7cdff9616ec0d1b167ab5c003ca16b6ac85c2f085a6470564c2
 [submodule "upstream/agentshield"]
-	ref = 9bbc007cf5afb562c324bbad4ce6c544420f49f6
+	ref = b0891303bdcd6037376a94263d45cfd2ff3dfb98
 	path = upstream/agentshield
 	url = https://github.com/affaan-m/agentshield.git
-	branch = v1.4.0
+	branch = v1.6.0
 	shallow = true
 	ignore = dirty
 	sparse-checkout = src
@@ -69,23 +69,23 @@
 # Guard: .claude/hooks/repo/no-copyleft-source-read/
 # Gate:  scripts/repo/check/copyleft-slices-are-tests-only.mts
 # See docs/agents.md/repo/upstream-slices.md and NOTICE.
-# trufflehog-v3.96.0 sha256:83e7c8ca90c0e87367d7b0f4473266cd725a9ab5b0ad4b92b9e232188debcdf1
+# trufflehog-v3.97.8 (2026-09-23) sha256:f8a42aae80a65bb7e64d54ba8184c7cbd9f9ade8ae48acd02afd834828495f82
 [submodule "upstream/trufflehog"]
-	ref = 6f3c981e7b77f235fd2702dd74af25fc4b72bf11
+	ref = a5f3de55cc2065ae4dde8fee24076f137fd62fcf
 	path = upstream/trufflehog
 	url = https://github.com/trufflesecurity/trufflehog.git
-	branch = v3.96.0
+	branch = v3.97.8
 	shallow = true
 	ignore = dirty
 	sparse-checkout = **/*_test.go **/testdata/** /AUTHORS* /CONTRIBUTORS* /COPYING* /LICENSE* /NOTICE* /README*
 	verify = none
 	sparse-mode = no-cone
-# skillspector-v2.5.0 sha256:56012ec197ac45ac572fb39260e2811f17ede92c6d821dc5947220a9a14e69e4
+# skillspector-v2.11.2 (2026-09-09) sha256:a8f5d57ad1be3164c3a8e890e262f26b98a2133dd9251539b22fa992797747a0
 [submodule "upstream/skillspector"]
-	ref = 34f60308522f45447cd343da0aad77bcea308ad4
+	ref = 69dcdfb74487d361ba4c811d088cfdea2ff3a9dc
 	path = upstream/skillspector
 	url = https://github.com/NVIDIA/SkillSpector.git
-	branch = v2.5.0
+	branch = v2.11.2
 	shallow = true
 	ignore = dirty
 	sparse-checkout = src/skillspector/nodes/analyzers
