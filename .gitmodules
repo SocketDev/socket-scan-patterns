@@ -69,12 +69,12 @@
 # Guard: .claude/hooks/repo/no-copyleft-source-read/
 # Gate:  scripts/repo/check/copyleft-slices-are-tests-only.mts
 # See docs/agents.md/repo/upstream-slices.md and NOTICE.
-# trufflehog-v3.96.0 sha256:83e7c8ca90c0e87367d7b0f4473266cd725a9ab5b0ad4b92b9e232188debcdf1
+# trufflehog-v3.97.8 (2026-09-23) sha256:f8a42aae80a65bb7e64d54ba8184c7cbd9f9ade8ae48acd02afd834828495f82
 [submodule "upstream/trufflehog"]
-	ref = 6f3c981e7b77f235fd2702dd74af25fc4b72bf11
+	ref = a5f3de55cc2065ae4dde8fee24076f137fd62fcf
 	path = upstream/trufflehog
 	url = https://github.com/trufflesecurity/trufflehog.git
-	branch = v3.96.0
+	branch = v3.97.8
 	shallow = true
 	ignore = dirty
 	sparse-checkout = **/*_test.go **/testdata/** /AUTHORS* /CONTRIBUTORS* /COPYING* /LICENSE* /NOTICE* /README*

@@ -84,11 +84,10 @@
       "kind": "version-pin",
       "id": "trufflehog",
       "upstream": "trufflehog",
-      "pinned_sha": "6f3c981e7b77f235fd2702dd74af25fc4b72bf11",
       "upgrade_policy": "track-latest",
       "criticality": 6,
       "notes": "CONFORMANCE-ONLY coverage oracle. AGPL-3.0, so it is TESTS-ONLY: no generator reads it and no row cites it. A pin bump must keep the sparse-checkout tests-only — see docs/agents.md/repo/upstream-slices.md.",
-      "pinned_tag": "v3.96.0"
+      "pinned_tag": "v3.97.8"
     },
     {
       "kind": "version-pin",
