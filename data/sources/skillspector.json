@@ -10,7 +10,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -28,7 +28,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -46,7 +46,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -64,7 +64,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -82,7 +82,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -100,7 +100,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -118,7 +118,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -136,7 +136,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -154,7 +154,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -172,7 +172,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -190,7 +190,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -208,7 +208,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -226,7 +226,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -244,7 +244,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -262,7 +262,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -280,7 +280,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -298,7 +298,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -316,47 +316,29 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "exec\\s*\\(\\s*(?:response|output|result|answer|completion|reply|generated)",
-      "severity": "critical",
-      "title": "OH1 output-handling"
-    },
-    {
-      "category": "output-handling",
-      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
-      "dialect": "js",
-      "id": "skillspector:oh1-11",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "f['\\\"](?:SELECT|INSERT|UPDATE|DELETE)\\s+.*?\\{(?:response|output|result)",
-      "severity": "critical",
-      "title": "OH1 output-handling"
-    },
-    {
-      "category": "output-handling",
-      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
-      "dialect": "js",
-      "id": "skillspector:oh1-2",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
       "regexSource": "eval\\s*\\(\\s*(?:response|output|result|answer|completion|reply|generated)",
+      "severity": "critical",
+      "title": "OH1 output-handling"
+    },
+    {
+      "category": "output-handling",
+      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
+      "dialect": "js",
+      "id": "skillspector:oh1-9",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "OH1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "f['\\\"](?:SELECT|INSERT|UPDATE|DELETE)\\s+.*?\\{(?:response|output|result)",
       "severity": "critical",
       "title": "OH1 output-handling"
     },
@@ -370,7 +352,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -388,7 +370,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -406,7 +388,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -424,7 +406,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -442,7 +424,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -460,7 +442,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -478,7 +460,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -496,7 +478,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -514,7 +496,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -532,7 +514,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -550,7 +532,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -568,7 +550,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -586,7 +568,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -604,7 +586,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -622,7 +604,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -640,7 +622,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -658,7 +640,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -676,7 +658,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -694,7 +676,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -712,7 +694,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -730,7 +712,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -748,7 +730,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -766,7 +748,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -784,7 +766,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -802,7 +784,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -820,7 +802,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -838,7 +820,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -856,7 +838,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -874,7 +856,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -892,7 +874,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -910,7 +892,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -928,7 +910,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -946,7 +928,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -964,7 +946,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -982,7 +964,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1000,7 +982,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1018,7 +1000,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1036,7 +1018,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1054,7 +1036,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1072,7 +1054,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1090,7 +1072,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1108,7 +1090,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1126,7 +1108,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1144,7 +1126,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1162,7 +1144,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1180,7 +1162,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1198,7 +1180,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1216,7 +1198,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1234,7 +1216,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1252,7 +1234,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -1270,7 +1252,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SSRF1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_ssrf.py"
       },
       "regexFlags": "im",
@@ -1288,31 +1270,13 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SSRF1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_ssrf.py"
       },
       "regexFlags": "im",
       "regexSource": "metadata\\.google\\.internal",
       "severity": "critical",
       "title": "SSRF1 ssrf"
-    },
-    {
-      "category": "tool-misuse",
-      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
-      "dialect": "js",
-      "id": "skillspector:tm1-3",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "\\b(?:rm\\b|del\\b|erase\\b)\\s+[^|]*-(?:r|rf|fr)\\s+[/~]",
-      "severity": "critical",
-      "title": "TM1 tool-misuse"
     },
     {
       "category": "tool-misuse",
@@ -1324,7 +1288,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -1342,7 +1306,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -1360,7 +1324,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1378,7 +1342,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1396,7 +1360,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1414,7 +1378,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1432,7 +1396,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1450,7 +1414,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1468,7 +1432,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1486,7 +1450,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1504,7 +1468,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -1522,7 +1486,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1540,7 +1504,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1558,7 +1522,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1576,7 +1540,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1594,7 +1558,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1612,7 +1576,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1630,7 +1594,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1648,7 +1612,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1666,7 +1630,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AS3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py"
       },
       "regexFlags": "im",
@@ -1675,76 +1639,118 @@
       "title": "AS3 agent-snooping"
     },
     {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
+      "category": "deserialization",
+      "description": "Avoid unserialize() on untrusted PHP input. Use json_decode() for data, or restrict allowed classes via the second argument: unserialize($data, ['allowed_classes' => false]).",
       "dialect": "js",
-      "id": "skillspector:e2-11",
+      "id": "skillspector:ds1-1",
       "keywords": [],
       "kind": "regex",
+      "pathRegexSource": "\\.(?:php|php3|php4|php5|phtml)$",
       "provenance": {
         "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
+        "ruleId": "DS1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
       },
-      "regexFlags": "im",
-      "regexSource": "(?:extract|harvest|gather)\\s+(?:api\\s+)?keys?\\s+from\\s+environment",
+      "regexFlags": "i",
+      "regexSource": "\\bunserialize\\s*\\(",
       "severity": "high",
-      "title": "E2 data-exfiltration"
+      "title": "PHP object injection via unserialize()"
     },
     {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
+      "category": "deserialization",
+      "description": "Never call Marshal.load/Marshal.restore on untrusted data. Use JSON.parse for data exchange; Marshal is only safe for data you produced and trust.",
       "dialect": "js",
-      "id": "skillspector:e2-2",
+      "id": "skillspector:ds2-1",
       "keywords": [],
       "kind": "regex",
+      "pathRegexSource": "\\.(?:rb|rake)$",
       "provenance": {
         "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
+        "ruleId": "DS2",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
       },
-      "regexFlags": "im",
-      "regexSource": "os\\.environ\\s*\\[\\s*['\\\"][^'\\\"]*(?:KEY|SECRET|TOKEN|PASSWORD|CREDENTIAL)[^'\\\"]*['\\\"]\\s*\\]",
+      "regexFlags": "i",
+      "regexSource": "\\bMarshal\\s*\\.\\s*(?:load|restore)\\b",
       "severity": "high",
-      "title": "E2 data-exfiltration"
+      "title": "Ruby Marshal deserialization of untrusted data"
     },
     {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
+      "category": "deserialization",
+      "description": "Do not use node-serialize/funcster/serialize-to-js to deserialize untrusted input. Use JSON.parse for data, which never executes embedded code.",
       "dialect": "js",
-      "id": "skillspector:e2-5",
+      "id": "skillspector:ds4-1",
       "keywords": [],
       "kind": "regex",
+      "pathRegexSource": "\\.(?:js|mjs|cjs|jsx|ts|tsx)$",
       "provenance": {
         "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
+        "ruleId": "DS4",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
       },
-      "regexFlags": "im",
-      "regexSource": "(?:API_KEY|SECRET|TOKEN|PASSWORD|CREDENTIAL)\\s+in\\s+(?:key|name|var)",
+      "regexFlags": "i",
+      "regexSource": "require\\(\\s*['\"]node-serialize['\"]\\s*\\)",
       "severity": "high",
-      "title": "E2 data-exfiltration"
+      "title": "Unsafe JavaScript deserialization (node-serialize/funcster)"
     },
     {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
+      "category": "deserialization",
+      "description": "Do not use node-serialize/funcster/serialize-to-js to deserialize untrusted input. Use JSON.parse for data, which never executes embedded code.",
       "dialect": "js",
-      "id": "skillspector:e2-8",
+      "id": "skillspector:ds4-2",
       "keywords": [],
       "kind": "regex",
+      "pathRegexSource": "\\.(?:js|mjs|cjs|jsx|ts|tsx)$",
       "provenance": {
         "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
+        "ruleId": "DS4",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
       },
-      "regexFlags": "im",
-      "regexSource": "env\\s*\\|\\s*grep\\s+(?:-i\\s+)?(?:key|secret|token|password)",
+      "regexFlags": "i",
+      "regexSource": "require\\(\\s*['\"]serialize-to-js['\"]\\s*\\)",
       "severity": "high",
-      "title": "E2 data-exfiltration"
+      "title": "Unsafe JavaScript deserialization (node-serialize/funcster)"
+    },
+    {
+      "category": "deserialization",
+      "description": "Do not use node-serialize/funcster/serialize-to-js to deserialize untrusted input. Use JSON.parse for data, which never executes embedded code.",
+      "dialect": "js",
+      "id": "skillspector:ds4-3",
+      "keywords": [],
+      "kind": "regex",
+      "pathRegexSource": "\\.(?:js|mjs|cjs|jsx|ts|tsx)$",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "DS4",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
+      },
+      "regexFlags": "i",
+      "regexSource": "\\bfuncster\\b",
+      "severity": "high",
+      "title": "Unsafe JavaScript deserialization (node-serialize/funcster)"
+    },
+    {
+      "category": "deserialization",
+      "description": "Do not use node-serialize/funcster/serialize-to-js to deserialize untrusted input. Use JSON.parse for data, which never executes embedded code.",
+      "dialect": "js",
+      "id": "skillspector:ds4-4",
+      "keywords": [],
+      "kind": "regex",
+      "pathRegexSource": "\\.(?:js|mjs|cjs|jsx|ts|tsx)$",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "DS4",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
+      },
+      "regexFlags": "i",
+      "regexSource": "\\.unserialize\\s*\\(",
+      "severity": "high",
+      "title": "Unsafe JavaScript deserialization (node-serialize/funcster)"
     },
     {
       "category": "data-exfiltration",
@@ -1756,7 +1762,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1774,7 +1780,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1792,7 +1798,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1810,7 +1816,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1828,7 +1834,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1846,7 +1852,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1864,7 +1870,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1882,7 +1888,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1900,7 +1906,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1918,7 +1924,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -1936,11 +1942,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
-      "regexSource": "(?:tools?|permissions?)\\s*:\\s*\\[?\\s*['\\\"]?\\*['\\\"]?\\s*\\]?",
+      "regexSource": "(?:tools?|permissions?)\\s*:[ \\t]*\\[?[ \\t]*['\\\"]?\\*(?!\\*|\\w)['\\\"]?[ \\t]*\\]?",
       "severity": "high",
       "title": "EA1 excessive-agency"
     },
@@ -1954,7 +1960,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -1972,7 +1978,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -1990,7 +1996,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2008,7 +2014,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2026,7 +2032,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2044,7 +2050,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2062,7 +2068,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2080,7 +2086,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2098,7 +2104,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2116,7 +2122,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2134,7 +2140,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2152,7 +2158,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2170,7 +2176,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2188,7 +2194,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2206,7 +2212,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2224,7 +2230,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2242,7 +2248,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2260,7 +2266,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2278,7 +2284,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2296,7 +2302,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2314,7 +2320,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2332,7 +2338,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -2350,7 +2356,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2368,7 +2374,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2386,7 +2392,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2404,7 +2410,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2422,7 +2428,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2440,7 +2446,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2458,7 +2464,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2476,7 +2482,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2494,7 +2500,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2512,7 +2518,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2530,7 +2536,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2548,7 +2554,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2566,7 +2572,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2584,7 +2590,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2602,7 +2608,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2620,7 +2626,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2638,7 +2644,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2656,7 +2662,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2674,7 +2680,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2692,7 +2698,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2710,7 +2716,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -2728,11 +2734,29 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
-      "regexSource": "(?:execute|cursor\\.execute|query)\\s*\\([^)]*(?:\\+|%|\\.format|f['\\\"])\\s*.*?(?:response|output|result)",
+      "regexSource": "(?:run|execute|shell)\\s+(?:the\\s+)?(?:generated|model|llm|ai)\\s+(?:output|response|code|command)",
+      "severity": "high",
+      "title": "OH1 output-handling"
+    },
+    {
+      "category": "output-handling",
+      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
+      "dialect": "js",
+      "id": "skillspector:oh1-11",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "OH1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "(?:pipe|pass|feed)\\s+(?:the\\s+)?(?:output|response|result)\\s+(?:directly\\s+)?(?:to|into)\\s+(?:the\\s+)?(?:shell|terminal|command|interpreter)",
       "severity": "high",
       "title": "OH1 output-handling"
     },
@@ -2746,47 +2770,29 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "(?:run|execute|shell)\\s+(?:the\\s+)?(?:generated|model|llm|ai)\\s+(?:output|response|code|command)",
-      "severity": "high",
-      "title": "OH1 output-handling"
-    },
-    {
-      "category": "output-handling",
-      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
-      "dialect": "js",
-      "id": "skillspector:oh1-13",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "(?:pipe|pass|feed)\\s+(?:the\\s+)?(?:output|response|result)\\s+(?:directly\\s+)?(?:to|into)\\s+(?:the\\s+)?(?:shell|terminal|command|interpreter)",
-      "severity": "high",
-      "title": "OH1 output-handling"
-    },
-    {
-      "category": "output-handling",
-      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
-      "dialect": "js",
-      "id": "skillspector:oh1-14",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
       "regexSource": "(?:use|insert|embed)\\s+(?:the\\s+)?(?:raw|unfiltered|unescaped|unsanitized)\\s+(?:output|response)",
+      "severity": "high",
+      "title": "OH1 output-handling"
+    },
+    {
+      "category": "output-handling",
+      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
+      "dialect": "js",
+      "id": "skillspector:oh1-2",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "OH1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "os\\.system\\s*\\(\\s*(?:response|output|result|answer|completion)",
       "severity": "high",
       "title": "OH1 output-handling"
     },
@@ -2800,11 +2806,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
-      "regexSource": "subprocess\\.\\w+\\s*\\([^)]*\\b(?:response|output|result|answer|completion)\\b",
+      "regexSource": "os\\.popen\\s*\\(\\s*(?:response|output|result|answer|completion)",
       "severity": "high",
       "title": "OH1 output-handling"
     },
@@ -2818,11 +2824,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
-      "regexSource": "os\\.system\\s*\\(\\s*(?:response|output|result|answer|completion)",
+      "regexSource": "innerHTML\\s*=\\s*(?:response|output|result|answer|completion)",
       "severity": "high",
       "title": "OH1 output-handling"
     },
@@ -2836,47 +2842,29 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "os\\.popen\\s*\\(\\s*(?:response|output|result|answer|completion)",
-      "severity": "high",
-      "title": "OH1 output-handling"
-    },
-    {
-      "category": "output-handling",
-      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
-      "dialect": "js",
-      "id": "skillspector:oh1-6",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "innerHTML\\s*=\\s*(?:response|output|result|answer|completion)",
-      "severity": "high",
-      "title": "OH1 output-handling"
-    },
-    {
-      "category": "output-handling",
-      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
-      "dialect": "js",
-      "id": "skillspector:oh1-7",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
       "regexSource": "document\\.write\\s*\\(\\s*(?:response|output|result|answer|completion)",
+      "severity": "high",
+      "title": "OH1 output-handling"
+    },
+    {
+      "category": "output-handling",
+      "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
+      "dialect": "js",
+      "id": "skillspector:oh1-8",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "OH1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "(?:execute|cursor\\.execute|query)\\s*\\([^)]*(?:\\+|%|\\.format|f['\\\"])\\s*.*?(?:response|output|result)",
       "severity": "high",
       "title": "OH1 output-handling"
     },
@@ -2890,7 +2878,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -2908,7 +2896,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -2926,7 +2914,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -2944,7 +2932,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -2962,7 +2950,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -2980,7 +2968,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -2998,7 +2986,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3016,7 +3004,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3034,7 +3022,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3052,7 +3040,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3070,7 +3058,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3088,7 +3076,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3106,7 +3094,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3124,7 +3112,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -3142,7 +3130,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3160,7 +3148,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3178,7 +3166,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3196,7 +3184,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3214,7 +3202,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3232,7 +3220,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3250,7 +3238,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3268,7 +3256,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3286,7 +3274,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3304,7 +3292,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3322,7 +3310,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3340,7 +3328,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3358,7 +3346,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3376,7 +3364,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -3394,7 +3382,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3412,7 +3400,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3430,7 +3418,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3448,7 +3436,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3466,7 +3454,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3484,7 +3472,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3502,7 +3490,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P6",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3520,7 +3508,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3538,7 +3526,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3556,7 +3544,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3574,7 +3562,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3592,7 +3580,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3610,7 +3598,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3628,7 +3616,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3646,7 +3634,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3664,7 +3652,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3682,7 +3670,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3700,7 +3688,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3718,7 +3706,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3736,7 +3724,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3754,7 +3742,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P8",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -3772,7 +3760,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3790,7 +3778,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3808,7 +3796,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3826,7 +3814,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3844,7 +3832,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3862,7 +3850,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3880,7 +3868,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3898,7 +3886,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3916,7 +3904,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3934,7 +3922,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3952,7 +3940,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3970,7 +3958,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -3988,7 +3976,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4006,7 +3994,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4024,7 +4012,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4042,7 +4030,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4060,7 +4048,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4078,7 +4066,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4096,7 +4084,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4114,7 +4102,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4132,7 +4120,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4150,7 +4138,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4168,7 +4156,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4186,7 +4174,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4204,7 +4192,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -4222,7 +4210,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4240,7 +4228,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4258,7 +4246,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4276,7 +4264,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4294,7 +4282,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4312,7 +4300,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4330,7 +4318,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4348,7 +4336,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4366,7 +4354,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4384,7 +4372,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4402,7 +4390,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4420,7 +4408,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4438,7 +4426,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4456,7 +4444,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4474,7 +4462,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -4492,7 +4480,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4510,7 +4498,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4528,7 +4516,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4546,7 +4534,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4564,7 +4552,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4582,7 +4570,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4600,7 +4588,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4618,7 +4606,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4636,7 +4624,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -4654,7 +4642,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SSRF1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_ssrf.py"
       },
       "regexFlags": "im",
@@ -4672,7 +4660,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SSRF1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_ssrf.py"
       },
       "regexFlags": "im",
@@ -4690,7 +4678,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4702,17 +4690,35 @@
       "category": "tool-misuse",
       "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
       "dialect": "js",
-      "id": "skillspector:tm1-13",
+      "id": "skillspector:tm1-12",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
       "regexSource": "\\bgit\\s+(?:am|commit|merge|push)\\b[^\\n|]*--no-verify\\b",
+      "severity": "high",
+      "title": "TM1 tool-misuse"
+    },
+    {
+      "category": "tool-misuse",
+      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+      "dialect": "js",
+      "id": "skillspector:tm1-16",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "TM1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "\\b(?:delete|remove)\\s+['\\\"]?/[^\\s'\\\"]{1,100}",
       "severity": "high",
       "title": "TM1 tool-misuse"
     },
@@ -4726,11 +4732,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "\\b(?:delete|remove)\\s+['\\\"]?/[^\\s'\\\"]{1,100}",
+      "regexSource": "(?:execute|query)\\s*\\(\\s*f?['\\\"].*?\\{.*?\\}.*?\\b(?:DROP|DELETE|UPDATE|INSERT|ALTER|TRUNCATE)\\b",
       "severity": "high",
       "title": "TM1 tool-misuse"
     },
@@ -4744,25 +4750,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "(?:execute|query)\\s*\\(\\s*f?['\\\"].*?\\{.*?\\}.*?\\b(?:DROP|DELETE|UPDATE|INSERT|ALTER|TRUNCATE)\\b",
-      "severity": "high",
-      "title": "TM1 tool-misuse"
-    },
-    {
-      "category": "tool-misuse",
-      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
-      "dialect": "js",
-      "id": "skillspector:tm1-19",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4780,7 +4768,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4792,17 +4780,35 @@
       "category": "tool-misuse",
       "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
       "dialect": "js",
-      "id": "skillspector:tm1-5",
+      "id": "skillspector:tm1-4",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
       "regexSource": "--no-?(?:check|validate|confirm|protect|safe)\\b",
+      "severity": "high",
+      "title": "TM1 tool-misuse"
+    },
+    {
+      "category": "tool-misuse",
+      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+      "dialect": "js",
+      "id": "skillspector:tm1-7",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "TM1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "\\bshutil\\.rmtree\\s*\\(\\s*['\\\"]\\s*/",
       "severity": "high",
       "title": "TM1 tool-misuse"
     },
@@ -4816,25 +4822,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "\\bshutil\\.rmtree\\s*\\(\\s*['\\\"]\\s*/",
-      "severity": "high",
-      "title": "TM1 tool-misuse"
-    },
-    {
-      "category": "tool-misuse",
-      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
-      "dialect": "js",
-      "id": "skillspector:tm1-9",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4852,7 +4840,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4870,7 +4858,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4888,7 +4876,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4906,7 +4894,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4924,7 +4912,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4942,7 +4930,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4960,7 +4948,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4978,7 +4966,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -4996,7 +4984,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5014,7 +5002,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5032,7 +5020,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5050,7 +5038,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5068,7 +5056,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5086,7 +5074,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5104,7 +5092,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5122,7 +5110,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -5140,7 +5128,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -5158,7 +5146,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
@@ -5176,13 +5164,51 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "AR2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py"
       },
       "regexFlags": "im",
       "regexSource": "\\b(?:do\\s+not|don'?t)\\s+(?:apologize|apologise|say\\s+sorry)\\b",
       "severity": "medium",
       "title": "AR2 anti-refusal"
+    },
+    {
+      "category": "deserialization",
+      "description": "Replace YAML.load/Psych.load with YAML.safe_load (or Psych.safe_load) and pass an explicit permitted-classes allowlist. For Oj, avoid :object mode on untrusted input.",
+      "dialect": "js",
+      "id": "skillspector:ds3-1",
+      "keywords": [],
+      "kind": "regex",
+      "pathRegexSource": "\\.(?:rb|rake)$",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "DS3",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
+      },
+      "regexFlags": "i",
+      "regexSource": "\\b(?:YAML|Psych)\\s*\\.\\s*load\\s*\\(",
+      "severity": "medium",
+      "title": "Unsafe Ruby YAML/Oj deserialization"
+    },
+    {
+      "category": "deserialization",
+      "description": "Replace YAML.load/Psych.load with YAML.safe_load (or Psych.safe_load) and pass an explicit permitted-classes allowlist. For Oj, avoid :object mode on untrusted input.",
+      "dialect": "js",
+      "id": "skillspector:ds3-2",
+      "keywords": [],
+      "kind": "regex",
+      "pathRegexSource": "\\.(?:rb|rake)$",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "DS3",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_deserialization.py"
+      },
+      "regexFlags": "i",
+      "regexSource": "\\bOj\\s*\\.\\s*load\\s*\\(",
+      "severity": "medium",
+      "title": "Unsafe Ruby YAML/Oj deserialization"
     },
     {
       "category": "data-exfiltration",
@@ -5194,7 +5220,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5212,7 +5238,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5230,7 +5256,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5248,7 +5274,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5266,7 +5292,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5284,7 +5310,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5302,7 +5328,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5320,7 +5346,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5338,139 +5364,13 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
       "regexSource": "(?:send|transmit|post|upload)\\s+(?:user\\s+)?(?:data|information|context|files?)\\s+to\\s+(?:https?://|external)",
       "severity": "medium",
       "title": "E1 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-1",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "for\\s+\\w+\\s*,\\s*\\w+\\s+in\\s+os\\.environ\\.items\\(\\)",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-10",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "collect\\s+(?:all\\s+)?(?:environment\\s+variables?|env\\s+vars?)",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-3",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "os\\.environ\\.get\\s*\\([^)]*(?:KEY|SECRET|TOKEN|PASSWORD|CREDENTIAL)",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-4",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "os\\.environ\\s*\\.\\s*copy\\s*\\(\\)",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-6",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "process\\.env\\s*\\[\\s*['\\\"][^'\\\"]*(?:KEY|SECRET|TOKEN|PASSWORD)[^'\\\"]*['\\\"]\\s*\\]",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-7",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "Object\\.keys\\s*\\(\\s*process\\.env\\s*\\)",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
-    },
-    {
-      "category": "data-exfiltration",
-      "description": "Avoid reading sensitive env vars (API keys, tokens) unless strictly required. Use secrets managers or secure config. Never log or transmit credentials.",
-      "dialect": "js",
-      "id": "skillspector:e2-9",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "E2",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "printenv\\s+(?:\\w*(?:KEY|SECRET|TOKEN|PASSWORD)\\w*)",
-      "severity": "medium",
-      "title": "E2 data-exfiltration"
     },
     {
       "category": "data-exfiltration",
@@ -5482,7 +5382,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5500,7 +5400,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5518,7 +5418,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5536,7 +5436,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5554,7 +5454,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5572,7 +5472,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5590,7 +5490,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5608,7 +5508,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5626,7 +5526,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5644,7 +5544,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5662,7 +5562,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5680,7 +5580,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5698,7 +5598,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5716,7 +5616,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5734,7 +5634,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5752,7 +5652,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5770,7 +5670,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "E5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py"
       },
       "regexFlags": "im",
@@ -5788,7 +5688,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5806,7 +5706,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5824,7 +5724,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5842,7 +5742,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5860,7 +5760,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5878,7 +5778,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5896,7 +5796,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5914,7 +5814,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5932,7 +5832,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5950,7 +5850,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5968,7 +5868,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -5986,7 +5886,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -6004,7 +5904,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "EA4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py"
       },
       "regexFlags": "im",
@@ -6022,7 +5922,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -6040,7 +5940,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "MP3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py"
       },
       "regexFlags": "im",
@@ -6052,13 +5952,13 @@
       "category": "output-handling",
       "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
       "dialect": "js",
-      "id": "skillspector:oh1-8",
+      "id": "skillspector:oh1-6",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -6070,13 +5970,13 @@
       "category": "output-handling",
       "description": "Validate and sanitize all model output before using it in downstream contexts. Use parameterized queries for SQL, shell quoting for commands, and HTML encoding for web output.",
       "dialect": "js",
-      "id": "skillspector:oh1-9",
+      "id": "skillspector:oh1-7",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -6094,7 +5994,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "OH3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_output_handling.py"
       },
       "regexFlags": "im",
@@ -6112,7 +6012,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6130,7 +6030,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6148,7 +6048,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6166,7 +6066,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6184,7 +6084,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6202,7 +6102,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6220,7 +6120,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6238,7 +6138,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py"
       },
       "regexFlags": "ims",
@@ -6256,7 +6156,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -6274,7 +6174,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "P7",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py"
       },
       "regexFlags": "im",
@@ -6292,7 +6192,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6310,7 +6210,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6328,7 +6228,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6346,7 +6246,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6364,7 +6264,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6382,7 +6282,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6400,7 +6300,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6418,7 +6318,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6436,7 +6336,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6454,7 +6354,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6472,7 +6372,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6490,7 +6390,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6508,7 +6408,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6526,7 +6426,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6544,11 +6444,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
-      "regexSource": "\\.env(?:\\.local|\\.production|\\.development)?(?:\\s|$|['\\\"])",
+      "regexSource": "(?<!\\w)\\.env(?:\\.local|\\.production|\\.development)?(?:\\s|$|['\\\"])",
       "severity": "medium",
       "title": "PE3 privilege-escalation"
     },
@@ -6562,7 +6462,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6580,7 +6480,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6598,7 +6498,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6616,7 +6516,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6634,7 +6534,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6652,7 +6552,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "PE5",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py"
       },
       "regexFlags": "im",
@@ -6670,7 +6570,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6688,7 +6588,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6706,7 +6606,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6724,7 +6624,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6742,7 +6642,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6760,7 +6660,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6778,7 +6678,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "RA2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py"
       },
       "regexFlags": "im",
@@ -6796,7 +6696,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6814,7 +6714,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6832,7 +6732,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6850,7 +6750,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6868,7 +6768,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6886,7 +6786,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6904,7 +6804,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6922,7 +6822,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6940,7 +6840,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6958,7 +6858,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -6976,7 +6876,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SSRF1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_ssrf.py"
       },
       "regexFlags": "im",
@@ -6994,7 +6894,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SSRF3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_ssrf.py"
       },
       "regexFlags": "im",
@@ -7012,11 +6912,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "git\\s+push\\s+[^|]*--force",
+      "regexSource": "git\\s+reset\\s+--hard",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7030,11 +6930,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "git\\s+reset\\s+--hard",
+      "regexSource": "git\\s+clean\\s+-[fd]+x",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7042,17 +6942,17 @@
       "category": "tool-misuse",
       "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
       "dialect": "js",
-      "id": "skillspector:tm1-12",
+      "id": "skillspector:tm1-13",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "git\\s+clean\\s+-[fd]+x",
+      "regexSource": "curl\\s+[^|]*-k\\b",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7066,11 +6966,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "curl\\s+[^|]*-k\\b",
+      "regexSource": "curl\\s+[^|]*--insecure\\b",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7084,25 +6984,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
-        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
-      },
-      "regexFlags": "im",
-      "regexSource": "curl\\s+[^|]*--insecure\\b",
-      "severity": "medium",
-      "title": "TM1 tool-misuse"
-    },
-    {
-      "category": "tool-misuse",
-      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
-      "dialect": "js",
-      "id": "skillspector:tm1-16",
-      "keywords": [],
-      "kind": "regex",
-      "provenance": {
-        "license": "Apache-2.0",
-        "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7114,17 +6996,35 @@
       "category": "tool-misuse",
       "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
       "dialect": "js",
-      "id": "skillspector:tm1-4",
+      "id": "skillspector:tm1-3",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
       "regexSource": "--force\\s+(?:delete|remove|push|reset|clean)",
+      "severity": "medium",
+      "title": "TM1 tool-misuse"
+    },
+    {
+      "category": "tool-misuse",
+      "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+      "dialect": "js",
+      "id": "skillspector:tm1-5",
+      "keywords": [],
+      "kind": "regex",
+      "provenance": {
+        "license": "Apache-2.0",
+        "ruleId": "TM1",
+        "source": "skillspector@v2.11.2",
+        "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
+      },
+      "regexFlags": "im",
+      "regexSource": "--skip-?(?:validation|verification|checks?|auth|tests?)",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7138,11 +7038,11 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "--skip-?(?:validation|verification|checks?|auth|tests?)",
+      "regexSource": "--allow-?(?:root|unrelated|unsafe)\\b",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7150,17 +7050,17 @@
       "category": "tool-misuse",
       "description": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
       "dialect": "js",
-      "id": "skillspector:tm1-7",
+      "id": "skillspector:tm1-9",
       "keywords": [],
       "kind": "regex",
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
-      "regexSource": "--allow-?(?:root|unrelated|unsafe)\\b",
+      "regexSource": "git\\s+push\\s+[^|]*--force",
       "severity": "medium",
       "title": "TM1 tool-misuse"
     },
@@ -7174,7 +7074,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7192,7 +7092,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7210,7 +7110,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7228,7 +7128,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM2",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7246,7 +7146,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7264,7 +7164,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7282,7 +7182,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7300,7 +7200,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7318,7 +7218,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7336,7 +7236,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7354,7 +7254,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7372,7 +7272,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM3",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7390,7 +7290,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7408,7 +7308,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7426,7 +7326,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7444,7 +7344,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7462,7 +7362,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "TM4",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py"
       },
       "regexFlags": "im",
@@ -7480,7 +7380,7 @@
       "provenance": {
         "license": "Apache-2.0",
         "ruleId": "SC1",
-        "source": "skillspector@v2.5.0",
+        "source": "skillspector@v2.11.2",
         "sourceFile": "upstream/skillspector/src/skillspector/nodes/analyzers/static_patterns_supply_chain.py"
       },
       "regexFlags": "im",
@@ -7491,6 +7391,6 @@
   ],
   "schemaVersion": 1,
   "sources": [
-    "skillspector@v2.5.0"
+    "skillspector@v2.11.2"
   ]
 }
