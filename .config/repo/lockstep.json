@@ -93,11 +93,10 @@
       "kind": "version-pin",
       "id": "zizmor",
       "upstream": "zizmor",
-      "pinned_sha": "4381cc6339bb76a1004a99da929fe8f8f1143d94",
       "upgrade_policy": "track-latest",
       "criticality": 7,
       "notes": "Workflow-audit source (MIT). The port is documentation-driven; a new upstream audit fails the generator until it is triaged in .config/repo/zizmor-audit-status.json.",
-      "pinned_tag": "v1.28.0"
+      "pinned_tag": "v1.30.1"
     }
   ]
 }

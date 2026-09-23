@@ -8,12 +8,12 @@
 	ignore = dirty
 	sparse-checkout = config testdata/config
 	verify = none
-# zizmor-v1.28.0 sha256:06e12a304238f8d632158b84220063c1c31538596f042ac6e03591ae0a1abfc6
+# zizmor-v1.30.1 (2026-09-09) sha256:32e54fb73f6172bd53194d25b9270dcd7abe0a44daa97999f000a2d2c8fb9f5c
 [submodule "upstream/zizmor"]
-	ref = 4381cc6339bb76a1004a99da929fe8f8f1143d94
+	ref = 99a054ed9283c90abdd2d5b9fb5101d27dde9783
 	path = upstream/zizmor
 	url = https://github.com/zizmorcore/zizmor.git
-	branch = v1.28.0
+	branch = v1.30.1
 	shallow = true
 	ignore = dirty
 	sparse-checkout = docs crates/zizmor/tests
