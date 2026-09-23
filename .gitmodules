@@ -18,12 +18,12 @@
 	ignore = dirty
 	sparse-checkout = docs crates/zizmor/tests
 	verify = none
-# trivy-v0.72.0 sha256:5a922c388846d11345ce8283e4373be312458f002abc667c3cd1f77c43163725
+# trivy-v0.74.0 (2026-08-14) sha256:285594b257470eb444fd2836be95a835565ee600382320c977b3993d8efbb767
 [submodule "upstream/trivy"]
-	ref = 8a32853686209a428179bb3a1688802b25691564
+	ref = e1fd17a0ea4a8cf24bc4b4dd7e2cfbf4bb31b994
 	path = upstream/trivy
 	url = https://github.com/aquasecurity/trivy.git
-	branch = v0.72.0
+	branch = v0.74.0
 	shallow = true
 	ignore = dirty
 	sparse-checkout = pkg/fanal/secret

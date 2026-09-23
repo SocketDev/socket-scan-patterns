@@ -75,11 +75,10 @@
       "kind": "version-pin",
       "id": "trivy",
       "upstream": "trivy",
-      "pinned_sha": "8a32853686209a428179bb3a1688802b25691564",
       "upgrade_policy": "track-latest",
       "criticality": 9,
       "notes": "Second secret-detector source (Apache-2.0, attributed in NOTICE). Supplies severity, which gitleaks does not express, plus the manifest-scoped Maven rules.",
-      "pinned_tag": "v0.72.0"
+      "pinned_tag": "v0.74.0"
     },
     {
       "kind": "version-pin",
