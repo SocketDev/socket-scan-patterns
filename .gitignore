@@ -300,6 +300,7 @@ pnpm-debug.log
 !/.github/workflows/cron-weekly-fuzz.yml
 !/.github/workflows/cron-weekly-odai-cache.yml
 !/.github/workflows/cron-weekly-update.yml
+!/.github/workflows/nightly-npm.yml
 !/.github/workflows/publish-npm.yml
 !/.github/workflows/release-github.yml
 !/.github/workflows/sweep-jobs.yml
@@ -3259,6 +3260,7 @@ scripts/fleet/browser/bridge/cleanup.mts
 scripts/fleet/browser/bridge/cli.mts
 scripts/fleet/browser/bridge/confirmation.mts
 scripts/fleet/browser/bridge/crates-token-schema.mts
+scripts/fleet/browser/bridge/crates-token.mts
 scripts/fleet/browser/bridge/diagnostics.mts
 scripts/fleet/browser/bridge/doctor.mts
 scripts/fleet/browser/bridge/extension/apple-profile.mts
@@ -3267,6 +3269,7 @@ scripts/fleet/browser/bridge/extension/background.mts
 scripts/fleet/browser/bridge/extension/build.mts
 scripts/fleet/browser/bridge/extension/chrome.mts
 scripts/fleet/browser/bridge/extension/content.mts
+scripts/fleet/browser/bridge/extension/crates-token.mts
 scripts/fleet/browser/bridge/extension/crates.mts
 scripts/fleet/browser/bridge/extension/debugger.mts
 scripts/fleet/browser/bridge/extension/depot.mts
@@ -3917,6 +3920,7 @@ scripts/fleet/cross-cli/util.mts
 scripts/fleet/depot-ci.mts
 scripts/fleet/dismiss-stale-dependabot-alerts.mts
 scripts/fleet/doctor-git-probes.mts
+scripts/fleet/doctor-resource-probes.mts
 scripts/fleet/doctor-worktree-probes.mts
 scripts/fleet/doctor.mts
 scripts/fleet/eco/cargo-workspaces.mts
@@ -4332,6 +4336,8 @@ scripts/fleet/process/lifecycle.mts
 scripts/fleet/process/main/run.mts
 scripts/fleet/process/pnpm-command.mts
 scripts/fleet/process/poll-with-decay.mts
+scripts/fleet/process/resource-inspection.mts
+scripts/fleet/process/resource-sweep.mts
 scripts/fleet/process/run-main-minimal.mts
 scripts/fleet/process/run-main.mts
 scripts/fleet/process/runaway-memory.mts
@@ -4413,11 +4419,15 @@ scripts/fleet/registry-infra/apple/keychain-csr.mts
 scripts/fleet/registry-infra/apple/util.mts
 scripts/fleet/registry-infra/brew/shared.mts
 scripts/fleet/registry-infra/cargo/approve.mts
+scripts/fleet/registry-infra/cargo/browser/credential.mts
+scripts/fleet/registry-infra/cargo/browser/store.mts
+scripts/fleet/registry-infra/cargo/browser/validation.mts
 scripts/fleet/registry-infra/cargo/bump.mts
 scripts/fleet/registry-infra/cargo/placeholder.mts
 scripts/fleet/registry-infra/cargo/registry.mts
 scripts/fleet/registry-infra/cargo/shared.mts
 scripts/fleet/registry-infra/cargo/staged.mts
+scripts/fleet/registry-infra/cargo/trusted-publisher-http.mts
 scripts/fleet/registry-infra/cargo/trusted-publisher.mts
 scripts/fleet/registry-infra/crates-io-browser-auth.mts
 scripts/fleet/registry-infra/crates-io-trusted-token.mts
@@ -4528,6 +4538,7 @@ scripts/fleet/release/github/reconcile.mts
 scripts/fleet/release/github/remote.mts
 scripts/fleet/release/hint.mts
 scripts/fleet/release/member-probe.mts
+scripts/fleet/release/nightly/decision.mts
 scripts/fleet/release/npm-only-provenance.mts
 scripts/fleet/release/pipeline/deps.mts
 scripts/fleet/release/pipeline/gate-runners.mts
@@ -4721,6 +4732,7 @@ scripts/fleet/statusline/snapshot.mts
 scripts/fleet/strings/lines.mts
 scripts/fleet/strip-ai-tags.mts
 scripts/fleet/sweep.mts
+scripts/fleet/sweep/resources.mts
 scripts/fleet/sweep/worktree.mts
 scripts/fleet/sync-gh-aw-action-pins.mts
 scripts/fleet/sync-global-hooks.mts
