@@ -16148,7 +16148,7 @@ function parseYamlEntryChunks(bodyLines) {
  * inside the fleet-owned `hooks` key. Fleet-shipped entries (present in the
  * bundle block) take the bundle's text, comments included; member-local
  * entries that appear only in the consumer block survive in their original
- * order after the fleet set. Scalar-shaped blocks (`saveExact: true`) have no
+ * order after the fleet set. Scalar-shaped workspace settings have no
  * nested entries, so the bundle block replaces wholesale. Trailing blank lines
  * follow the consumer block so inter-block spacing is preserved. The merged
  * block's head (the separator run above its key) is the BUNDLE's when the
@@ -45874,13 +45874,26 @@ function canonicalMcpConfigPath(repoRoot) {
 
 var import_predicates = require_predicates$3()
 const MCP_PROVIDERS = {
+  linear: {
+    connectOrder: 5,
+    serverName: 'fleet-linear',
+    url: 'https://mcp.linear.app/mcp',
+    auth: 'oauth',
+    setupUrl: 'https://linear.app',
+    allowedAuthorizationHosts: ['linear.app', 'mcp.linear.app'],
+    clients: {
+      claude: { kind: 'oauth' },
+      codex: { kind: 'oauth' },
+      opencode: { kind: 'oauth' },
+    },
+  },
   notion: {
     connectOrder: 4,
     serverName: 'fleet-notion',
     url: 'https://mcp.notion.com/mcp',
     auth: 'oauth',
     setupUrl: 'https://mcp.notion.com',
-    allowedAuthorizationHosts: ['mcp.notion.com'],
+    allowedAuthorizationHosts: ['app.notion.com', 'mcp.notion.com'],
     clients: {
       claude: { kind: 'oauth' },
       codex: { kind: 'oauth' },
@@ -46302,8 +46315,12 @@ function writeCodexAdapters(repoRoot, servers) {
     const adapter = CODEX_ADAPTERS[i]
     const dest = mcpConfigFilePath(repoRoot, adapter.path)
     mkdirSync(path.dirname(dest), { recursive: true })
-    writeThroughMirrorLock(dest, adapter.render(servers))
+    writeGeneratedConfigIfChanged(dest, adapter.render(servers))
   }
+}
+function writeGeneratedConfigIfChanged(dest, content) {
+  if (existsSync(dest) && readFileSync(dest, 'utf8') === content) return
+  writeThroughMirrorLock(dest, content)
 }
 /**
  * Regenerate the project MCP adapters from `.mcp.json`.
@@ -46330,7 +46347,7 @@ function writeMcpClientConfigs(repoRoot) {
       'Cannot update opencode.json: expected an object. Fix the existing config before regenerating MCP servers.',
     )
   const generated = createOpenCodeMcpConfig(servers)
-  writeThroughMirrorLock(
+  writeGeneratedConfigIfChanged(
     configPath,
     formatOpenCodeMcpConfig(
       {

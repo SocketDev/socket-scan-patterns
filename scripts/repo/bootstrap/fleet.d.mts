@@ -806,7 +806,7 @@ export declare function parseYamlEntryChunks(bodyLines: readonly string[]): Yaml
  * inside the fleet-owned `hooks` key. Fleet-shipped entries (present in the
  * bundle block) take the bundle's text, comments included; member-local
  * entries that appear only in the consumer block survive in their original
- * order after the fleet set. Scalar-shaped blocks (`saveExact: true`) have no
+ * order after the fleet set. Scalar-shaped workspace settings have no
  * nested entries, so the bundle block replaces wholesale. Trailing blank lines
  * follow the consumer block so inter-block spacing is preserved. The merged
  * block's head (the separator run above its key) is the BUNDLE's when the
