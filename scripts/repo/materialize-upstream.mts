@@ -42,7 +42,14 @@ export async function cloneUpstreamSlice(name: string): Promise<void> {
   await spawn(
     process.execPath,
     [
-      path.join(REPO_ROOT, 'scripts', 'fleet', 'git', 'submodule', 'partial.mts'),
+      path.join(
+        REPO_ROOT,
+        'scripts',
+        'fleet',
+        'git',
+        'submodule',
+        'partial.mts',
+      ),
       'clone',
       `upstream/${name}`,
     ],
