@@ -7,7 +7,7 @@ import { expect, it } from 'vitest'
 
 import { packAndInspect } from '../../../scripts/fleet/pack/inspect.mts'
 import { tarExecutable } from '../../../scripts/fleet/archives/tar-executable.mts'
-import { withPrunedPackManifest } from '../../../scripts/fleet/registry-infra/npm/pack-manifest.mts'
+import { withPrunedPackManifest } from '../../../scripts/fleet/registry/npm/pack-manifest.mts'
 import { REPO_ROOT } from '../../../scripts/repo/paths.mts'
 
 it('loads all scanner tables from the packed npm artifact', async () => {
