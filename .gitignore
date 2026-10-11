@@ -4407,6 +4407,7 @@ scripts/fleet/npm/publish/retry.mts
 scripts/fleet/npm/publish/run-cli.mts
 scripts/fleet/npm/publish/run.mts
 scripts/fleet/npm/publish/scan-retry.mts
+scripts/fleet/npm/publish/stage-evidence-cache.mts
 scripts/fleet/npm/scan.mts
 scripts/fleet/npm/staged.mts
 scripts/fleet/npm/trusted-publisher/migrate.mts
