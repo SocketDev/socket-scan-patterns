@@ -88,6 +88,10 @@ time:
 import secretsTable from '@socketsecurity/scan-patterns/data/secrets.json' with { type: 'json' }
 ```
 
+### Documentation
+
+See the [API reference](./docs/api.md) for scanner tables, rule schema, provenance, supported pattern kinds and dialects, compilation behavior, and direct JSON imports.
+
 ## Development
 
 <details>
