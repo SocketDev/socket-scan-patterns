@@ -32,7 +32,12 @@ import { diagnosePublishFailure } from './publish-failure.mts'
 import { fetchPublishedState, isAlreadyPublished } from './registry.mts'
 import { normalizeBundleRegionComments } from './region-comments.mts'
 import type { StageListEntry } from './shared.mts'
-import { isStagingExpected, logNpmApproveHandoff } from './shared.mts'
+import {
+  isStagingExpected,
+  logNpmApproveHandoff,
+  matchNpmStageUploadEvidence,
+} from './shared.mts'
+import type { NpmStageEvidenceRecorder } from './shared.mts'
 import { resolveNpmStageCommand } from './stage-command.mts'
 import {
   packWorkspaceMemberTarball,
@@ -115,6 +120,7 @@ export async function runStaged(
   config: {
     dryRun: boolean
     tarballs?: ReadonlyMap<string, string> | undefined
+    onStageUploaded?: NpmStageEvidenceRecorder | undefined
   },
 ): Promise<void> {
   const { dryRun } = { __proto__: null, ...config } as typeof config
@@ -126,6 +132,7 @@ export async function runStaged(
     await runWorkspacePublish('staged', tag, layout, {
       dryRun,
       tarballs: config.tarballs,
+      onStageUploaded: config.onStageUploaded,
     })
     return
   }
@@ -188,6 +195,8 @@ export async function runStaged(
         if (!preflightOk) {
           return 1
         }
+        const digest =
+          config.onStageUploaded && !dryRun ? hashTarball(tarball) : undefined
         staged = await uploadNpmPackage({
           cwd: rootPath,
           dryRun,
@@ -198,6 +207,21 @@ export async function runStaged(
           mode: 'staged',
           tag,
           tarball,
+          onUploaded:
+            digest && config.onStageUploaded
+              ? async uploaded => {
+                  await config.onStageUploaded!(
+                    matchNpmStageUploadEvidence({
+                      distTag: tag,
+                      output: uploaded.output,
+                      name: pkg.name,
+                      sha1: digest.shasum,
+                      sha512: digest.integrity.slice('sha512-'.length),
+                      version: pkg.version,
+                    }),
+                  )
+                }
+              : undefined,
         })
         return staged.code
       }),
@@ -708,7 +732,7 @@ export async function verifyStagedEntry(
     logger.fail(
       `Pre-approve verify: staged entry is missing name/version/stageId.\n` +
         `  Where: ${JSON.stringify(entry)}\n` +
-        `  Fix: re-stage the package; do not approve an entry the registry can't identify.`,
+        `  Fix: inspect the stage metadata; do not approve an unidentified entry.`,
     )
     return false
   }
@@ -717,7 +741,7 @@ export async function verifyStagedEntry(
       `Pre-approve verify: no server-side shasum for ${name}@${version}.\n` +
         `  Where: npm stage list --json (stageId ${stageId}) exposed no shasum field.\n` +
         `  Saw vs wanted: an entry with no digest.\n` +
-        `  Fix: reject + re-stage (node scripts/fleet/npm-auth.mts stage reject ${stageId}); if npm's stage-list shape changed, update readStagedShasum.`,
+        `  Fix: inspect the stage-list response and repair readStagedShasum if its schema changed; never approve without a verified digest.`,
     )
     return false
   }
@@ -752,7 +776,7 @@ export async function verifyStagedEntry(
           `  Where: tarball sha1 mismatch and the staged tarball could not be downloaded.\n` +
           `    local pack:  ${local.shasum}\n` +
           `    npm staging: ${stagedShasum}\n` +
-          `  Fix: check npm auth (npm stage download ${stageId}), or reject and re-stage.`,
+          `  Fix: check npm auth (npm stage download ${stageId}), then retry verification.`,
       )
       return false
     }
@@ -764,7 +788,7 @@ export async function verifyStagedEntry(
           `  Saw vs wanted: ${contents.detail}\n` +
           `    local pack:  ${local.shasum}\n` +
           `    npm staging: ${stagedShasum}\n` +
-          `  Fix: reject the staged publish (node scripts/fleet/npm-auth.mts stage reject ${stageId}) and re-stage — never approve a divergent artifact.`,
+          `  Fix: reject the staged publish (node scripts/fleet/npm/auth/run.mts stage reject ${stageId}) and reserve a higher version; never approve divergent bytes.`,
       )
       return false
     }

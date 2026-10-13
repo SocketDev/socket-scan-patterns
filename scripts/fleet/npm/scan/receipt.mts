@@ -29,8 +29,16 @@ export function parseNpmPublishSourceEvidence(config: {
     ),
   ].map(match => match[1]!)
   const ordinary = [
-    ...committed.map(prefix => ({ kind: 'committed' as const, prefix })),
-    ...resumed.map(prefix => ({ kind: 'resumed' as const, prefix })),
+    ...committed.map(prefix => ({
+      __proto__: null,
+      kind: 'committed' as const,
+      prefix,
+    })),
+    ...resumed.map(prefix => ({
+      __proto__: null,
+      kind: 'resumed' as const,
+      prefix,
+    })),
   ]
   if (ordinary.length > 0) {
     const unique = [
